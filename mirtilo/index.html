@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<!-- (c) Plantfort Estufas Agricolas. Projeto proprietario. Codigo e desenho protegidos; copia, reuso ou redistribuicao nao autorizados. -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2E6B2E">
+<title>Plano Mirtilo São Carlos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Archivo:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --verde:#2E6B2E; --verde-esc:#1c3d1c; --verde-cl:#6FB53A; --verde-pale:#e8efe2;
+    --mirtilo:#4B4E9E; --mirtilo-pale:#e6e6f3; --mirtilo-esc:#2f3170;
+    --papel:#f4f1e8; --papel-2:#ece7d8; --branco:#fbfaf5; --tinta:#22301f; --tinta-2:#5a6553; --linha:#c8c0aa;
+    --ocre:#c0622a; --ocre-pale:#f5e6da;
+    --grid:rgba(46,107,46,.035);
+    --sombra:0 1px 2px rgba(34,48,31,.06), 0 8px 30px rgba(34,48,31,.08);
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --verde:#5FA52E; --verde-esc:#a9d98a; --verde-cl:#7cc45a; --verde-pale:#1f2e1c;
+      --mirtilo:#7A7ED0; --mirtilo-pale:#232648; --mirtilo-esc:#b9bcf0;
+      --papel:#151b13; --papel-2:#1e271c; --branco:#1a2218; --tinta:#e9e6da; --tinta-2:#a9b1a0; --linha:#3a4636;
+      --ocre:#CC7440; --ocre-pale:#3a2718;
+      --grid:rgba(111,181,58,.05);
+      --sombra:0 1px 2px rgba(0,0,0,.3), 0 8px 30px rgba(0,0,0,.35);
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --verde:#5FA52E; --verde-esc:#a9d98a; --verde-cl:#7cc45a; --verde-pale:#1f2e1c;
+    --mirtilo:#7A7ED0; --mirtilo-pale:#232648; --mirtilo-esc:#b9bcf0;
+    --papel:#151b13; --papel-2:#1e271c; --branco:#1a2218; --tinta:#e9e6da; --tinta-2:#a9b1a0; --linha:#3a4636;
+    --ocre:#CC7440; --ocre-pale:#3a2718;
+    --grid:rgba(111,181,58,.05);
+    --sombra:0 1px 2px rgba(0,0,0,.3), 0 8px 30px rgba(0,0,0,.35);
+    color-scheme: dark;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:'Archivo',system-ui,sans-serif; color:var(--tinta); background:var(--papel);
+    background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+    background-size:26px 26px; -webkit-font-smoothing:antialiased; line-height:1.55; font-size:15.5px;
+  }
+  .wrap{max-width:900px;margin:0 auto;padding-block:28px 80px;padding-inline:clamp(16px,4vw,48px)}
+  header{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-bottom:20px;border-bottom:1.5px solid var(--linha);margin-bottom:34px}
+  .brand{display:flex;align-items:center;gap:14px}
+  .leaf{width:46px;height:46px;flex:none;color:var(--verde)}
+  .brand h1{font-family:'Fraunces',serif;font-weight:900;font-size:26px;letter-spacing:-.5px;line-height:1}
+  .brand .sub{font-size:11.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--verde);font-weight:600;margin-top:3px}
+  .meta{font-family:'DM Mono',monospace;font-size:11.5px;color:var(--tinta-2);text-align:right;line-height:1.7}
+  .meta b{color:var(--tinta);font-weight:500}
+
+  .titulo h2{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(30px,5vw,44px);line-height:1.05;letter-spacing:-1px;text-wrap:balance;max-width:16ch}
+  .titulo p.lead{font-size:17px;color:var(--tinta-2);max-width:62ch;margin-top:14px}
+  .titulo .tag{display:inline-block;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mirtilo-esc);background:var(--mirtilo-pale);padding:4px 10px;border-radius:999px;margin-bottom:14px}
+
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:30px 0 8px}
+  .kpi{background:var(--branco);border:1px solid var(--linha);border-radius:12px;padding:14px 16px;box-shadow:var(--sombra)}
+  .kpi .l{font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:var(--tinta-2);font-weight:600}
+  .kpi .v{font-family:'Fraunces',serif;font-weight:600;font-size:28px;letter-spacing:-.5px;margin-top:4px;font-variant-numeric:tabular-nums;line-height:1.1}
+  .kpi .v small{font-family:'DM Mono',monospace;font-size:12px;color:var(--tinta-2);letter-spacing:0}
+  .kpi .n{font-size:12px;color:var(--tinta-2);margin-top:4px}
+  .kpi.destaque{border-color:var(--mirtilo);background:var(--mirtilo-pale)}
+  .kpi.destaque .v{color:var(--mirtilo-esc)}
+
+  section{margin-top:48px}
+  section > h3{font-family:'Fraunces',serif;font-weight:900;font-size:24px;letter-spacing:-.4px;margin-bottom:14px;text-wrap:balance;display:flex;align-items:baseline;gap:12px}
+  section > h3 .num{font-family:'DM Mono',monospace;font-size:12px;color:var(--verde);letter-spacing:1px;font-weight:500}
+  h4{font-family:'Archivo',sans-serif;font-weight:700;font-size:15px;margin:22px 0 8px;letter-spacing:.2px}
+  p{max-width:68ch;margin-bottom:12px}
+  ul,ol{max-width:68ch;padding-left:22px;margin-bottom:12px}
+  li{margin-bottom:6px}
+  li::marker{color:var(--verde)}
+  strong{font-weight:600}
+
+  .veredito{background:var(--branco);border-left:4px solid var(--mirtilo);border-radius:0 12px 12px 0;padding:18px 22px;margin:26px 0;box-shadow:var(--sombra)}
+  .veredito p{margin-bottom:8px}
+  .veredito p:last-child{margin-bottom:0}
+  .alerta{background:var(--ocre-pale);border-left:4px solid var(--ocre);border-radius:0 12px 12px 0;padding:14px 18px;margin:18px 0}
+  .alerta p{margin-bottom:6px}
+  .alerta p:last-child{margin-bottom:0}
+
+  .tabela-wrap{overflow-x:auto;margin:14px 0 18px;border:1px solid var(--linha);border-radius:12px;background:var(--branco);box-shadow:var(--sombra)}
+  table{border-collapse:collapse;width:100%;font-size:14px;min-width:520px}
+  th,td{padding:9px 14px;text-align:left;border-bottom:1px solid var(--linha);vertical-align:top}
+  th{font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:var(--tinta-2);font-weight:600;background:var(--papel-2)}
+  td.num,th.num{text-align:right;font-family:'DM Mono',monospace;font-variant-numeric:tabular-nums;white-space:nowrap}
+  tr:last-child td{border-bottom:none}
+  tr.total td{font-weight:600;background:var(--verde-pale);border-top:2px solid var(--verde)}
+  tr.total td.num{font-weight:500}
+  td.neg{color:var(--ocre)}
+  td:first-child{white-space:nowrap}
+  td.rec{color:var(--mirtilo-esc);font-weight:600}
+  .legenda{font-size:12.5px;color:var(--tinta-2);margin:-8px 0 16px}
+
+  .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin:14px 0}
+  .box{background:var(--branco);border:1px solid var(--linha);border-radius:12px;padding:16px 18px}
+  .box h5{font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:var(--verde);font-weight:700;margin-bottom:8px}
+  .box p,.box ul{font-size:14px;margin-bottom:6px}
+  .box ul{padding-left:18px}
+
+  /* calendário */
+  .cal{border:1px solid var(--linha);border-radius:12px;background:var(--branco);padding:14px 16px 10px;overflow-x:auto;margin:14px 0}
+  .cal-grid{display:grid;grid-template-columns:150px repeat(12,minmax(28px,1fr));gap:4px 3px;min-width:560px;align-items:center}
+  .cal-grid .h{font-family:'DM Mono',monospace;font-size:11px;color:var(--tinta-2);text-align:center}
+  .cal-grid .r{font-size:12.5px;padding-right:8px}
+  .cal-grid .c{height:18px;border-radius:4px;background:var(--papel-2)}
+  .cal-grid .c.on{background:var(--tinta-2);opacity:.55}
+  .cal-grid .c.sc{background:var(--verde);opacity:1}
+  .cal-grid .c.pr{background:var(--mirtilo);opacity:1}
+  .cal-leg{display:flex;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--tinta-2);margin-top:10px}
+  .cal-leg span{display:inline-flex;align-items:center;gap:6px}
+  .cal-leg i{width:14px;height:10px;border-radius:3px;display:inline-block}
+
+  /* gráfico */
+  figure{margin:16px 0 8px;background:var(--branco);border:1px solid var(--linha);border-radius:12px;padding:16px 16px 10px;box-shadow:var(--sombra)}
+  figure figcaption{font-size:13px;color:var(--tinta-2);margin-top:6px}
+  figure .ftitle{font-weight:600;font-size:14px;margin-bottom:2px}
+  .chart-legend{display:flex;gap:18px;font-size:12.5px;color:var(--tinta-2);margin-bottom:8px;flex-wrap:wrap}
+  .chart-legend span{display:inline-flex;align-items:center;gap:6px}
+  .chart-legend i{width:12px;height:12px;border-radius:3px;display:inline-block}
+  .chart-legend i.line{height:3px;width:18px;border-radius:2px}
+  svg.chart{width:100%;height:auto;display:block;font-family:'DM Mono',monospace}
+  svg.chart text{fill:var(--tinta-2);font-size:11px}
+  svg.chart .grid line{stroke:var(--linha);stroke-width:1;opacity:.5}
+  svg.chart .zero{stroke:var(--tinta-2);stroke-width:1.2}
+  svg.chart .bar{fill:var(--verde)}
+  svg.chart .bar.neg{fill:var(--ocre)}
+  svg.chart .acum{fill:none;stroke:var(--mirtilo);stroke-width:2.5;stroke-linejoin:round}
+  svg.chart .pt{fill:var(--mirtilo);stroke:var(--branco);stroke-width:2}
+  svg.chart .hit{fill:transparent;cursor:pointer}
+  svg.chart .hit:hover ~ .bar{opacity:.85}
+  .tip{position:absolute;pointer-events:none;background:var(--tinta);color:var(--papel);font-family:'DM Mono',monospace;font-size:12px;padding:8px 10px;border-radius:8px;line-height:1.5;white-space:nowrap;box-shadow:var(--sombra);display:none;z-index:5}
+  .chart-box{position:relative}
+
+  .sens td.ok{background:var(--verde-pale);color:var(--verde-esc);font-weight:500}
+  .sens td.meh{background:var(--papel-2)}
+  .sens td.bad{background:var(--ocre-pale);color:var(--ocre)}
+
+  .cron{display:grid;grid-template-columns:110px 1fr;gap:6px 16px;max-width:760px;font-size:14.5px}
+  .cron .m{font-family:'DM Mono',monospace;font-size:12px;color:var(--verde);padding-top:3px;white-space:nowrap}
+  .cron .d{padding-bottom:8px;border-bottom:1px dashed var(--linha)}
+
+  .fontes{font-size:13px;color:var(--tinta-2)}
+  .fontes li{margin-bottom:4px}
+  a{color:var(--mirtilo-esc)}
+  a:focus-visible{outline:2px solid var(--verde-cl);outline-offset:2px;border-radius:3px}
+  footer{margin-top:60px;padding-top:18px;border-top:1.5px solid var(--linha);font-family:'DM Mono',monospace;font-size:11.5px;color:var(--tinta-2);line-height:1.7}
+  @media (max-width:560px){
+    .meta{text-align:left}
+    .cron{grid-template-columns:1fr}
+    .cron .m{padding-top:0}
+  }
+  @media (prefers-reduced-motion:no-preference){
+    .kpi{transition:transform .2s ease}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<header>
+  <div class="brand">
+    <svg class="leaf" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M8 40C8 22 20 10 40 8c-2 20-14 32-32 32Z" fill="currentColor" opacity=".9"/><path d="M10 38c8-10 16-18 26-26" stroke="#fbfaf5" stroke-width="2.2" stroke-linecap="round"/></svg>
+    <div>
+      <h1>Plantfort</h1>
+      <div class="sub">Plano de negócio · Fruticultura</div>
+    </div>
+  </div>
+  <div class="meta">
+    <b>Mirtilo · 2,0 ha · São Carlos/SP</b><br>
+    Versão 1 · setembro de 2026<br>
+    Valores em R$ correntes · estimativas
+  </div>
+</header>
+
+<div class="titulo">
+  <span class="tag">Vaccinium · southern highbush de baixo frio</span>
+  <h2>Mirtilo em vasos, 2 hectares em São Carlos</h2>
+  <p class="lead">Plano de implantação e operação de um pomar de mirtilo de 13.200 plantas em substrato, com terra própria já disponível e muda a R$ 20,00. Cobre sistema de produção, mercado, investimento, custos, projeção de dez anos, sensibilidade e riscos.</p>
+</div>
+
+<div class="kpis">
+  <div class="kpi"><div class="l">Investimento total</div><div class="v">R$ 1,78<small> mi</small></div><div class="n">CAPEX R$ 1,57 mi + giro R$ 0,21 mi</div></div>
+  <div class="kpi"><div class="l">Receita na maturidade</div><div class="v">R$ 1,09<small> mi/ano</small></div><div class="n">33 t/ano a R$ 33/kg (ano 5+)</div></div>
+  <div class="kpi"><div class="l">EBITDA na maturidade</div><div class="v">R$ 416<small> mil/ano</small></div><div class="n">margem de 38% · custo R$ 20,39/kg</div></div>
+  <div class="kpi destaque"><div class="l">Payback · TIR 10 anos</div><div class="v">ano 7<small> · 8,8%</small></div><div class="n">cenário base A, sem financiamento</div></div>
+</div>
+
+<div class="veredito">
+  <p><strong>Leitura direta.</strong> O projeto se paga, mas não é uma mina de ouro no preço atual de atacado. A margem operacional é boa (custo de R$ 20/kg contra preço de R$ 33/kg), porém o investimento inicial de quase R$ 900 mil por hectare faz o retorno depender de três coisas: <strong>preço médio acima de R$ 37/kg</strong>, <strong>produtividade de 2,5 kg/planta ou mais</strong> a partir do ano 5, e <strong>venda direta ao varejo</strong> para uma parte relevante do volume.</p>
+  <p>Com preço de R$ 41/kg (viável com 40% da fruta vendida direto a supermercados e lojas), a TIR sobe para 18,7% e o payback cai para o ano 6. Com preço de R$ 29/kg (cenário de saturação do atacado na safra nacional), o projeto não remunera o capital. A recomendação é <strong>implantar em duas etapas de 1 ha</strong>: reduz o desembolso do primeiro ano, valida a produtividade real no clima de São Carlos e permite fechar canais de venda antes de dobrar a área.</p>
+</div>
+
+<section id="premissas">
+  <h3><span class="num">01</span>Premissas do plano</h3>
+  <div class="grid2">
+    <div class="box"><h5>Dados do cliente</h5>
+      <ul>
+        <li>Área de 2,0 ha em São Carlos/SP, <strong>terra própria</strong> (sem custo de aquisição ou arrendamento).</li>
+        <li>Muda a <strong>R$ 20,00</strong> a unidade, posta na fazenda.</li>
+        <li>Investidor assume gestão; o plano prevê consultoria agronômica contratada.</li>
+      </ul>
+    </div>
+    <div class="box"><h5>Escolhas técnicas do plano</h5>
+      <ul>
+        <li>Cultivo em <strong>vasos de 30 L com substrato</strong>, não em solo.</li>
+        <li>Espaçamento 2,5 m × 0,60 m: <strong>6.600 plantas/ha</strong>, 13.200 no total.</li>
+        <li>Cobertura de <strong>tela antipássaro e antigranizo</strong> (cenário A). Túnel alto com filme plástico avaliado como cenário B.</li>
+        <li>Fertirrigação por gotejamento automatizada, água acidificada.</li>
+      </ul>
+    </div>
+    <div class="box"><h5>Preço e rendimento</h5>
+      <ul>
+        <li>Preço médio ao produtor de <strong>R$ 33/kg</strong>, mix de 40% atacado (R$ 30), 40% varejo direto (R$ 45) e 20% fruta de segunda ou congelada (R$ 14).</li>
+        <li>Curva de produção por planta: 0,3 · 1,0 · 1,8 · 2,3 · 2,5 kg nos anos 1 a 5, estável depois.</li>
+        <li>Perdas pós-colheita e comissão de venda: 9,5% da receita, já incluído o Funrural.</li>
+      </ul>
+    </div>
+    <div class="box"><h5>O que não está incluído</h5>
+      <ul>
+        <li>Imposto de renda sobre o resultado (depende de pessoa física ou jurídica).</li>
+        <li>Custo financeiro de empréstimo (tratado na seção 10).</li>
+        <li>Veículo de entrega e moradia de funcionários.</li>
+        <li>Royalties de cultivares protegidas, se a muda de R$ 20 for de variedade licenciada.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="regiao">
+  <h3><span class="num">02</span>Por que São Carlos funciona para mirtilo</h3>
+  <p>São Carlos fica a cerca de 850 m de altitude, com clima Cwa (subtropical de altitude): verão chuvoso e quente, inverno seco com mínimas médias entre 10 e 12 °C em junho e julho. O acúmulo de frio abaixo de 7,2 °C é baixo e irregular, tipicamente abaixo de 200 horas por ano. Isso descarta as variedades tradicionais do Sul (highbush do norte e boa parte das rabbiteye) e obriga a usar <strong>southern highbush de baixa exigência em frio</strong>, o mesmo grupo que sustenta a produção paulista em Atibaia, Bragança Paulista e Holambra.</p>
+  <p>Três fatores jogam a favor:</p>
+  <ul>
+    <li><strong>Logística.</strong> 230 km da CEAGESP pela Washington Luís e Anhanguera. Fruta colhida de manhã chega refrigerada em São Paulo no mesmo dia. Campinas, Ribeirão Preto e Araraquara ficam num raio de 150 km para venda direta.</li>
+    <li><strong>Janela de colheita.</strong> No baixo frio de São Paulo a colheita concentra-se entre agosto e novembro, antes do pico da fruta chilena. Com manejo de poda é possível puxar parte da produção para junho e julho, quando o importado praticamente some e o preço dobra.</li>
+    <li><strong>Suporte técnico.</strong> UFSCar, Embrapa Instrumentação e a Escola de Engenharia de São Carlos (USP) estão na cidade; a Esalq em Piracicaba a 100 km. Análises de água, substrato e nutrição são acessíveis.</li>
+  </ul>
+  <div class="alerta">
+    <p><strong>Ponto de atenção: água.</strong> Mirtilo exige água de irrigação com pH entre 4,5 e 5,5 e baixa alcalinidade (bicarbonatos abaixo de 1,5 meq/L). Água de poço na região costuma ter alcalinidade moderada e precisa de acidificação contínua. A análise da fonte de água é a <strong>primeira</strong> despesa do projeto, antes de encomendar qualquer muda.</p>
+  </div>
+</section>
+
+<section id="sistema">
+  <h3><span class="num">03</span>Sistema de produção</h3>
+  <h4>Vasos com substrato, não solo</h4>
+  <p>O solo de São Carlos (latossolos e neossolos arenosos) é naturalmente ácido, o que ajudaria, mas drena mal em muitas glebas e sofre com o excesso de chuva de dezembro a março. Raízes de mirtilo são finas, sem pelos radiculares, e morrem em encharcamento por <em>Phytophthora</em>. O vaso de 30 L com casca de pinus e fibra de coco isola a planta do solo, garante drenagem, dá controle total da nutrição pela fertirrigação e antecipa a entrada em produção. É o padrão dos pomares comerciais recentes em São Paulo e Minas.</p>
+
+  <h4>Cultivares</h4>
+  <p>Todas do grupo southern highbush, exigência de frio até 300 horas, com pelo menos três cultivares intercaladas para polinização cruzada. Mix sugerido:</p>
+  <div class="tabela-wrap"><table>
+    <thead><tr><th>Cultivar</th><th class="num">Participação</th><th>Papel no pomar</th><th>Observação</th></tr></thead>
+    <tbody>
+      <tr><td>Emerald</td><td class="num">35%</td><td>Volume e tamanho de fruta</td><td>Vigorosa, produtiva, fruta grande e firme</td></tr>
+      <tr><td>Jewel</td><td class="num">25%</td><td>Qualidade e polinizadora</td><td>Sabor e firmeza, boa vida de prateleira</td></tr>
+      <tr><td>Snowchaser</td><td class="num">20%</td><td>Precocidade</td><td>Florada e colheita mais cedo; puxa a janela de junho a agosto</td></tr>
+      <tr><td>Biloxi ou Star</td><td class="num">20%</td><td>Rusticidade</td><td>Comprovadas em clima quente; Biloxi tolera bem verão</td></tr>
+    </tbody>
+  </table></div>
+  <p class="legenda">Se a muda de R$ 20 for de cultivar protegida (Eureka, Sekoya, Arana e similares), confirme no contrato a taxa de royalty por planta e por kg vendido.</p>
+
+  <h4>Estrutura e manejo</h4>
+  <div class="grid2">
+    <div class="box"><h5>Plantio</h5>
+      <ul>
+        <li>Linhas de 2,5 m com <em>ground cover</em> no solo e vasos alinhados a 0,60 m.</li>
+        <li>Substrato: 60% casca de pinus compostada, 30% fibra de coco, 10% turfa ou serragem; pH 4,5 a 5,0.</li>
+        <li>Muda de saco ou tubete grande, com 30 a 40 cm, plantada de março a maio para pegar o inverno enraizando.</li>
+      </ul>
+    </div>
+    <div class="box"><h5>Fertirrigação</h5>
+      <ul>
+        <li>Dois gotejadores por vaso, 4 a 8 pulsos por dia no verão.</li>
+        <li>Injeção de ácido (fosfórico ou sulfúrico) para pH 5,0 na saída; condutividade elétrica de 0,8 a 1,2 mS/cm.</li>
+        <li>Nitrogênio amoniacal, nunca nítrico puro; sensores de umidade de substrato nas linhas de referência.</li>
+      </ul>
+    </div>
+    <div class="box"><h5>Proteção</h5>
+      <ul>
+        <li>Tela antipássaro por cima e nas laterais: sem ela a perda para pássaros passa de 30% da fruta madura.</li>
+        <li>Monitoramento semanal de <em>Drosophila suzukii</em> com armadilhas; controle biológico e pulverizações de baixo residual.</li>
+        <li>Botrytis e antracnose no período chuvoso; ventilação entre linhas e colheita frequente reduzem pressão.</li>
+      </ul>
+    </div>
+    <div class="box"><h5>Polinização e poda</h5>
+      <ul>
+        <li>4 a 6 colmeias de <em>Apis</em> por hectare durante a floração, mais mamangavas nativas preservadas.</li>
+        <li>Poda de formação nos anos 1 e 2 (retirar flores no ano 1 em 100%, no ano 2 em 50%).</li>
+        <li>Poda de renovação após a colheita, retirando ramos com mais de 4 anos.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h4>Colheita e pós-colheita</h4>
+  <p>Colheita manual, em 5 a 8 passadas por planta ao longo de 10 a 14 semanas. Um colhedor treinado rende 4 a 6 kg por hora. A fruta vai direto em cumbucas de 125 g, entra na câmara fria a 2 °C em até duas horas e sai no mesmo dia ou no dia seguinte para o cliente. No pico da safra (setembro e outubro) o pomar demanda 25 a 35 colhedores por dia; fora dele, 2 funcionários fixos cuidam de tudo.</p>
+</section>
+
+<section id="cronograma">
+  <h3><span class="num">04</span>Cronograma de implantação</h3>
+  <div class="cron">
+    <div class="m">Mês 0 a 1</div><div class="d">Análise de água e solo, projeto executivo de fertirrigação e telas, licenciamento (outorga de água na SP Águas / DAEE, CAR, licença ambiental se houver supressão). Contrato de mudas.</div>
+    <div class="m">Mês 1 a 3</div><div class="d">Terraplenagem leve, drenagem, poço e reservatório, rede elétrica, cerca. Compra de vasos e substrato. Montagem da estrutura de tela.</div>
+    <div class="m">Mês 3 a 4</div><div class="d">Instalação da fertirrigação, enchimento de vasos, testes de pH e uniformidade. Contratação e treinamento da equipe fixa.</div>
+    <div class="m">Mês 4 a 5</div><div class="d">Plantio (março a maio ideal). Início da fertirrigação de estabelecimento. Câmara fria e galpão de packing em construção.</div>
+    <div class="m">Mês 6 a 12</div><div class="d">Formação de planta, retirada de flores, replantio de falhas (3%). Cadastro em atacadistas e visitas a varejistas. Registro de marca e embalagem.</div>
+    <div class="m">Mês 13 a 18</div><div class="d">Primeira colheita comercial (cerca de 4 t). Ajuste de logística, teste de canais e de preço.</div>
+    <div class="m">Ano 3 em diante</div><div class="d">Pomar em plena produção a partir do ano 5. Poda de renovação anual. Reposição de substrato a cada 5 a 6 anos.</div>
+  </div>
+</section>
+
+<section id="mercado">
+  <h3><span class="num">05</span>Mercado e comercialização</h3>
+  <p>O Brasil consome muito mais mirtilo do que produz. O importado ainda domina o volume nacional, com o Chile em torno de dois terços das importações, seguido de Peru, Uruguai e Argentina. Na CEAGESP a fruta paulista já responde por cerca de metade do que é comercializado, e a participação do importado vem caindo há cinco anos, sinal de que a produção de São Paulo cresce e encontra comprador.</p>
+  <p>O preço tem forte sazonalidade. Em janeiro de 2025 a cotação na CEAGESP passou de R$ 96/kg com fruta importada; em novembro e dezembro de 2025, no pico da safra nacional e com Chile e Peru entrando, ficou entre R$ 27 e R$ 35/kg. Esse é o intervalo que importa para o plano: <strong>quem vende só no atacado na safra recebe o preço de baixa</strong>.</p>
+
+  <h4>Calendário de oferta e janela de preço</h4>
+  <div class="cal">
+    <div class="cal-grid" id="cal"></div>
+    <div class="cal-leg">
+      <span><i style="background:var(--tinta-2);opacity:.55"></i>Oferta no mercado brasileiro</span>
+      <span><i style="background:var(--verde)"></i>Colheita prevista em São Carlos</span>
+      <span><i style="background:var(--mirtilo)"></i>Meses de preço mais alto</span>
+    </div>
+  </div>
+
+  <h4>Estratégia de venda</h4>
+  <div class="tabela-wrap"><table>
+    <thead><tr><th>Canal</th><th class="num">Mix alvo</th><th class="num">Preço ao produtor</th><th>Como chegar</th></tr></thead>
+    <tbody>
+      <tr><td>Atacado (CEAGESP, distribuidores)</td><td class="num">40%</td><td class="num">R$ 28 a 32/kg</td><td>Permissionário fixo, escoa volume no pico; exige classificação e caixa padrão</td></tr>
+      <tr><td>Varejo direto (supermercados regionais, hortifrutis, empórios)</td><td class="num">40%</td><td class="num">R$ 42 a 50/kg</td><td>São Carlos, Araraquara, Ribeirão, Campinas; entrega 2 a 3 vezes por semana com marca própria</td></tr>
+      <tr><td>Fruta de segunda e congelado (IQF)</td><td class="num">20%</td><td class="num">R$ 12 a 16/kg</td><td>Indústrias de polpa, sorvete e açaí; congelamento em terceiros</td></tr>
+    </tbody>
+  </table></div>
+  <p>A alavanca mais barata do plano é vender a fruta <strong>de junho a agosto</strong>, antes do pico nacional: cada tonelada deslocada para essa janela vale R$ 15 a 25 mil a mais. Snowchaser e poda escalonada existem para isso. A segunda alavanca é a marca própria na cumbuca, que abre o varejo regional sem intermediário.</p>
+</section>
+
+<section id="investimento">
+  <h3><span class="num">06</span>Investimento (CAPEX)</h3>
+  <p>Cenário base A: vasos sob estrutura de tela antipássaro e antigranizo, 2,0 ha, 13.200 plantas.</p>
+  <div class="tabela-wrap"><table>
+    <thead><tr><th>Item</th><th>Base de cálculo</th><th class="num">R$</th><th class="num">%</th></tr></thead>
+    <tbody>
+      <tr><td>Mudas</td><td>13.200 un + 3% de replantio × R$ 20</td><td class="num">271.920</td><td class="num">17%</td></tr>
+      <tr><td>Estrutura de tela antipássaro / antigranizo</td><td>20.000 m² × R$ 22/m² (postes, cabos, tela HDPE, laterais)</td><td class="num">440.000</td><td class="num">28%</td></tr>
+      <tr><td>Vasos de 30 L</td><td>13.200 × R$ 15</td><td class="num">198.000</td><td class="num">13%</td></tr>
+      <tr><td>Substrato</td><td>396 m³ de casca de pinus e fibra de coco × R$ 11/vaso</td><td class="num">145.200</td><td class="num">9%</td></tr>
+      <tr><td>Câmara fria e galpão de packing</td><td>Câmara de 20 m³ + galpão de 120 m²</td><td class="num">140.000</td><td class="num">9%</td></tr>
+      <tr><td>Fertirrigação</td><td>Gotejo, injetores de ácido e nutrientes, filtros, automação</td><td class="num">110.000</td><td class="num">7%</td></tr>
+      <tr><td>Poço, reservatório e casa de bombas</td><td>Poço semi-artesiano + reservatório de 300 m³</td><td class="num">90.000</td><td class="num">6%</td></tr>
+      <tr><td>Máquinas e equipamentos</td><td>Trator utilitário, pulverizador, carrinhos de colheita</td><td class="num">90.000</td><td class="num">6%</td></tr>
+      <tr><td>Preparo de área</td><td>Nivelamento, drenagem, ground cover 20.000 m²</td><td class="num">45.000</td><td class="num">3%</td></tr>
+      <tr><td>Cerca, rede elétrica, projeto e licenças</td><td></td><td class="num">40.000</td><td class="num">3%</td></tr>
+      <tr class="total"><td>CAPEX</td><td></td><td class="num">1.570.120</td><td class="num">100%</td></tr>
+      <tr><td>Capital de giro</td><td>Cobre o caixa negativo dos anos 1 e 2</td><td class="num">211.400</td><td class="num"></td></tr>
+      <tr class="total"><td>Investimento total</td><td>R$ 890 mil por hectare</td><td class="num">1.781.500</td><td class="num"></td></tr>
+    </tbody>
+  </table></div>
+  <p class="legenda">Se a propriedade já tem poço, trator ou galpão, os itens correspondentes saem da conta (até R$ 320 mil a menos).</p>
+
+  <h4>Comparação de sistemas de cobertura</h4>
+  <p>Como fornecedora de estufas, a Plantfort tem interesse direto na resposta. O modelo foi rodado com três coberturas. O túnel alto com filme dá 12% a mais de produção (proteção de chuva, menos botrytis, antecipação) e cerca de 8% a mais de preço pela qualidade, mas ao preço de mercado de R$ 55/m² o custo adicional de R$ 660 mil só empata com a tela. <strong>Ao custo interno da Plantfort (R$ 35/m²) o túnel passa a ser a melhor opção</strong>, com VPL positivo a 12% ao ano.</p>
+  <div class="tabela-wrap"><table>
+    <thead><tr><th>Cenário</th><th class="num">CAPEX</th><th class="num">Investimento total</th><th class="num">EBITDA maduro</th><th class="num">TIR 10 anos</th><th class="num">VPL a 12%</th><th class="num">Payback</th></tr></thead>
+    <tbody>
+      <tr><td><strong>A</strong> · Vasos sob tela antipássaro (R$ 22/m²)</td><td class="num">1.570.120</td><td class="num">1.781.500</td><td class="num">416.000</td><td class="num">8,8%</td><td class="num neg">−286.900</td><td class="num">ano 7</td></tr>
+      <tr><td><strong>B</strong> · Túnel alto com filme, preço de mercado (R$ 55/m²)</td><td class="num">2.230.120</td><td class="num">2.441.000</td><td class="num">571.000</td><td class="num">9,2%</td><td class="num neg">−348.600</td><td class="num">ano 7</td></tr>
+      <tr><td><strong>C</strong> · Túnel alto ao custo Plantfort (R$ 35/m²)</td><td class="num">1.830.120</td><td class="num">2.041.000</td><td class="num">571.000</td><td class="num">12,5%</td><td class="num">+51.400</td><td class="num">ano 7</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="custos">
+  <h3><span class="num">07</span>Custos operacionais na maturidade</h3>
+  <p>Ano 5 em diante, 33 t colhidas, cenário A. Custos fixos independem do volume; variáveis acompanham os quilos vendidos.</p>
+  <div class="tabela-wrap"><table>
+    <thead><tr><th>Item</th><th>Base</th><th class="num">R$/ano</th><th class="num">R$/kg</th></tr></thead>
+    <tbody>
+      <tr><td>Embalagem</td><td>Cumbuca de 125 g, rótulo, caixa de papelão</td><td class="num">132.000</td><td class="num">4,00</td></tr>
+      <tr><td>Comissão, perdas e Funrural</td><td>9,5% da receita bruta</td><td class="num">103.500</td><td class="num">3,14</td></tr>
+      <tr><td>Colheita (diaristas)</td><td>R$ 3,00 por kg colhido</td><td class="num">99.000</td><td class="num">3,00</td></tr>
+      <tr><td>Mão de obra fixa</td><td>2 funcionários com encargos, o ano todo</td><td class="num">90.000</td><td class="num">2,73</td></tr>
+      <tr><td>Fertirrigação</td><td>Nutrientes solúveis e ácido</td><td class="num">60.000</td><td class="num">1,82</td></tr>
+      <tr><td>Frete refrigerado</td><td>Até São Paulo e clientes regionais</td><td class="num">49.500</td><td class="num">1,50</td></tr>
+      <tr><td>Administração, contabilidade, seguro rural</td><td></td><td class="num">40.000</td><td class="num">1,21</td></tr>
+      <tr><td>Consultoria agronômica</td><td>Visita mensal + laudos</td><td class="num">36.000</td><td class="num">1,09</td></tr>
+      <tr><td>Manutenção e substrato de reposição</td><td></td><td class="num">20.000</td><td class="num">0,61</td></tr>
+      <tr><td>Defensivos e controle biológico</td><td></td><td class="num">16.000</td><td class="num">0,48</td></tr>
+      <tr><td>Provisão de troca da tela</td><td>Vida útil de 10 anos</td><td class="num">15.000</td><td class="num">0,45</td></tr>
+      <tr><td>Energia elétrica e água</td><td>Bombeamento e câmara fria</td><td class="num">12.000</td><td class="num">0,36</td></tr>
+      <tr class="total"><td>Custo operacional total</td><td>33.000 kg</td><td class="num">672.955</td><td class="num">20,39</td></tr>
+    </tbody>
+  </table></div>
+  <p>A margem de contribuição é de R$ 21,36 por kg vendido. Os custos fixos de R$ 289 mil por ano exigem <strong>13,5 t (1,02 kg/planta)</strong> para o pomar empatar no operacional, patamar que o plano atinge no ano 2. Acima disso, cada quilo adicional deixa R$ 21 no caixa.</p>
+</section>
+
+<section id="projecao">
+  <h3><span class="num">08</span>Projeção de dez anos</h3>
+  <div class="tabela-wrap"><table>
+    <thead><tr><th>Ano</th><th class="num">kg/planta</th><th class="num">Produção (t)</th><th class="num">Receita</th><th class="num">Custo operacional</th><th class="num">EBITDA</th><th class="num">Caixa acumulado</th></tr></thead>
+    <tbody id="proj"></tbody>
+  </table></div>
+  <p class="legenda">Caixa acumulado parte de −R$ 1.570.120 (CAPEX no ano 0). Sem imposto de renda e sem juros. Preço fixo de R$ 33/kg em reais correntes.</p>
+
+  <figure>
+    <div class="ftitle">Resultado anual e caixa acumulado, cenário A</div>
+    <div class="chart-legend"><span><i style="background:var(--verde)"></i>EBITDA do ano</span><span><i style="background:var(--ocre)"></i>EBITDA negativo</span><span><i class="line" style="background:var(--mirtilo)"></i>Caixa acumulado</span></div>
+    <div class="chart-box"><svg class="chart" id="chart" viewBox="0 0 800 340" role="img" aria-label="Gráfico de barras do EBITDA anual e linha do caixa acumulado ao longo de dez anos"></svg><div class="tip" id="tip"></div></div>
+    <figcaption>O caixa acumulado cruza o zero no ano 7. Passe o mouse sobre as barras para ver os valores.</figcaption>
+  </figure>
+</section>
+
+<section id="sensibilidade">
+  <h3><span class="num">09</span>Sensibilidade: preço × produtividade</h3>
+  <p>TIR em dez anos do cenário A conforme o preço médio recebido e a produtividade realizada em relação à curva base (2,5 kg/planta na maturidade). A célula base está no centro.</p>
+  <div class="tabela-wrap"><table class="sens">
+    <thead><tr><th>Preço médio</th><th class="num">70% da produção<br>(1,75 kg/pl)</th><th class="num">85%<br>(2,1 kg/pl)</th><th class="num">100%<br>(2,5 kg/pl)</th><th class="num">115%<br>(2,9 kg/pl)</th></tr></thead>
+    <tbody>
+      <tr><td>R$ 25/kg</td><td class="num bad">−25,4%</td><td class="num bad">−13,1%</td><td class="num bad">−6,0%</td><td class="num bad">−0,7%</td></tr>
+      <tr><td>R$ 29/kg</td><td class="num bad">−11,5%</td><td class="num bad">−3,4%</td><td class="num meh">2,4%</td><td class="num meh">7,3%</td></tr>
+      <tr><td><strong>R$ 33/kg</strong></td><td class="num bad">−3,8%</td><td class="num meh">3,3%</td><td class="num meh"><strong>8,8%</strong></td><td class="num ok">13,6%</td></tr>
+      <tr><td>R$ 37/kg</td><td class="num meh">1,9%</td><td class="num meh">8,6%</td><td class="num ok">14,1%</td><td class="num ok">18,9%</td></tr>
+      <tr><td>R$ 41/kg</td><td class="num meh">6,6%</td><td class="num ok">13,2%</td><td class="num ok">18,7%</td><td class="num ok">23,6%</td></tr>
+      <tr><td>R$ 45/kg</td><td class="num meh">10,7%</td><td class="num ok">17,3%</td><td class="num ok">22,9%</td><td class="num ok">27,9%</td></tr>
+    </tbody>
+  </table></div>
+  <p class="legenda">Verde: TIR acima de 12% (custo de oportunidade adotado). Laranja: projeto não recupera o capital em dez anos.</p>
+  <p>A leitura é simples: <strong>preço pesa mais que produtividade</strong>. Subir o preço médio em R$ 4/kg vale o mesmo que produzir 15% a mais. Por isso o plano trata canal de venda e janela de colheita como decisões de investimento, não de rotina comercial.</p>
+</section>
+
+<section id="riscos">
+  <h3><span class="num">10</span>Riscos e mitigação</h3>
+  <div class="tabela-wrap"><table>
+    <thead><tr><th>Risco</th><th>Impacto</th><th>Mitigação prevista</th></tr></thead>
+    <tbody>
+      <tr><td>Queda de preço no atacado com o crescimento da produção paulista</td><td>Alto. Cada R$ 4/kg a menos tira 5 pontos da TIR</td><td>40% do volume em varejo direto com marca; escalonar colheita para junho a agosto; contrato de fornecimento com 1 ou 2 redes regionais antes do ano 3</td></tr>
+      <tr><td>Produtividade abaixo do previsto por calor e baixo frio</td><td>Alto. A 70% da curva o projeto não se paga</td><td>Cultivares comprovadas em SP; implantar 1 ha primeiro e medir; sombreamento de 20 a 30% no verão se o pomar sofrer com radiação</td></tr>
+      <tr><td><em>Drosophila suzukii</em> e botrytis</td><td>Médio. Perdas de 10 a 30% em anos chuvosos</td><td>Armadilhas, colheita frequente, retirada de fruta caída, controle biológico; túnel com filme reduz o risco (cenário C)</td></tr>
+      <tr><td>Água inadequada (alcalinidade, ferro, cloro)</td><td>Alto se descoberto tarde</td><td>Análise completa antes de qualquer compra; injeção de ácido dimensionada para o pior caso; reservatório de decantação</td></tr>
+      <tr><td>Falta de colhedores no pico</td><td>Médio. Fruta passa do ponto em 3 dias</td><td>Parceria com cooperativa de trabalho rural da região; contratação por safra registrada; escalonar cultivares</td></tr>
+      <tr><td>Granizo e vento</td><td>Médio, episódico</td><td>Estrutura de tela dimensionada para vento de 100 km/h; seguro rural para a estrutura</td></tr>
+      <tr><td>Muda de baixa qualidade ou fora de tipo a R$ 20</td><td>Alto e irreversível por 10 anos</td><td>Comprar de viveiro registrado no RENASEM, com laudo fitossanitário; visitar o viveiro; reter 20% do pagamento até 90 dias após o plantio</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="financiamento">
+  <h3><span class="num">11</span>Financiamento e tributação</h3>
+  <div class="grid2">
+    <div class="box"><h5>Linhas de crédito</h5>
+      <ul>
+        <li><strong>Pronamp</strong> (médio produtor, receita bruta até R$ 3 milhões): investimento com juros em torno de 8% ao ano, até 8 anos com 3 de carência. Cobre estrutura, irrigação e mudas.</li>
+        <li><strong>BNDES Finame</strong> para trator, câmara fria e equipamentos.</li>
+        <li><strong>Desenvolve SP</strong> e <strong>FEAP</strong> (Fundo de Expansão do Agronegócio Paulista) para irrigação e proteção de cultivos.</li>
+      </ul>
+      <p>Com 60% do CAPEX financiado a 8% ao ano, 3 anos de carência e 5 de amortização, o caixa do proprietário fica positivo já no ano 3 e o capital próprio necessário cai para cerca de R$ 840 mil.</p>
+    </div>
+    <div class="box"><h5>Tributos</h5>
+      <ul>
+        <li><strong>Funrural</strong>: 1,5% sobre a receita bruta (pessoa física), já incluído nos custos.</li>
+        <li><strong>ICMS</strong>: fruta fresca in natura é isenta nas operações internas em São Paulo.</li>
+        <li><strong>Imposto de renda</strong>: pessoa física apura pelo Livro Caixa (até 27,5% do lucro) ou por presunção de 20% da receita; pessoa jurídica no Lucro Presumido paga cerca de 3,1% sobre a receita bruta. Acima de R$ 1 milhão de receita, a estrutura em PJ costuma compensar.</li>
+        <li>Investimentos em CAPEX são dedutíveis integralmente no ano da compra na atividade rural (pessoa física), o que reduz o imposto nos anos de implantação.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="proximos">
+  <h3><span class="num">12</span>Próximos passos</h3>
+  <ol>
+    <li><strong>Análise de água</strong> da fonte prevista (pH, alcalinidade, ferro, sódio, cloretos, condutividade). Custa menos de R$ 500 e decide o projeto.</li>
+    <li><strong>Visita a dois pomares</strong> em produção no interior paulista com o mesmo sistema, para calibrar a curva de produção assumida.</li>
+    <li><strong>Cotação da estrutura de cobertura</strong> para 1 ha e 2 ha, nas versões tela e túnel com filme, para fechar o cenário definitivo.</li>
+    <li><strong>Confirmação da muda</strong>: viveiro, cultivares, tamanho, laudo e prazo de entrega para plantio entre março e maio de 2027.</li>
+    <li><strong>Pré-contato comercial</strong> com um permissionário da CEAGESP e duas redes de supermercado regionais.</li>
+    <li><strong>Decisão de faseamento</strong>: 1 ha em 2027 e 1 ha em 2028, ou 2 ha de uma vez com financiamento Pronamp.</li>
+  </ol>
+</section>
+
+<section id="fontes">
+  <h3><span class="num">13</span>Fontes e base das estimativas</h3>
+  <ul class="fontes">
+    <li>CEAGESP, cotações de mirtilo no Entreposto da Capital (boletim de preços): R$ 26,67 a 34,71/kg em novembro e dezembro de 2025; R$ 96,20/kg em janeiro de 2025. <a href="https://ceagesp.gov.br/guia-ceagesp/mirtilo/">ceagesp.gov.br/guia-ceagesp/mirtilo</a></li>
+    <li>Hortifruti/Cepea (Esalq-USP), especial mirtilo: participação do produto paulista na CEAGESP e origem das importações (Chile 66%, Peru 14%, Uruguai 9%, Argentina 6%). <a href="https://www.cepea.org.br/br/releases/hf-brasil-cepea-na-edicao-de-abril-revista-traz-um-especial-sobre-mirtilo.aspx">cepea.org.br</a></li>
+    <li>Revista Brasileira de Fruticultura (SciELO), desempenho inicial de cultivares de baixa exigência em frio no Estado de São Paulo. <a href="https://www.scielo.br/j/rbf/a/cG47Fsqm583VwcmNtb8KQWv/?lang=pt">scielo.br</a></li>
+    <li>Embrapa Clima Temperado, Sistema de Produção do Mirtilo (2023): manejo, nutrição, pragas e pós-colheita. <a href="https://www.infoteca.cnptia.embrapa.br/infoteca/bitstream/doc/1155980/1/Sistema-de-Producao-do-Mirtilo.pdf">infoteca.cnptia.embrapa.br</a></li>
+    <li>Reportagens setoriais sobre custo de implantação em vasos (R$ 650 a 900 mil por hectare) e densidades de 6.000 a 8.000 plantas/ha. <a href="https://campoenegocios.com/mirtilo-tropical-o-ouro-azul-da-nova-fruticultura-brasileira/">campoenegocios.com</a>, <a href="https://aegro.com.br/blog/pequenas-frutas-lucro-custos-producao/">aegro.com.br</a></li>
+    <li>Custos de vasos, substrato, fertirrigação, embalagem, mão de obra e estrutura: estimativas de mercado para o interior de São Paulo em 2026, a confirmar em cotação.</li>
+  </ul>
+</section>
+
+<footer>
+  Plantfort Estufas Agrícolas · Plano de negócio preparado em setembro de 2026 para avaliação interna.<br>
+  Todos os valores são estimativas em reais correntes e devem ser confirmados com cotações e análises locais antes da decisão de investimento.
+</footer>
+</div>
+
+<script>
+(function(){
+  var anos=[
+    {ano:1,kg:0.3,t:4.0,rec:130680,custo:335075,e:-204395},
+    {ano:2,kg:1.0,t:13.2,rec:435600,custo:442582,e:-6982},
+    {ano:3,kg:1.8,t:23.8,rec:784080,custo:565448,e:218632},
+    {ano:4,kg:2.3,t:30.4,rec:1001880,custo:642239,e:359641},
+    {ano:5,kg:2.5,t:33.0,rec:1089000,custo:672955,e:416045},
+    {ano:6,kg:2.5,t:33.0,rec:1089000,custo:672955,e:416045},
+    {ano:7,kg:2.5,t:33.0,rec:1089000,custo:672955,e:416045},
+    {ano:8,kg:2.5,t:33.0,rec:1089000,custo:672955,e:416045},
+    {ano:9,kg:2.5,t:33.0,rec:1089000,custo:672955,e:416045},
+    {ano:10,kg:2.5,t:33.0,rec:1089000,custo:672955,e:416045}
+  ];
+  var capex=1570120;
+  function br(n){var s=Math.round(Math.abs(n)).toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.');return (n<0?'−':'')+s;}
+  function dec(n){return n.toFixed(1).replace('.',',');}
+  var acum=-capex, tb=document.getElementById('proj'), html='';
+  anos.forEach(function(a){
+    acum+=a.e; a.acum=acum;
+    html+='<tr><td>Ano '+a.ano+'</td><td class="num">'+dec(a.kg)+'</td><td class="num">'+dec(a.t)+'</td><td class="num">'+br(a.rec)+'</td><td class="num">'+br(a.custo)+'</td><td class="num'+(a.e<0?' neg':'')+'">'+br(a.e)+'</td><td class="num'+(acum<0?' neg':(a.ano===7?' rec':''))+'">'+br(acum)+'</td></tr>';
+  });
+  tb.innerHTML=html;
+
+  // gráfico
+  var svg=document.getElementById('chart'), NS='http://www.w3.org/2000/svg';
+  var W=800,H=340,L=70,R=20,T=16,B=36, pw=W-L-R, ph=H-T-B;
+  var ymin=-1800000, ymax=1400000;
+  function y(v){return T+ph*(ymax-v)/(ymax-ymin);}
+  function x(i){return L+pw*(i+0.5)/11;}
+  function el(n,attrs,parent){var e=document.createElementNS(NS,n);for(var k in attrs)e.setAttribute(k,attrs[k]);(parent||svg).appendChild(e);return e;}
+  var g=el('g',{class:'grid'});
+  for(var v=ymin;v<=ymax;v+=400000){
+    el('line',{x1:L,x2:W-R,y1:y(v),y2:y(v)},g);
+    var t=el('text',{x:L-8,y:y(v)+4,'text-anchor':'end'},g);
+    t.textContent=(v/1000000).toFixed(1).replace('.',',')+' mi';
+  }
+  el('line',{class:'zero',x1:L,x2:W-R,y1:y(0),y2:y(0)});
+  var bw=pw/11*0.55;
+  var pts=[[x(-0.5)+bw*0.0, y(-capex)]];
+  var tip=document.getElementById('tip'), box=svg.parentNode;
+  anos.forEach(function(a,i){
+    var top=Math.min(y(0),y(a.e)), h=Math.abs(y(a.e)-y(0));
+    var bar=el('rect',{class:'bar'+(a.e<0?' neg':''),x:x(i)-bw/2,y:top,width:bw,height:h,rx:3});
+    if(a.e>0){bar.setAttribute('y',top);}
+    var lbl=el('text',{x:x(i),y:H-B+18,'text-anchor':'middle'}); lbl.textContent='A'+a.ano;
+    pts.push([x(i),y(a.acum)]);
+    var hit=el('rect',{class:'hit',x:x(i)-pw/22,y:T,width:pw/11,height:ph});
+    hit.addEventListener('mousemove',function(ev){
+      tip.style.display='block';
+      tip.innerHTML='<b>Ano '+a.ano+'</b> · '+dec(a.t)+' t<br>EBITDA R$ '+br(a.e)+'<br>Acumulado R$ '+br(a.acum);
+      var r=box.getBoundingClientRect();
+      var px=ev.clientX-r.left+14, py=ev.clientY-r.top-10;
+      if(px+190>r.width) px=ev.clientX-r.left-200;
+      tip.style.left=px+'px'; tip.style.top=py+'px';
+    });
+    hit.addEventListener('mouseleave',function(){tip.style.display='none';});
+  });
+  el('text',{x:x(-0.5)+6,y:y(-capex)-8,'text-anchor':'start'}).textContent='−1,57 mi (CAPEX)';
+  var path=el('path',{class:'acum',d:pts.map(function(p,i){return (i?'L':'M')+p[0].toFixed(1)+' '+p[1].toFixed(1);}).join(' ')});
+  pts.forEach(function(p,i){ if(i===0||i===7||i===10) el('circle',{class:'pt',cx:p[0],cy:p[1],r:4}); });
+  el('text',{x:x(6)+9,y:y(anos[6].acum)+18,'text-anchor':'start'}).textContent='+45 mil (ano 7)';
+  el('text',{x:x(9),y:y(anos[9].acum)-10,'text-anchor':'middle'}).textContent='+1,29 mi';
+  // move hits to front
+  Array.prototype.slice.call(svg.querySelectorAll('.hit')).forEach(function(h){svg.appendChild(h);});
+
+  // calendário
+  var meses=['J','F','M','A','M','J','J','A','S','O','N','D'];
+  var linhas=[
+    ['Chile (importado)',[1,1,1,0,0,0,0,0,0,0,1,1],'on'],
+    ['Peru e Argentina (importado)',[0,0,0,0,0,0,0,1,1,1,1,1],'on'],
+    ['Sul do Brasil (RS, SC, PR)',[1,0,0,0,0,0,0,0,0,1,1,1],'on'],
+    ['SP e MG, baixo frio',[0,0,0,0,0,0,1,1,1,1,1,0],'on'],
+    ['São Carlos, este plano',[0,0,0,0,0,1,1,1,1,1,0,0],'sc'],
+    ['Preço mais alto',[0,0,1,1,1,1,1,0,0,0,0,0],'pr']
+  ];
+  var cal=document.getElementById('cal'), ch='<div class="r"></div>';
+  meses.forEach(function(m){ch+='<div class="h">'+m+'</div>';});
+  linhas.forEach(function(l){ch+='<div class="r">'+l[0]+'</div>'; l[1].forEach(function(v){ch+='<div class="c'+(v?' '+l[2]:'')+'"></div>';});});
+  cal.innerHTML=ch;
+})();
+</script>
+</body>
+</html>

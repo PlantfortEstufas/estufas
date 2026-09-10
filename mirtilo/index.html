@@ -200,16 +200,16 @@
     </div>
   </div>
   <div class="meta">
-    <b>Mirtilo · 2,0 ha · São Carlos/SP</b><br>
-    Versão 6 · simulador · setembro de 2026<br>
+    <b>Mirtilo · <span data-d="area"></span> ha · São Carlos/SP</b><br>
+    Versão 7 · simulador · setembro de 2026<br>
     Valores em R$ correntes · estimativas
   </div>
 </header>
 
 <div class="titulo">
   <span class="tag">Vaccinium · southern highbush de baixo frio</span>
-  <h2>Mirtilo em sacos de cultivo, 2 hectares em São Carlos</h2>
-  <p class="lead">Plano de implantação e operação de um pomar de mirtilo de 13.200 plantas em sacos de cultivo com substrato, com terra e água próprias, macrotúnel Plantfort de R$ 200 mil cobrindo 1 dos 2 hectares, muda a R$ 20,00 e venda a R$ 60 a caixa de 1,5 kg. Cobre sistema de produção, mercado, investimento, custos, projeção de dez anos, sensibilidade e riscos, com um simulador que recalcula as seções financeiras a partir dos seus parâmetros.</p>
+  <h2>Mirtilo em sacos de cultivo, <span data-d="area_int"></span> em São Carlos</h2>
+  <p class="lead">Plano de implantação e operação de um pomar de mirtilo de <span data-d="plantas"></span> plantas em sacos de cultivo com substrato, com terra e água próprias, macrotúnel Plantfort de R$ <span data-d="tunel_total"></span> cobrindo <span data-d="cob_de_area"></span>, muda a R$ <span data-d="muda"></span> e venda a R$ <span data-d="preco_caixa"></span> a caixa de 1,5 kg. Cobre sistema de produção, mercado, investimento, custos, projeção de dez anos, sensibilidade e riscos, com um simulador que recalcula as seções financeiras a partir dos seus parâmetros.</p>
 </div>
 
 <div class="kpis">
@@ -229,26 +229,26 @@
   <div class="grid2">
     <div class="box"><h5>Dados do cliente</h5>
       <ul>
-        <li>Área de 2,0 ha em São Carlos/SP, <strong>terra própria</strong> (sem custo de aquisição ou arrendamento).</li>
-        <li>Muda a <strong>R$ 20,00</strong> a unidade, posta na fazenda.</li>
+        <li>Área de <span data-d="area"></span> ha em São Carlos/SP, <strong>terra própria</strong> (sem custo de aquisição ou arrendamento).</li>
+        <li>Muda a <strong>R$ <span data-d="muda"></span></strong> a unidade, posta na fazenda, com <span data-d="replantio"></span>% de replantio.</li>
         <li>Propriedade já tem <strong>água</strong> disponível, sem necessidade de terraplenagem nem cerca. Trator dispensado.</li>
         <li>Investidor assume gestão; o plano prevê consultoria agronômica contratada.</li>
       </ul>
     </div>
     <div class="box"><h5>Escolhas técnicas do plano</h5>
       <ul>
-        <li>Cultivo em <strong>sacos de cultivo de 30 L com substrato</strong>, não em solo.</li>
-        <li>Espaçamento 2,5 m × 0,60 m: <strong>6.600 plantas/ha</strong>, 13.200 no total.</li>
-        <li><strong>Macrotúnel Plantfort</strong> com filme plástico, orçado em <strong>R$ 200 mil</strong>, cobrindo <strong>1 ha</strong> (10.000 m², R$ 20/m²), com tela antipássaro nas laterais e frentes. O segundo hectare fica descoberto.</li>
+        <li>Cultivo em <strong>sacos de cultivo de <span data-d="vol_saco"></span> L com substrato</strong> (R$ <span data-d="custo_m3"></span>/m³ na composição escolhida), não em solo.</li>
+        <li>Espaçamento <span data-d="esp_linha"></span> m × <span data-d="esp_saco"></span> m: <strong><span data-d="plha"></span> plantas/ha</strong>, <span data-d="plantas"></span> no total.</li>
+        <li><strong>Macrotúnel Plantfort</strong> com filme plástico, orçado em <strong>R$ <span data-d="tunel_total"></span></strong>, cobrindo <strong><span data-d="area_cob"></span> ha</strong> (<span data-d="tunel_area"></span> m², R$ <span data-d="tunel_m2"></span>/m²), com tela antipássaro nas laterais e frentes. <span data-d="desc_txt"></span></li>
         <li>Fertirrigação por gotejamento automatizada, água acidificada.</li>
       </ul>
     </div>
     <div class="box"><h5>Preço e rendimento</h5>
       <ul>
-        <li>Preço de venda de <strong>R$ 60 a caixa de 1,5 kg (R$ 40/kg)</strong>, praticado por produtor em atividade (reunião de 10/09/2026), aplicado a toda a fruta do hectare coberto.</li>
-        <li>Produção por planta no hectare coberto: <strong>0,8 kg no ano 1 e 2,5 kg a partir do ano 2</strong>, referência do mesmo produtor.</li>
-        <li>Hectare descoberto: <strong>25% de perda</strong> de fruta comercial e preço de R$ 38/kg pela maior proporção de fruta de segunda.</li>
-        <li>Perdas pós-colheita e comissão de venda: 9,5% da receita, já incluído o Funrural.</li>
+        <li>Preço de venda de <strong>R$ <span data-d="preco_caixa"></span> a caixa de 1,5 kg (R$ <span data-d="preco_cob"></span>/kg)</strong>, referência de produtor em atividade (reunião de 10/09/2026), aplicado a toda a fruta da área coberta.</li>
+        <li>Produção por planta na área coberta: <strong><span data-d="kg1"></span> kg no ano 1 e <span data-d="kg2"></span> kg a partir do ano 2</strong>, referência do mesmo produtor.</li>
+        <li>Área descoberta: <strong><span data-d="perda"></span>% de perda</strong> de fruta comercial e preço de R$ <span data-d="preco_desc"></span>/kg pela maior proporção de fruta de segunda.</li>
+        <li>Perdas pós-colheita e comissão de venda: <span data-d="comissao"></span>% da receita, já incluído o Funrural.</li>
       </ul>
     </div>
     <div class="box"><h5>O que não está incluído</h5>
@@ -280,7 +280,7 @@
 <section id="sistema">
   <h3><span class="num">03</span>Sistema de produção</h3>
   <h4>Sacos de cultivo com substrato, não solo</h4>
-  <p>O solo de São Carlos (latossolos e neossolos arenosos) é naturalmente ácido, o que ajudaria, mas drena mal em muitas glebas e sofre com o excesso de chuva de dezembro a março. Raízes de mirtilo são finas, sem pelos radiculares, e morrem em encharcamento por <em>Phytophthora</em>. O saco de cultivo de 30 L (polietileno tratado contra UV, branco por fora e preto por dentro) com casca de pinus e fibra de coco isola a planta do solo, garante drenagem, dá controle total da nutrição pela fertirrigação e antecipa a entrada em produção. Custa um quarto do vaso rígido e cumpre a mesma função; a contrapartida é a vida útil de 4 a 6 anos, quando o saco é trocado junto com a renovação do substrato.</p>
+  <p>O solo de São Carlos (latossolos e neossolos arenosos) é naturalmente ácido, o que ajudaria, mas drena mal em muitas glebas e sofre com o excesso de chuva de dezembro a março. Raízes de mirtilo são finas, sem pelos radiculares, e morrem em encharcamento por <em>Phytophthora</em>. O saco de cultivo de <span data-d="vol_saco"></span> L (polietileno tratado contra UV, branco por fora e preto por dentro) com casca de pinus e fibra de coco isola a planta do solo, garante drenagem, dá controle total da nutrição pela fertirrigação e antecipa a entrada em produção. Custa um quarto do vaso rígido e cumpre a mesma função; a contrapartida é a vida útil de 4 a 6 anos, quando o saco é trocado junto com a renovação do substrato.</p>
 
   <h4>Cultivares</h4>
   <p>Todas do grupo southern highbush, exigência de frio até 300 horas, com pelo menos três cultivares intercaladas para polinização cruzada. Mix sugerido:</p>
@@ -293,13 +293,13 @@
       <tr><td>Biloxi ou Star</td><td class="num">20%</td><td>Rusticidade</td><td>Comprovadas em clima quente; Biloxi tolera bem verão</td></tr>
     </tbody>
   </table></div>
-  <p class="legenda">Se a muda de R$ 20 for de cultivar protegida (Eureka, Sekoya, Arana e similares), confirme no contrato a taxa de royalty por planta e por kg vendido.</p>
+  <p class="legenda">Se a muda de R$ <span data-d="muda"></span> for de cultivar protegida (Eureka, Sekoya, Arana e similares), confirme no contrato a taxa de royalty por planta e por kg vendido.</p>
 
   <h4>Estrutura e manejo</h4>
   <div class="grid2">
     <div class="box"><h5>Plantio</h5>
       <ul>
-        <li>Linhas de 2,5 m com <em>ground cover</em> no solo e sacos alinhados a 0,60 m.</li>
+        <li>Linhas de <span data-d="esp_linha"></span> m com <em>ground cover</em> no solo e sacos alinhados a <span data-d="esp_saco"></span> m.</li>
         <li>Substrato: 60% casca de pinus compostada, 30% fibra de coco, 10% turfa ou serragem; pH 4,5 a 5,0.</li>
         <li>Muda de saco ou tubete grande, com 30 a 40 cm, plantada de março a maio para pegar o inverno enraizando.</li>
       </ul>
@@ -322,7 +322,7 @@
     <div class="box"><h5>Polinização e poda</h5>
       <ul>
         <li>4 a 6 colmeias de <em>Apis</em> por hectare durante a floração, mais mamangavas nativas preservadas.</li>
-        <li>Poda de formação no ano 1 com desbaste parcial de flores, limitando a carga a cerca de 0,8 kg por planta para não comprometer a estrutura.</li>
+        <li>Poda de formação no ano 1 com desbaste parcial de flores, limitando a carga a cerca de <span data-d="kg1"></span> kg por planta para não comprometer a estrutura.</li>
         <li>Poda de renovação após a colheita, retirando ramos com mais de 4 anos.</li>
       </ul>
     </div>
@@ -339,17 +339,17 @@
     <div class="m">Mês 1 a 3</div><div class="d">Ground cover, rede elétrica da casa de bombas. Compra de sacos e substrato. Montagem do macrotúnel no hectare 1.</div>
     <div class="m">Mês 3 a 4</div><div class="d">Instalação da fertirrigação, enchimento dos sacos, testes de pH e uniformidade. Contratação e treinamento da equipe fixa.</div>
     <div class="m">Mês 4 a 5</div><div class="d">Plantio (março a maio ideal). Início da fertirrigação de estabelecimento.</div>
-    <div class="m">Mês 6 a 12</div><div class="d">Formação de planta, retirada de flores, replantio de falhas (3%). Cadastro em atacadistas e visitas a varejistas. Registro de marca e embalagem.</div>
-    <div class="m">Mês 12 a 15</div><div class="d">Câmara fria e galpão de packing (investimento de pós-colheita, R$ 140 mil), prontos antes da primeira colheita.</div>
-    <div class="m">Mês 13 a 18</div><div class="d">Primeira colheita comercial (cerca de 9 t). Ajuste de logística, teste de canais e de preço.</div>
-    <div class="m">Ano 2 em diante</div><div class="d">Pomar em plena produção (2,5 kg por planta). Poda de renovação anual. Reposição de substrato e sacos a cada 5 a 6 anos.</div>
+    <div class="m">Mês 6 a 12</div><div class="d">Formação de planta, retirada de flores, replantio de falhas (<span data-d="replantio"></span>%). Cadastro em atacadistas e visitas a varejistas. Registro de marca e embalagem.</div>
+    <div class="m">Mês 12 a 15</div><div class="d">Câmara fria e galpão de packing (investimento de pós-colheita, R$ <span data-d="pos"></span>), prontos antes da primeira colheita.</div>
+    <div class="m">Mês 13 a 18</div><div class="d">Primeira colheita comercial (cerca de <span data-d="t1"></span> t). Ajuste de logística, teste de canais e de preço.</div>
+    <div class="m">Ano 2 em diante</div><div class="d">Pomar em plena produção (<span data-d="kg2"></span> kg por planta). Poda de renovação anual. Reposição de substrato e sacos a cada 5 a 6 anos.</div>
   </div>
 </section>
 
 <section id="mercado">
   <h3><span class="num">05</span>Mercado e comercialização</h3>
   <p>O Brasil consome muito mais mirtilo do que produz. O importado ainda domina o volume nacional, com o Chile em torno de dois terços das importações, seguido de Peru, Uruguai e Argentina. Na CEAGESP a fruta paulista já responde por cerca de metade do que é comercializado, e a participação do importado vem caindo há cinco anos, sinal de que a produção de São Paulo cresce e encontra comprador.</p>
-  <p>O plano usa <strong>R$ 60 a caixa de 1,5 kg (12 cumbucas de 125 g), ou R$ 40/kg</strong>, preço praticado por produtor da região ouvido em 10/09/2026. O preço tem forte sazonalidade: em janeiro de 2025 a cotação na CEAGESP passou de R$ 96/kg com fruta importada; em novembro e dezembro de 2025, no pico da safra nacional e com Chile e Peru entrando, ficou entre R$ 27 e R$ 35/kg. R$ 40/kg é portanto um preço de safra realista, mas não garantido no pico de oferta: <strong>quem vende só no atacado na safra corre o risco de receber o preço de baixa</strong>. A seção 09 mostra o efeito de R$ 28 a 48/kg.</p>
+  <p>O plano usa <strong>R$ <span data-d="preco_caixa"></span> a caixa de 1,5 kg (12 cumbucas de 125 g), ou R$ <span data-d="preco_cob"></span>/kg</strong>, preço praticado por produtor da região ouvido em 10/09/2026. O preço tem forte sazonalidade: em janeiro de 2025 a cotação na CEAGESP passou de R$ 96/kg com fruta importada; em novembro e dezembro de 2025, no pico da safra nacional e com Chile e Peru entrando, ficou entre R$ 27 e R$ 35/kg. R$ <span data-d="preco_cob"></span>/kg é portanto um preço de safra realista, mas não garantido no pico de oferta: <strong>quem vende só no atacado na safra corre o risco de receber o preço de baixa</strong>. A seção 09 mostra o efeito de R$ 28 a 48/kg.</p>
 
   <h4>Calendário de oferta e janela de preço</h4>
   <div class="cal">
@@ -365,12 +365,12 @@
   <div class="tabela-wrap"><table>
     <thead><tr><th>Canal</th><th class="num">Mix alvo</th><th class="num">Preço ao produtor</th><th>Como chegar</th></tr></thead>
     <tbody>
-      <tr><td>Atacado (CEAGESP, distribuidores)</td><td class="num">60%</td><td class="num">R$ 60/caixa (R$ 40/kg)</td><td>Permissionário fixo, escoa volume no pico; exige classificação e caixa padrão de 12 cumbucas</td></tr>
+      <tr><td>Atacado (CEAGESP, distribuidores)</td><td class="num">60%</td><td class="num">R$ <span data-d="preco_caixa"></span>/caixa (R$ <span data-d="preco_cob"></span>/kg)</td><td>Permissionário fixo, escoa volume no pico; exige classificação e caixa padrão de 12 cumbucas</td></tr>
       <tr><td>Varejo direto (supermercados regionais, hortifrutis, empórios)</td><td class="num">30%</td><td class="num">R$ 48 a 55/kg</td><td>São Carlos, Araraquara, Ribeirão, Campinas; entrega 2 a 3 vezes por semana com marca própria</td></tr>
       <tr><td>Fruta de segunda e congelado (IQF)</td><td class="num">10%</td><td class="num">R$ 12 a 16/kg</td><td>Indústrias de polpa, sorvete e açaí; congelamento em terceiros</td></tr>
     </tbody>
   </table></div>
-  <p>O mix acima sustenta a média de R$ 40/kg mesmo que o atacado caia abaixo disso no pico. A alavanca mais barata do plano é vender a fruta <strong>de junho a agosto</strong>, antes do pico nacional: cada tonelada deslocada para essa janela vale R$ 15 a 25 mil a mais. Snowchaser e poda escalonada existem para isso. A segunda alavanca é a marca própria na cumbuca, que abre o varejo regional sem intermediário.</p>
+  <p>O mix acima sustenta a média de R$ <span data-d="preco_cob"></span>/kg mesmo que o atacado caia abaixo disso no pico. A alavanca mais barata do plano é vender a fruta <strong>de junho a agosto</strong>, antes do pico nacional: cada tonelada deslocada para essa janela vale R$ 15 a 25 mil a mais. Snowchaser e poda escalonada existem para isso. A segunda alavanca é a marca própria na cumbuca, que abre o varejo regional sem intermediário.</p>
 </section>
 
 <section id="simulador">
@@ -520,14 +520,14 @@
   <div class="tabela-wrap"><table>
     <thead><tr><th>Risco</th><th>Impacto</th><th>Mitigação prevista</th></tr></thead>
     <tbody>
-      <tr><td>Queda de preço no atacado com o crescimento da produção paulista</td><td>Alto. Cada R$ 4/kg a menos tira cerca de 8 pontos da TIR</td><td>40% do volume em varejo direto com marca; escalonar colheita para junho a agosto; contrato de fornecimento com 1 ou 2 redes regionais antes do ano 3</td></tr>
-      <tr><td>Produtividade abaixo do previsto por calor e baixo frio</td><td>Alto. A 70% da curva a TIR cai para 13%; com a curva da literatura, para 19%</td><td>Cultivares comprovadas em SP; implantar 1 ha primeiro e medir; sombreamento de 20 a 30% no verão se o pomar sofrer com radiação</td></tr>
+      <tr><td>Queda de preço no atacado com o crescimento da produção paulista</td><td>Alto. Cada R$ 4/kg a menos tira cerca de <span data-d="drop4"></span> pontos da TIR</td><td>40% do volume em varejo direto com marca; escalonar colheita para junho a agosto; contrato de fornecimento com 1 ou 2 redes regionais antes do ano 3</td></tr>
+      <tr><td>Produtividade abaixo do previsto por calor e baixo frio</td><td>Alto. A 70% da curva a TIR cai para <span data-d="tir70"></span>; com a curva da literatura, para <span data-d="tir_lit"></span></td><td>Cultivares comprovadas em SP; implantar 1 ha primeiro e medir; sombreamento de 20 a 30% no verão se o pomar sofrer com radiação</td></tr>
       <tr><td><em>Drosophila suzukii</em> e botrytis</td><td>Médio. Perdas de 10 a 30% em anos chuvosos</td><td>Armadilhas, colheita frequente, retirada de fruta caída, controle biológico; o macrotúnel já reduz botrytis no hectare coberto</td></tr>
       <tr><td>Água inadequada (alcalinidade, ferro, cloro)</td><td>Alto se descoberto tarde</td><td>Análise completa antes de qualquer compra; injeção de ácido dimensionada para o pior caso; reservatório de decantação</td></tr>
       <tr><td>Falta de colhedores no pico</td><td>Médio. Fruta passa do ponto em 3 dias</td><td>Parceria com cooperativa de trabalho rural da região; contratação por safra registrada; escalonar cultivares</td></tr>
-      <tr><td>Pássaros, granizo e queimadura no hectare descoberto</td><td>Médio. Cada 10 pontos de perda a mais tiram cerca de 3 pontos da TIR</td><td>Rede antipássaro leve sobre as linhas (R$ 3 a 4/m²) já no ano 2; cobrir o hectare de vez antes do ano 3</td></tr>
+      <tr><td>Pássaros, granizo e queimadura no hectare descoberto</td><td>Médio. Cada 10 pontos de perda a mais tiram cerca de <span data-d="drop_perda"></span> pontos da TIR</td><td>Rede antipássaro leve sobre as linhas (R$ 3 a 4/m²) já no ano 2; cobrir o hectare de vez antes do ano 3</td></tr>
       <tr><td>Vento e granizo no macrotúnel</td><td>Médio, episódico</td><td>Dimensionar o macrotúnel para vento de 100 km/h, filme com garantia UV e ancoragem reforçada; seguro rural para a estrutura</td></tr>
-      <tr><td>Muda de baixa qualidade ou fora de tipo a R$ 20</td><td>Alto e irreversível por 10 anos</td><td>Comprar de viveiro registrado no RENASEM, com laudo fitossanitário; visitar o viveiro; reter 20% do pagamento até 90 dias após o plantio</td></tr>
+      <tr><td>Muda de baixa qualidade ou fora de tipo a R$ <span data-d="muda"></span></td><td>Alto e irreversível por 10 anos</td><td>Comprar de viveiro registrado no RENASEM, com laudo fitossanitário; visitar o viveiro; reter 20% do pagamento até 90 dias após o plantio</td></tr>
     </tbody>
   </table></div>
 </section>
@@ -541,7 +541,7 @@
         <li><strong>BNDES Finame</strong> para trator, câmara fria e equipamentos.</li>
         <li><strong>Desenvolve SP</strong> e <strong>FEAP</strong> (Fundo de Expansão do Agronegócio Paulista) para irrigação e proteção de cultivos.</li>
       </ul>
-      <p>Com 60% do plantio e da pós-colheita financiados a 8% ao ano, 3 anos de carência e 5 de amortização, o capital próprio necessário cai para cerca de R$ 455 mil e o caixa do proprietário fica positivo já no ano 2.</p>
+      <p>Com 60% do plantio e da pós-colheita financiados a 8% ao ano, 3 anos de carência e 5 de amortização, o capital próprio necessário cai para cerca de R$ <span data-d="equity"></span> e o caixa do proprietário fica positivo <span data-d="ano_pos"></span>.</p>
     </div>
     <div class="box"><h5>Tributos</h5>
       <ul>
@@ -558,11 +558,11 @@
   <h3><span class="num">12</span>Próximos passos</h3>
   <ol>
     <li><strong>Análise de água</strong> da fonte prevista (pH, alcalinidade, ferro, sódio, cloretos, condutividade). Custa menos de R$ 500 e decide o projeto.</li>
-    <li><strong>Segunda visita ao produtor</strong> ouvido em 10/09, de preferência na colheita, para ver na prática classificação, embalagem, ritmo de colheita e o manejo que entrega 0,8 kg já no primeiro ano.</li>
+    <li><strong>Segunda visita ao produtor</strong> ouvido em 10/09, de preferência na colheita, para ver na prática classificação, embalagem, ritmo de colheita e o manejo que entrega <span data-d="kg1"></span> kg já no primeiro ano.</li>
     <li><strong>Especificação do macrotúnel</strong> para o hectare 1 (vão, pé-direito, filme, tela lateral antipássaro, ventilação) e cotação de uma rede antipássaro leve para o hectare 2.</li>
     <li><strong>Confirmação da muda</strong>: viveiro, cultivares, tamanho, laudo e prazo de entrega para plantio entre março e maio de 2027.</li>
-    <li><strong>Pré-contato comercial</strong> com um permissionário da CEAGESP e duas redes de supermercado regionais, para mapear como os R$ 60 por caixa se comportam ao longo da safra.</li>
-    <li><strong>Decisão sobre a cobertura do hectare 2</strong>: segundo macrotúnel junto com o primeiro (mais R$ 200 mil, TIR de 34,1%) ou depois, com o caixa da produção, antes da colheita do ano 3.</li>
+    <li><strong>Pré-contato comercial</strong> com um permissionário da CEAGESP e duas redes de supermercado regionais, para mapear como os R$ <span data-d="preco_caixa"></span> por caixa se comportam ao longo da safra.</li>
+    <li><strong>Decisão sobre a cobertura da área restante</strong>: <span data-d="cobrir_txt"></span></li>
   </ol>
 </section>
 
@@ -679,6 +679,22 @@
   function pbTxt(pb){return pb?('ano '+pb):'não paga em 10 anos';}
   function tirTxt(t){return t===null?'—':pct(t);}
 
+  function setDyn(R,full,lit){
+    var d4=calc(P,{preco_cob:P.preco_cob-4,preco_desc:P.preco_desc-4}), s70=calc(P,{fator:0.7}), pp=Object.assign({},P,{perda:Math.min(100,P.perda+10)}), pd=calc(pp);
+    var pts=function(a,b){return (a===null||b===null)?'—':dec(Math.abs(a-b)*100,0);};
+    var firstPos=null;for(var i=0;i<R.anos.length;i++){if(R.anos[i].e>0){firstPos=R.anos[i].ano;break;}}
+    var D={area:dec(R.area,1),area_int:(R.area===1?'1 hectare':dec(R.area,R.area%1?1:0)+' hectares'),area_cob:dec(R.cob,1),plantas:br(R.plantas),plha:br(R.plha),
+      esp_linha:dec(P.esp_linha,P.esp_linha%1?(P.esp_linha*10%1?2:1):1),esp_saco:dec(P.esp_saco,2),muda:dec(P.muda,2),replantio:dec(P.replantio,P.replantio%1?1:0),vol_saco:br(P.vol_saco),custo_m3:dec(R.custo_m3,0),
+      tunel_total:mi(R.cob*10000*P.tunel_m2),tunel_area:br(R.cob*10000),tunel_m2:dec(P.tunel_m2,P.tunel_m2%1?2:0),
+      cob_de_area:(R.cob>=R.area?'toda a área':dec(R.cob,1)+' de '+dec(R.area,1)+' hectares'),
+      desc_txt:(R.cob>=R.area?'Toda a área plantada fica coberta.':'A área restante ('+dec(R.area-R.cob,1)+' ha) fica descoberta.'),
+      kg1:dec(P.kg1,1),kg2:dec(P.kg2,1),perda:dec(P.perda,0),preco_cob:dec(P.preco_cob,0),preco_caixa:dec(P.preco_cob*1.5,0),preco_desc:dec(P.preco_desc,0),comissao:dec(P.comissao,1),
+      pos:mi(R.pos),t1:dec(R.anos[0].kg/1000,0),equity:mi(Math.max(0,R.total-0.6*(R.plantio+R.pos))),
+      ano_pos:(firstPos?'já no ano '+firstPos:'só depois do ano 10'),
+      drop4:pts(R.tir,d4.tir),tir70:tirTxt(s70.tir),tir_lit:tirTxt(lit.tir),drop_perda:pts(R.tir,pd.tir),
+      cobrir_txt:(R.cob<R.area?'macrotúnel na área restante junto com o primeiro (mais '+rs(full.plantio-R.plantio)+', TIR de '+tirTxt(full.tir)+') ou depois, com o caixa da produção, antes da colheita do ano 3.':'toda a área já está coberta neste cenário.')};
+    var els=document.querySelectorAll('[data-d]');for(var i=0;i<els.length;i++){var k=els[i].getAttribute('data-d');if(D[k]!==undefined)els[i].textContent=D[k];}
+  }
   function render(){
     var R=calc(P);
     // painel
@@ -697,6 +713,7 @@
     setT('k-pb-n',dec(R.cob,1)+' ha em macrotúnel de '+dec(R.area,1)+' ha, sem financiamento');
     // veredito
     var full=calc(P,{area_cob:P.area}), lit=calc(P,{curva:LIT}), low=calc(P,{preco_cob:P.preco_cob-8,preco_desc:P.preco_desc-8});
+    setDyn(R,full,lit);
     setH('v1','<strong>Leitura direta.</strong> Com venda a R$ '+dec(P.preco_cob*1.5,0)+' a caixa de 1,5 kg (R$ '+dec(P.preco_cob,0)+'/kg) e produção de '+dec(P.kg1,1)+' kg por planta no primeiro ano e '+dec(P.kg2,1)+' kg a partir do segundo, o projeto '+(R.pb?'se paga no <strong>ano '+R.pb+'</strong>':'<strong>não se paga em dez anos</strong>')+' com TIR de '+tirTxt(R.tir)+' em dez anos, com '+dec(R.cob,1)+' ha em macrotúnel de '+dec(R.area,1)+' ha plantados. O pomar gera cerca de '+rs(R.mat.e)+' por ano de EBITDA a partir do ano 2 e o capital de giro necessário é de '+rs(R.giro)+'.');
     var cobTxt=(R.cob<R.area)?' Cobrir toda a área com macrotúnel (mais '+rs(full.plantio-R.plantio)+') '+(full.mat.e>=R.mat.e?'acrescenta':'reduz')+' '+rs(Math.abs(full.mat.e-R.mat.e))+' por ano de EBITDA e leva a TIR a '+tirTxt(full.tir)+'.':' Toda a área plantada está coberta neste cenário.';
     setH('v2','Preço e produção vêm de um <strong>produtor de mirtilo em atividade</strong>, ouvido em reunião em 10 de setembro de 2026, e por isso são a base do plano. Como margem de segurança, o plano também mostra o caso conservador: com a curva de produção da literatura (0,3 kg no ano 1 até 2,5 kg só no ano 5) a TIR fica em '+tirTxt(lit.tir)+' e o payback '+(lit.pb?'no ano '+lit.pb:'não ocorre em dez anos')+'; a R$ '+dec(P.preco_cob-8,0)+'/kg a TIR fica em '+tirTxt(low.tir)+'.'+cobTxt);

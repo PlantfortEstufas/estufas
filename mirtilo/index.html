@@ -238,7 +238,7 @@
     <div class="box"><h5>Escolhas técnicas do plano</h5>
       <ul>
         <li>Cultivo em <strong>sacos de cultivo de <span data-d="vol_saco"></span> L com substrato</strong> (R$ <span data-d="custo_m3"></span>/m³ na composição escolhida), não em solo.</li>
-        <li>Espaçamento <span data-d="esp_linha"></span> m × <span data-d="esp_saco"></span> m: <strong><span data-d="plha"></span> plantas/ha</strong>, <span data-d="plantas"></span> no total.</li>
+        <li>Espaçamento <span data-d="esp_linha"></span> m × <span data-d="esp_saco"></span> m, linhas de no máximo <span data-d="linha_max"></span> m com corredor de <span data-d="corredor"></span> m entre trechos (<span data-d="util"></span>% de aproveitamento): <strong><span data-d="plha"></span> plantas/ha</strong>, <span data-d="plantas"></span> no total.</li>
         <li><strong>Macrotúnel Plantfort</strong> com filme plástico, orçado em <strong>R$ <span data-d="tunel_total"></span></strong>, cobrindo <strong><span data-d="area_cob"></span> ha</strong> (<span data-d="tunel_area"></span> m², R$ <span data-d="tunel_m2"></span>/m²), com tela antipássaro nas laterais e frentes. <span data-d="desc_txt"></span></li>
         <li>Fertirrigação por gotejamento automatizada, água acidificada.</li>
       </ul>
@@ -299,7 +299,7 @@
   <div class="grid2">
     <div class="box"><h5>Plantio</h5>
       <ul>
-        <li>Linhas de <span data-d="esp_linha"></span> m com <em>ground cover</em> no solo e sacos alinhados a <span data-d="esp_saco"></span> m.</li>
+        <li>Linhas de <span data-d="esp_linha"></span> m com <em>ground cover</em> no solo e sacos alinhados a <span data-d="esp_saco"></span> m, em trechos de até <span data-d="linha_max"></span> m separados por corredores de <span data-d="corredor"></span> m para circulação e colheita.</li>
         <li>Substrato: 60% casca de pinus compostada, 30% fibra de coco, 10% turfa ou serragem; pH 4,5 a 5,0.</li>
         <li>Muda de saco ou tubete grande, com 30 a 40 cm, plantada de março a maio para pegar o inverno enraizando.</li>
       </ul>
@@ -387,6 +387,9 @@
         <div class="campo"><label for="p-area_cob">Área com macrotúnel<small>hectares, dentro da área plantada</small></label><input id="p-area_cob" data-k="area_cob" type="number" step="0.1" min="0"></div>
         <div class="campo"><label for="p-esp_linha">Espaçamento entre linhas<small>metros</small></label><input id="p-esp_linha" data-k="esp_linha" type="number" step="0.1" min="0.5"></div>
         <div class="campo"><label for="p-esp_saco">Espaçamento entre sacos<small>metros, na linha</small></label><input id="p-esp_saco" data-k="esp_saco" type="number" step="0.05" min="0.2"></div>
+        <div class="campo"><label for="p-linha_max">Comprimento máximo da linha<small>metros; 0 = sem corredores</small></label><input id="p-linha_max" data-k="linha_max" type="number" step="5" min="0"></div>
+        <div class="campo"><label for="p-corredor">Corredor entre trechos de linha<small>metros, no sentido da linha</small></label><input id="p-corredor" data-k="corredor" type="number" step="0.5" min="0"></div>
+        <div class="campo calc"><label>Aproveitamento da linha<small>calculado</small></label><input id="c-util" readonly tabindex="-1"></div>
         <div class="campo"><label for="p-arred">Arredondar plantas/ha para múltiplo de<small>1 = não arredondar</small></label><input id="p-arred" data-k="arred" type="number" step="1" min="1"></div>
         <div class="campo calc"><label>Plantas por hectare<small>calculado</small></label><input id="c-plha" readonly tabindex="-1"></div>
         <div class="campo calc"><label>Plantas no total<small>calculado</small></label><input id="c-plantas" readonly tabindex="-1"></div>
@@ -587,7 +590,7 @@
 
 <script>
 (function(){
-  var DEF={area:2,area_cob:1,esp_linha:2.5,esp_saco:0.6,arred:100,muda:20,replantio:3,vol_saco:30,preco_saco:3.5,
+  var DEF={area:2,area_cob:1,esp_linha:2.5,esp_saco:0.6,linha_max:50,corredor:3,arred:100,muda:20,replantio:3,vol_saco:30,preco_saco:3.5,
     c1_pct:60,c1_rs:280,c2_pct:30,c2_rs:380,c3_pct:10,c3_rs:300,c4_pct:0,c4_rs:0,extras_m3:55,
     tunel_m2:20,fert_ha:55000,gc_m2:1.8,equip:35000,eletrica:25000,
     camara:55000,galpao_m2:120,galpao_rs:600,equip_pack:13000,
@@ -612,7 +615,8 @@
     var area=Math.max(0,o.area!==undefined?o.area:p.area);
     var cob=Math.min(Math.max(0,o.area_cob!==undefined?o.area_cob:p.area_cob),area);
     var arred=Math.max(1,p.arred||1);
-    var plha=Math.floor(10000/(p.esp_linha*p.esp_saco)/arred)*arred;
+    var util=(p.linha_max>0&&p.corredor>0)?p.linha_max/(p.linha_max+p.corredor):1;
+    var plha=Math.floor(10000/(p.esp_linha*p.esp_saco)*util/arred)*arred;
     var plantas=Math.round(plha*area), plc=Math.round(plha*cob), pld=plantas-plc;
     var volsub=plantas*p.vol_saco/1000;
     var soma=p.c1_pct+p.c2_pct+p.c3_pct+p.c4_pct;
@@ -656,7 +660,7 @@
     var giro=0;anos.forEach(function(a){if(a.e<0)giro+=-a.e;});
     var pb=null;for(var i=0;i<anos.length;i++){if(anos[i].acum>=0){pb=anos[i].ano;break;}}
     var m=anos[1];
-    return {area:area,cob:cob,plha:plha,plantas:plantas,plc:plc,pld:pld,volsub:volsub,soma:soma,custo_m3:custo_m3,
+    return {area:area,cob:cob,util:util,plha:plha,plantas:plantas,plc:plc,pld:pld,volsub:volsub,soma:soma,custo_m3:custo_m3,
       capex1:capex1,capex2:capex2,plantio:plantio,pos:pos,fixos:fixos,fixo:fixo,prov:prov,giro:giro,total:plantio+pos+giro,
       anos:anos,f:f,tir:irr(f),vpl:npv(p.taxa/100,f),pb:pb,mat:m,pc:pc,pd:pd,vkg:vkg,com:com};
   }
@@ -684,7 +688,7 @@
     var pts=function(a,b){return (a===null||b===null)?'—':dec(Math.abs(a-b)*100,0);};
     var firstPos=null;for(var i=0;i<R.anos.length;i++){if(R.anos[i].e>0){firstPos=R.anos[i].ano;break;}}
     var D={area:dec(R.area,1),area_int:(R.area===1?'1 hectare':dec(R.area,R.area%1?1:0)+' hectares'),area_cob:dec(R.cob,1),plantas:br(R.plantas),plha:br(R.plha),
-      esp_linha:dec(P.esp_linha,P.esp_linha%1?(P.esp_linha*10%1?2:1):1),esp_saco:dec(P.esp_saco,2),muda:dec(P.muda,2),replantio:dec(P.replantio,P.replantio%1?1:0),vol_saco:br(P.vol_saco),custo_m3:dec(R.custo_m3,0),
+      esp_linha:dec(P.esp_linha,P.esp_linha%1?(P.esp_linha*10%1?2:1):1),esp_saco:dec(P.esp_saco,2),linha_max:br(P.linha_max),corredor:dec(P.corredor,P.corredor%1?1:0),util:dec(R.util*100,1),muda:dec(P.muda,2),replantio:dec(P.replantio,P.replantio%1?1:0),vol_saco:br(P.vol_saco),custo_m3:dec(R.custo_m3,0),
       tunel_total:mi(R.cob*10000*P.tunel_m2),tunel_area:br(R.cob*10000),tunel_m2:dec(P.tunel_m2,P.tunel_m2%1?2:0),
       cob_de_area:(R.cob>=R.area?'toda a área':dec(R.cob,1)+' de '+dec(R.area,1)+' hectares'),
       desc_txt:(R.cob>=R.area?'Toda a área plantada fica coberta.':'A área restante ('+dec(R.area-R.cob,1)+' ha) fica descoberta.'),
@@ -698,7 +702,7 @@
   function render(){
     var R=calc(P);
     // painel
-    setv('c-plha',br(R.plha));setv('c-plantas',br(R.plantas));setv('c-volsub',dec(R.volsub,0)+' m³');
+    setv('c-util',dec(R.util*100,1)+'%');setv('c-plha',br(R.plha));setv('c-plantas',br(R.plantas));setv('c-volsub',dec(R.volsub,0)+' m³');
     setv('c-soma',dec(R.soma,0)+'%');document.getElementById('w-soma').classList.toggle('warn',Math.abs(R.soma-100)>0.01);
     setv('c-custom3','R$ '+dec(R.custo_m3,2));setv('c-caixa','R$ '+dec(P.preco_cob*1.5,2));
     setH('sim-res','<span>Plantio <b>'+rs(R.plantio)+'</b></span><span>Investimento total <b>'+rs(R.total)+'</b></span><span>EBITDA maduro <b>'+rs(R.mat.e)+'/ano</b></span><span>Payback <b>'+pbTxt(R.pb)+'</b></span><span>TIR 10 anos <b>'+tirTxt(R.tir)+'</b></span>'+(Math.abs(R.soma-100)>0.01?'<span style="color:var(--ocre)">A composição do substrato não soma 100%.</span>':''));
@@ -806,5 +810,6 @@
   fill();render();
 })();
 </script>
+
 </body>
 </html>

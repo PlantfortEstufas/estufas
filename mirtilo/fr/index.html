@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<!-- (c) Plantfort Estufas Agricolas. Projeto proprietario. Codigo e desenho protegidos; copia, reuso ou redistribuicao nao autorizados. -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2E6B2E">
+<title>Plan Myrtille São Carlos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Archivo:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --verde:#2E6B2E; --verde-esc:#1c3d1c; --verde-cl:#6FB53A; --verde-pale:#e8efe2;
+    --mirtilo:#4B4E9E; --mirtilo-pale:#e6e6f3; --mirtilo-esc:#2f3170;
+    --papel:#f4f1e8; --papel-2:#ece7d8; --branco:#fbfaf5; --tinta:#22301f; --tinta-2:#5a6553; --linha:#c8c0aa;
+    --ocre:#c0622a; --ocre-pale:#f5e6da;
+    --grid:rgba(46,107,46,.035);
+    --sombra:0 1px 2px rgba(34,48,31,.06), 0 8px 30px rgba(34,48,31,.08);
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --verde:#5FA52E; --verde-esc:#a9d98a; --verde-cl:#7cc45a; --verde-pale:#1f2e1c;
+      --mirtilo:#7A7ED0; --mirtilo-pale:#232648; --mirtilo-esc:#b9bcf0;
+      --papel:#151b13; --papel-2:#1e271c; --branco:#1a2218; --tinta:#e9e6da; --tinta-2:#a9b1a0; --linha:#3a4636;
+      --ocre:#CC7440; --ocre-pale:#3a2718;
+      --grid:rgba(111,181,58,.05);
+      --sombra:0 1px 2px rgba(0,0,0,.3), 0 8px 30px rgba(0,0,0,.35);
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --verde:#5FA52E; --verde-esc:#a9d98a; --verde-cl:#7cc45a; --verde-pale:#1f2e1c;
+    --mirtilo:#7A7ED0; --mirtilo-pale:#232648; --mirtilo-esc:#b9bcf0;
+    --papel:#151b13; --papel-2:#1e271c; --branco:#1a2218; --tinta:#e9e6da; --tinta-2:#a9b1a0; --linha:#3a4636;
+    --ocre:#CC7440; --ocre-pale:#3a2718;
+    --grid:rgba(111,181,58,.05);
+    --sombra:0 1px 2px rgba(0,0,0,.3), 0 8px 30px rgba(0,0,0,.35);
+    color-scheme: dark;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:'Archivo',system-ui,sans-serif; color:var(--tinta); background:var(--papel);
+    background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+    background-size:26px 26px; -webkit-font-smoothing:antialiased; line-height:1.55; font-size:15.5px;
+  }
+  .wrap{max-width:900px;margin:0 auto;padding-block:28px 80px;padding-inline:clamp(16px,4vw,48px)}
+  header{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-bottom:20px;border-bottom:1.5px solid var(--linha);margin-bottom:34px}
+  .brand{display:flex;align-items:center;gap:14px}
+  .leaf{width:46px;height:46px;flex:none;color:var(--verde)}
+  .brand h1{font-family:'Fraunces',serif;font-weight:900;font-size:26px;letter-spacing:-.5px;line-height:1}
+  .brand .sub{font-size:11.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--verde);font-weight:600;margin-top:3px}
+  .meta{font-family:'DM Mono',monospace;font-size:11.5px;color:var(--tinta-2);text-align:right;line-height:1.7}
+  .meta b{color:var(--tinta);font-weight:500}
+
+  .titulo h2{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(30px,5vw,44px);line-height:1.05;letter-spacing:-1px;text-wrap:balance;max-width:16ch}
+  .titulo p.lead{font-size:17px;color:var(--tinta-2);max-width:62ch;margin-top:14px}
+  .titulo .tag{display:inline-block;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mirtilo-esc);background:var(--mirtilo-pale);padding:4px 10px;border-radius:999px;margin-bottom:14px}
+
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:30px 0 8px}
+  .kpi{background:var(--branco);border:1px solid var(--linha);border-radius:12px;padding:14px 16px;box-shadow:var(--sombra)}
+  .kpi .l{font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:var(--tinta-2);font-weight:600}
+  .kpi .v{font-family:'Fraunces',serif;font-weight:600;font-size:28px;letter-spacing:-.5px;margin-top:4px;font-variant-numeric:tabular-nums;line-height:1.1}
+  .kpi .v small{font-family:'DM Mono',monospace;font-size:12px;color:var(--tinta-2);letter-spacing:0}
+  .kpi .n{font-size:12px;color:var(--tinta-2);margin-top:4px}
+  .kpi.destaque{border-color:var(--mirtilo);background:var(--mirtilo-pale)}
+  .kpi.destaque .v{color:var(--mirtilo-esc)}
+
+  section{margin-top:48px}
+  section > h3{font-family:'Fraunces',serif;font-weight:900;font-size:24px;letter-spacing:-.4px;margin-bottom:14px;text-wrap:balance;display:flex;align-items:baseline;gap:12px}
+  section > h3 .num{font-family:'DM Mono',monospace;font-size:12px;color:var(--verde);letter-spacing:1px;font-weight:500}
+  h4{font-family:'Archivo',sans-serif;font-weight:700;font-size:15px;margin:22px 0 8px;letter-spacing:.2px}
+  p{max-width:68ch;margin-bottom:12px}
+  ul,ol{max-width:68ch;padding-left:22px;margin-bottom:12px}
+  li{margin-bottom:6px}
+  li::marker{color:var(--verde)}
+  strong{font-weight:600}
+
+  .veredito{background:var(--branco);border-left:4px solid var(--mirtilo);border-radius:0 12px 12px 0;padding:18px 22px;margin:26px 0;box-shadow:var(--sombra)}
+  .veredito p{margin-bottom:8px}
+  .veredito p:last-child{margin-bottom:0}
+  .alerta{background:var(--ocre-pale);border-left:4px solid var(--ocre);border-radius:0 12px 12px 0;padding:14px 18px;margin:18px 0}
+  .alerta p{margin-bottom:6px}
+  .alerta p:last-child{margin-bottom:0}
+
+  .tabela-wrap{overflow-x:auto;margin:14px 0 18px;border:1px solid var(--linha);border-radius:12px;background:var(--branco);box-shadow:var(--sombra)}
+  table{border-collapse:collapse;width:100%;font-size:14px;min-width:520px}
+  th,td{padding:9px 14px;text-align:left;border-bottom:1px solid var(--linha);vertical-align:top}
+  th{font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:var(--tinta-2);font-weight:600;background:var(--papel-2)}
+  td.num,th.num{text-align:right;font-family:'DM Mono',monospace;font-variant-numeric:tabular-nums;white-space:nowrap}
+  tr:last-child td{border-bottom:none}
+  tr.total td{font-weight:600;background:var(--verde-pale);border-top:2px solid var(--verde)}
+  tr.total td.num{font-weight:500}
+  td.neg{color:var(--ocre)}
+  td:first-child{white-space:nowrap}
+  td.rec{color:var(--mirtilo-esc);font-weight:600}
+  .legenda{font-size:12.5px;color:var(--tinta-2);margin:-8px 0 16px}
+
+  .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin:14px 0}
+  .box{background:var(--branco);border:1px solid var(--linha);border-radius:12px;padding:16px 18px}
+  .box h5{font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:var(--verde);font-weight:700;margin-bottom:8px}
+  .box p,.box ul{font-size:14px;margin-bottom:6px}
+  .box ul{padding-left:18px}
+
+  /* calendário */
+  .cal{border:1px solid var(--linha);border-radius:12px;background:var(--branco);padding:14px 16px 10px;overflow-x:auto;margin:14px 0}
+  .cal-grid{display:grid;grid-template-columns:150px repeat(12,minmax(28px,1fr));gap:4px 3px;min-width:560px;align-items:center}
+  .cal-grid .h{font-family:'DM Mono',monospace;font-size:11px;color:var(--tinta-2);text-align:center}
+  .cal-grid .r{font-size:12.5px;padding-right:8px}
+  .cal-grid .c{height:18px;border-radius:4px;background:var(--papel-2)}
+  .cal-grid .c.on{background:var(--tinta-2);opacity:.55}
+  .cal-grid .c.sc{background:var(--verde);opacity:1}
+  .cal-grid .c.pr{background:var(--mirtilo);opacity:1}
+  .cal-leg{display:flex;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--tinta-2);margin-top:10px}
+  .cal-leg span{display:inline-flex;align-items:center;gap:6px}
+  .cal-leg i{width:14px;height:10px;border-radius:3px;display:inline-block}
+
+  /* gráfico */
+  figure{margin:16px 0 8px;background:var(--branco);border:1px solid var(--linha);border-radius:12px;padding:16px 16px 10px;box-shadow:var(--sombra)}
+  figure figcaption{font-size:13px;color:var(--tinta-2);margin-top:6px}
+  figure .ftitle{font-weight:600;font-size:14px;margin-bottom:2px}
+  .chart-legend{display:flex;gap:18px;font-size:12.5px;color:var(--tinta-2);margin-bottom:8px;flex-wrap:wrap}
+  .chart-legend span{display:inline-flex;align-items:center;gap:6px}
+  .chart-legend i{width:12px;height:12px;border-radius:3px;display:inline-block}
+  .chart-legend i.line{height:3px;width:18px;border-radius:2px}
+  svg.chart{width:100%;height:auto;display:block;font-family:'DM Mono',monospace}
+  svg.chart text{fill:var(--tinta-2);font-size:11px}
+  svg.chart .grid line{stroke:var(--linha);stroke-width:1;opacity:.5}
+  svg.chart .zero{stroke:var(--tinta-2);stroke-width:1.2}
+  svg.chart .bar{fill:var(--verde)}
+  svg.chart .bar.neg{fill:var(--ocre)}
+  svg.chart .acum{fill:none;stroke:var(--mirtilo);stroke-width:2.5;stroke-linejoin:round}
+  svg.chart .pt{fill:var(--mirtilo);stroke:var(--branco);stroke-width:2}
+  svg.chart .hit{fill:transparent;cursor:pointer}
+  svg.chart .hit:hover ~ .bar{opacity:.85}
+  .tip{position:absolute;pointer-events:none;background:var(--tinta);color:var(--papel);font-family:'DM Mono',monospace;font-size:12px;padding:8px 10px;border-radius:8px;line-height:1.5;white-space:nowrap;box-shadow:var(--sombra);display:none;z-index:5}
+  .chart-box{position:relative}
+
+  .sens td.ok{background:var(--verde-pale);color:var(--verde-esc);font-weight:500}
+  .sens td.meh{background:var(--papel-2)}
+  .sens td.bad{background:var(--ocre-pale);color:var(--ocre)}
+
+  .cron{display:grid;grid-template-columns:110px 1fr;gap:6px 16px;max-width:760px;font-size:14.5px}
+  .cron .m{font-family:'DM Mono',monospace;font-size:12px;color:var(--verde);padding-top:3px;white-space:nowrap}
+  .cron .d{padding-bottom:8px;border-bottom:1px dashed var(--linha)}
+
+  .fontes{font-size:13px;color:var(--tinta-2)}
+  .fontes li{margin-bottom:4px}
+  a{color:var(--mirtilo-esc)}
+  a:focus-visible{outline:2px solid var(--verde-cl);outline-offset:2px;border-radius:3px}
+  footer{margin-top:60px;padding-top:18px;border-top:1.5px solid var(--linha);font-family:'DM Mono',monospace;font-size:11.5px;color:var(--tinta-2);line-height:1.7}
+
+  /* simulador */
+  .sim{background:var(--branco);border:1.5px solid var(--mirtilo);border-radius:14px;padding:18px 20px 14px;margin:18px 0 8px;box-shadow:var(--sombra)}
+  .sim-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:6px}
+  .sim-head h4{margin:0;font-family:'Fraunces',serif;font-size:20px;font-weight:900;letter-spacing:-.3px}
+  .sim-head .acts{display:flex;gap:8px;flex-wrap:wrap}
+  .sim button{font-family:'Archivo',sans-serif;font-size:12.5px;font-weight:600;padding:7px 12px;border-radius:8px;border:1px solid var(--linha);background:var(--papel-2);color:var(--tinta);cursor:pointer}
+  .sim button:hover{border-color:var(--mirtilo)}
+  .sim button:focus-visible{outline:2px solid var(--verde-cl);outline-offset:2px}
+  .sim p.nota{font-size:13px;color:var(--tinta-2);margin-bottom:12px}
+  .sim-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
+  .sim-grid .box{padding:12px 14px}
+  .sim-grid .box h5{margin-bottom:8px}
+  .campo{display:grid;grid-template-columns:1fr 92px;gap:8px;align-items:center;margin-bottom:6px}
+  .campo label{font-size:12.5px;line-height:1.25}
+  .campo label small{display:block;color:var(--tinta-2);font-size:11px}
+  .campo input{font-family:'DM Mono',monospace;font-size:13px;padding:5px 8px;border:1px solid var(--linha);border-radius:7px;background:var(--papel);color:var(--tinta);width:100%;text-align:right}
+  .campo input:focus{outline:2px solid var(--verde-cl);border-color:var(--verde)}
+  .campo.calc input{background:var(--verde-pale);border-style:dashed;color:var(--verde-esc)}
+  .campo.warn input{outline:2px solid var(--ocre)}
+  .comp{display:grid;grid-template-columns:1fr 64px 84px;gap:6px;align-items:center;margin-bottom:5px;font-size:12.5px}
+  .comp .h{font-size:10.5px;letter-spacing:1px;text-transform:uppercase;color:var(--tinta-2);font-weight:600}
+  .comp input{font-family:'DM Mono',monospace;font-size:12.5px;padding:4px 6px;border:1px solid var(--linha);border-radius:6px;background:var(--papel);color:var(--tinta);width:100%;text-align:right}
+  .sim-res{display:flex;gap:16px;flex-wrap:wrap;margin-top:12px;padding-top:10px;border-top:1px dashed var(--linha);font-size:13px;color:var(--tinta-2)}
+  .sim-res b{color:var(--tinta);font-family:'DM Mono',monospace;font-weight:500}
+  .dyn{font-variant-numeric:tabular-nums}
+  @media print{.sim button{display:none}.sim{break-inside:avoid}}
+  @media (max-width:560px){
+    .meta{text-align:left}
+    .cron{grid-template-columns:1fr}
+    .cron .m{padding-top:0}
+  }
+  @media (prefers-reduced-motion:no-preference){
+    .kpi{transition:transform .2s ease}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<header>
+  <div class="brand">
+    <svg class="leaf" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M8 40C8 22 20 10 40 8c-2 20-14 32-32 32Z" fill="currentColor" opacity=".9"/><path d="M10 38c8-10 16-18 26-26" stroke="#fbfaf5" stroke-width="2.2" stroke-linecap="round"/></svg>
+    <div>
+      <h1>Plantfort</h1>
+      <div class="sub">Business plan · Arboriculture fruitière</div>
+    </div>
+  </div>
+  <div class="meta">
+    <b>Myrtille · <span data-d="area"></span> ha · São Carlos/SP, Brésil</b><br>
+    Version 7 · simulateur · septembre 2026<br>
+    Valeurs en R$ (réais brésiliens) courants · estimations
+  </div>
+</header>
+
+<div class="titulo">
+  <span class="tag">Vaccinium · southern highbush à faible besoin en froid</span>
+  <h2>Myrtille en sacs de culture, <span data-d="area_int"></span> à São Carlos</h2>
+  <p class="lead">Plan d'implantation et d'exploitation d'un verger de myrtilles de <span data-d="plantas"></span> plants en sacs de culture avec substrat, sur terrain et eau déjà disponibles, avec un macrotunnel Plantfort de R$ <span data-d="tunel_total"></span> couvrant <span data-d="cob_de_area"></span>, des plants à R$ <span data-d="muda"></span> et une vente à R$ <span data-d="preco_caixa"></span> la caisse de 1,5 kg. Il couvre le système de production, le marché, l'investissement, les coûts, la projection sur dix ans, la sensibilité et les risques, avec un simulateur qui recalcule les sections financières à partir de vos paramètres.</p>
+</div>
+
+<div class="kpis">
+  <div class="kpi"><div class="l">Investissement total</div><div class="v dyn" id="k-invest"></div><div class="n" id="k-invest-n"></div></div>
+  <div class="kpi"><div class="l">Chiffre d'affaires à maturité</div><div class="v dyn" id="k-rec"></div><div class="n" id="k-rec-n"></div></div>
+  <div class="kpi"><div class="l">EBITDA à maturité</div><div class="v dyn" id="k-ebitda"></div><div class="n" id="k-ebitda-n"></div></div>
+  <div class="kpi destaque"><div class="l">Retour · TRI 10 ans</div><div class="v dyn" id="k-pb"></div><div class="n" id="k-pb-n"></div></div>
+</div>
+
+<div class="veredito">
+  <p id="v1"></p>
+  <p id="v2"></p>
+</div>
+
+<section id="premissas">
+  <h3><span class="num">01</span>Hypothèses du plan</h3>
+  <div class="grid2">
+    <div class="box"><h5>Données du client</h5>
+      <ul>
+        <li>Surface de <span data-d="area"></span> ha à São Carlos/SP, <strong>terrain en propriété</strong> (sans coût d'achat ni de fermage).</li>
+        <li>Plant à <strong>R$ <span data-d="muda"></span></strong> l'unité, livré à la ferme, avec <span data-d="replantio"></span> % de remplacement.</li>
+        <li>L'exploitation dispose déjà de l'<strong>eau</strong>, sans terrassement ni clôture à prévoir. Pas de tracteur.</li>
+        <li>L'investisseur assure la gestion ; le plan prévoit un conseil agronomique sous contrat.</li>
+      </ul>
+    </div>
+    <div class="box"><h5>Choix techniques du plan</h5>
+      <ul>
+        <li>Culture en <strong>sacs de culture de <span data-d="vol_saco"></span> L avec substrat</strong> (R$ <span data-d="custo_m3"></span>/m³ dans la composition choisie), pas en pleine terre.</li>
+        <li>Écartement <span data-d="esp_linha"></span> m × <span data-d="esp_saco"></span> m, rangs de <span data-d="linha_max"></span> m au plus avec une allée de <span data-d="corredor"></span> m entre tronçons (<span data-d="util"></span> % d'occupation) : <strong><span data-d="plha"></span> plants/ha</strong>, <span data-d="plantas"></span> au total.</li>
+        <li><strong>Macrotunnel Plantfort</strong> à film plastique, chiffré à <strong>R$ <span data-d="tunel_total"></span></strong>, couvrant <strong><span data-d="area_cob"></span> ha</strong> (<span data-d="tunel_area"></span> m², R$ <span data-d="tunel_m2"></span>/m²), avec filet anti-oiseaux sur les côtés et les pignons. <span data-d="desc_txt"></span></li>
+        <li>Fertirrigation automatisée au goutte-à-goutte, eau acidifiée.</li>
+      </ul>
+    </div>
+    <div class="box"><h5>Prix et rendement</h5>
+      <ul>
+        <li>Prix de vente de <strong>R$ <span data-d="preco_caixa"></span> la caisse de 1,5 kg (R$ <span data-d="preco_cob"></span>/kg)</strong>, référence d'un producteur en activité (réunion du 10/09/2026), appliqué à tout le fruit de la surface couverte.</li>
+        <li>Production par plant sous couvert : <strong><span data-d="kg1"></span> kg en année 1 et <span data-d="kg2"></span> kg à partir de l'année 2</strong>, référence du même producteur.</li>
+        <li>Surface non couverte : <strong><span data-d="perda"></span> % de perte</strong> de fruit commercialisable et prix de R$ <span data-d="preco_desc"></span>/kg du fait d'une plus grande part de second choix.</li>
+        <li>Pertes post-récolte et commission de vente : <span data-d="comissao"></span> % du chiffre d'affaires, Funrural (cotisation sociale rurale) inclus.</li>
+      </ul>
+    </div>
+    <div class="box"><h5>Ce qui n'est pas inclus</h5>
+      <ul>
+        <li>Impôt sur le résultat (dépend du statut : personne physique ou société).</li>
+        <li>Coût financier d'un emprunt (traité en section 11).</li>
+        <li>Puits, réservoir, tracteur, clôture et terrassement (déjà existants ou écartés par le client).</li>
+        <li>Véhicule de livraison et logement du personnel.</li>
+        <li>Redevances de variétés protégées, si le plant à R$ 20 est d'une variété sous licence.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="regiao">
+  <h3><span class="num">02</span>Pourquoi São Carlos convient à la myrtille</h3>
+  <p>São Carlos se trouve à environ 850 m d'altitude, en climat Cwa (subtropical d'altitude) : été chaud et pluvieux, hiver sec avec des minimales moyennes de 10 à 12 °C en juin et juillet. Le cumul de froid sous 7,2 °C est faible et irrégulier, généralement inférieur à 200 heures par an. Cela exclut les variétés traditionnelles du Sud du Brésil (highbush du nord et la plupart des rabbiteye) et impose des <strong>southern highbush à faible besoin en froid</strong>, le groupe qui porte la production de l'État de São Paulo à Atibaia, Bragança Paulista et Holambra.</p>
+  <p>Trois facteurs jouent en faveur du site :</p>
+  <ul>
+    <li><strong>Logistique.</strong> 230 km du marché de gros CEAGESP (São Paulo) par les autoroutes Washington Luís et Anhanguera. Un fruit cueilli le matin arrive réfrigéré à São Paulo le jour même. Campinas, Ribeirão Preto et Araraquara sont dans un rayon de 150 km pour la vente directe.</li>
+    <li><strong>Fenêtre de récolte.</strong> En faible froid à São Paulo, la récolte se concentre d'août à novembre, avant le pic du fruit chilien. Avec une conduite de taille adaptée, on peut avancer une partie de la production en juin et juillet, quand l'import disparaît presque et que le prix double.</li>
+    <li><strong>Appui technique.</strong> L'UFSCar, l'Embrapa Instrumentação et l'École d'ingénieurs de São Carlos (USP) sont sur place ; l'Esalq à Piracicaba est à 100 km. Les analyses d'eau, de substrat et de nutrition sont accessibles.</li>
+  </ul>
+  <div class="alerta">
+    <p><strong>Point d'attention : l'eau.</strong> La myrtille exige une eau d'irrigation à pH 4,5 à 5,5 et à faible alcalinité (bicarbonates sous 1,5 meq/L). L'eau de forage de la région a souvent une alcalinité modérée et demande une acidification continue. Même si l'eau est déjà disponible sur l'exploitation, l'analyse de la source est la <strong>première</strong> dépense du projet, avant de commander le moindre plant.</p>
+  </div>
+</section>
+
+<section id="sistema">
+  <h3><span class="num">03</span>Système de production</h3>
+  <h4>Sacs de culture avec substrat, pas de pleine terre</h4>
+  <p>Le sol de São Carlos (latosols et néosols sableux) est naturellement acide, ce qui aiderait, mais il draine mal sur beaucoup de parcelles et souffre de l'excès de pluie de décembre à mars. Les racines de myrtille sont fines, sans poils absorbants, et meurent en cas d'asphyxie par <em>Phytophthora</em>. Le sac de culture de <span data-d="vol_saco"></span> L (polyéthylène traité anti-UV, blanc dehors et noir dedans) rempli d'écorce de pin et de fibre de coco isole la plante du sol, garantit le drainage, donne un contrôle total de la nutrition par fertirrigation et avance l'entrée en production. Il coûte le quart d'un pot rigide pour la même fonction ; en contrepartie, sa durée de vie est de 4 à 6 ans, et il est remplacé en même temps que le substrat.</p>
+
+  <h4>Variétés</h4>
+  <p>Toutes du groupe southern highbush, besoin en froid jusqu'à 300 heures, avec au moins trois variétés intercalées pour la pollinisation croisée. Assortiment proposé :</p>
+  <div class="tabela-wrap"><table>
+    <thead><tr><th>Variété</th><th class="num">Part</th><th>Rôle dans le verger</th><th>Remarque</th></tr></thead>
+    <tbody>
+      <tr><td>Emerald</td><td class="num">35 %</td><td>Volume et calibre</td><td>Vigoureuse, productive, gros fruit ferme</td></tr>
+      <tr><td>Jewel</td><td class="num">25 %</td><td>Qualité et pollinisatrice</td><td>Goût et fermeté, bonne tenue en rayon</td></tr>
+      <tr><td>Snowchaser</td><td class="num">20 %</td><td>Précocité</td><td>Floraison et récolte plus tôt ; ouvre la fenêtre juin à août</td></tr>
+      <tr><td>Biloxi ou Star</td><td class="num">20 %</td><td>Rusticité</td><td>Éprouvées en climat chaud ; Biloxi supporte bien l'été</td></tr>
+    </tbody>
+  </table></div>
+  <p class="legenda">Si le plant à R$ <span data-d="muda"></span> est d'une variété protégée (Eureka, Sekoya, Arana et similaires), vérifiez au contrat la redevance par plant et par kg vendu.</p>
+
+  <h4>Structure et conduite</h4>
+  <div class="grid2">
+    <div class="box"><h5>Plantation</h5>
+      <ul>
+        <li>Rangs de <span data-d="esp_linha"></span> m avec toile de paillage au sol et sacs alignés tous les <span data-d="esp_saco"></span> m, en tronçons de <span data-d="linha_max"></span> m au plus séparés par des allées de <span data-d="corredor"></span> m pour la circulation et la récolte.</li>
+        <li>Substrat : 60 % d'écorce de pin compostée, 30 % de fibre de coco, 10 % de tourbe ou de sciure ; pH 4,5 à 5,0.</li>
+        <li>Plant en sac ou en godet grand format, de 30 à 40 cm, planté de mars à mai pour s'enraciner pendant l'hiver.</li>
+      </ul>
+    </div>
+    <div class="box"><h5>Fertirrigation</h5>
+      <ul>
+        <li>Deux goutteurs par sac, 4 à 8 impulsions par jour en été.</li>
+        <li>Injection d'acide (phosphorique ou sulfurique) pour un pH de 5,0 en sortie ; conductivité de 0,8 à 1,2 mS/cm.</li>
+        <li>Azote ammoniacal, jamais nitrique pur ; sondes d'humidité du substrat sur les rangs de référence.</li>
+      </ul>
+    </div>
+    <div class="box"><h5>Protection</h5>
+      <ul>
+        <li>Macrotunnel à film sur la surface couverte : protège de la pluie à la récolte, réduit le botrytis et l'éclatement des fruits, et permet d'avancer la saison. Pignons et côtés fermés par un filet anti-oiseaux, sinon le tunnel devient un abri à oiseaux.</li>
+        <li>Sur la surface non couverte, la perte due aux oiseaux peut dépasser 30 % du fruit mûr ; le plan retient 25 % et recommande au minimum un filet léger sur les rangs.</li>
+        <li>Suivi hebdomadaire de <em>Drosophila suzukii</em> par pièges ; lutte biologique et traitements à faible résidu.</li>
+        <li>Botrytis et anthracnose en période pluvieuse ; l'aération entre rangs et des passages de récolte fréquents réduisent la pression.</li>
+      </ul>
+    </div>
+    <div class="box"><h5>Pollinisation et taille</h5>
+      <ul>
+        <li>4 à 6 ruches d'<em>Apis</em> par hectare pendant la floraison, plus les bourdons natifs préservés.</li>
+        <li>Taille de formation en année 1 avec éclaircissage partiel des fleurs, pour limiter la charge à environ <span data-d="kg1"></span> kg par plant sans compromettre la structure.</li>
+        <li>Taille de renouvellement après récolte, en retirant les bois de plus de 4 ans.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h4>Récolte et post-récolte</h4>
+  <p>Récolte manuelle, en 5 à 8 passages par plant sur 10 à 14 semaines. Un cueilleur formé fait 4 à 6 kg par heure. Le fruit va directement en barquettes de 125 g, entre en chambre froide à 2 °C en moins de deux heures et repart le jour même ou le lendemain vers le client. Au pic de saison (septembre et octobre), le verger demande 25 à 35 cueilleurs par jour ; hors pic, 2 salariés permanents suffisent à tout.</p>
+</section>
+
+<section id="cronograma">
+  <h3><span class="num">04</span>Calendrier d'implantation</h3>
+  <div class="cron">
+    <div class="m">Mois 0 à 1</div><div class="d">Analyses d'eau et de sol, projet d'exécution de la fertirrigation et de la structure, vérification de l'autorisation de prélèvement d'eau et du cadastre rural (CAR). Contrat des plants.</div>
+    <div class="m">Mois 1 à 3</div><div class="d">Toile de paillage, raccordement électrique de la station de pompage. Achat des sacs et du substrat. Montage du macrotunnel sur l'hectare 1.</div>
+    <div class="m">Mois 3 à 4</div><div class="d">Installation de la fertirrigation, remplissage des sacs, tests de pH et d'uniformité. Recrutement et formation de l'équipe permanente.</div>
+    <div class="m">Mois 4 à 5</div><div class="d">Plantation (idéalement de mars à mai). Début de la fertirrigation d'installation.</div>
+    <div class="m">Mois 6 à 12</div><div class="d">Formation des plants, suppression de fleurs, remplacement des manquants (<span data-d="replantio"></span> %). Référencement chez les grossistes et visites aux détaillants. Dépôt de marque et emballage.</div>
+    <div class="m">Mois 12 à 15</div><div class="d">Chambre froide et hangar de conditionnement (investissement post-récolte, R$ <span data-d="pos"></span>), prêts avant la première récolte.</div>
+    <div class="m">Mois 13 à 18</div><div class="d">Première récolte commerciale (environ <span data-d="t1"></span> t). Réglage de la logistique, test des canaux et du prix.</div>
+    <div class="m">Année 2 et suivantes</div><div class="d">Verger en pleine production (<span data-d="kg2"></span> kg par plant). Taille de renouvellement annuelle. Remplacement du substrat et des sacs tous les 5 à 6 ans.</div>
+  </div>
+</section>
+
+<section id="mercado">
+  <h3><span class="num">05</span>Marché et commercialisation</h3>
+  <p>Le Brésil consomme beaucoup plus de myrtilles qu'il n'en produit. L'import domine encore le volume national, le Chili pesant environ deux tiers des importations, suivi du Pérou, de l'Uruguay et de l'Argentine. Sur le marché de gros CEAGESP, le fruit de l'État de São Paulo représente déjà près de la moitié des volumes, et la part de l'import recule depuis cinq ans, signe que la production paulista croît et trouve preneur.</p>
+  <p>Le plan retient <strong>R$ <span data-d="preco_caixa"></span> la caisse de 1,5 kg (12 barquettes de 125 g), soit R$ <span data-d="preco_cob"></span>/kg</strong>, prix pratiqué par un producteur de la région rencontré le 10/09/2026. Le prix est très saisonnier : en janvier 2025, la cotation CEAGESP a dépassé R$ 96/kg avec du fruit importé ; en novembre et décembre 2025, au pic de la saison nationale et avec l'arrivée du Chili et du Pérou, elle est restée entre R$ 27 et R$ 35/kg. R$ <span data-d="preco_cob"></span>/kg est donc un prix de saison réaliste, mais non garanti au pic d'offre : <strong>qui ne vend qu'au marché de gros en pleine saison risque le prix bas</strong>. La section 09 montre l'effet de R$ 28 à 48/kg.</p>
+
+  <h4>Calendrier d'offre et fenêtre de prix</h4>
+  <div class="cal">
+    <div class="cal-grid" id="cal"></div>
+    <div class="cal-leg">
+      <span><i style="background:var(--tinta-2);opacity:.55"></i>Offre sur le marché brésilien</span>
+      <span><i style="background:var(--verde)"></i>Récolte prévue à São Carlos</span>
+      <span><i style="background:var(--mirtilo)"></i>Mois de prix les plus hauts</span>
+    </div>
+  </div>
+
+  <h4>Stratégie de vente</h4>
+  <div class="tabela-wrap"><table>
+    <thead><tr><th>Canal</th><th class="num">Mix cible</th><th class="num">Prix producteur</th><th>Comment y accéder</th></tr></thead>
+    <tbody>
+      <tr><td>Gros (CEAGESP, distributeurs)</td><td class="num">60 %</td><td class="num">R$ <span data-d="preco_caixa"></span>/caisse (R$ <span data-d="preco_cob"></span>/kg)</td><td>Grossiste attitré, écoule le volume au pic ; exige un tri et une caisse standard de 12 barquettes</td></tr>
+      <tr><td>Détail direct (supermarchés régionaux, primeurs, épiceries fines)</td><td class="num">30 %</td><td class="num">R$ 48 à 55/kg</td><td>São Carlos, Araraquara, Ribeirão, Campinas ; livraison 2 à 3 fois par semaine sous marque propre</td></tr>
+      <tr><td>Second choix et surgelé (IQF)</td><td class="num">10 %</td><td class="num">R$ 12 à 16/kg</td><td>Industries de pulpe, glaces et açaí ; surgélation chez un prestataire</td></tr>
+    </tbody>
+  </table></div>
+  <p>Ce mix soutient la moyenne de R$ <span data-d="preco_cob"></span>/kg même si le gros descend en dessous au pic. Le levier le moins cher du plan est de vendre le fruit <strong>de juin à août</strong>, avant le pic national : chaque tonne déplacée vers cette fenêtre vaut R$ 15 à 25 mille de plus. Snowchaser et la taille échelonnée sont là pour cela. Le second levier est la marque propre sur la barquette, qui ouvre le détail régional sans intermédiaire.</p>
+</section>
+
+<section id="simulador">
+  <h3><span class="num">▶</span>Simulateur : modifiez les paramètres, le plan se recalcule</h3>
+  <div class="sim">
+    <div class="sim-head">
+      <h4>Paramètres du projet</h4>
+      <div class="acts"><button type="button" id="btn-reset">Rétablir les valeurs du plan</button><button type="button" id="btn-copy">Copier les paramètres</button></div>
+    </div>
+    <p class="nota">Tout ce qui figure ici alimente les sections 06 à 09, les indicateurs du haut, les hypothèses et la lecture directe. Les modifications sont enregistrées dans ce navigateur. Pourcentages en %, valeurs en R$.</p>
+    <div class="sim-grid">
+      <div class="box"><h5>Surface et plantation</h5>
+        <div class="campo"><label for="p-area">Surface plantée<small>hectares</small></label><input id="p-area" data-k="area" type="number" step="0.1" min="0.1"></div>
+        <div class="campo"><label for="p-area_cob">Surface sous macrotunnel<small>hectares, dans la surface plantée</small></label><input id="p-area_cob" data-k="area_cob" type="number" step="0.1" min="0"></div>
+        <div class="campo"><label for="p-esp_linha">Écartement entre rangs<small>mètres</small></label><input id="p-esp_linha" data-k="esp_linha" type="number" step="0.1" min="0.5"></div>
+        <div class="campo"><label for="p-esp_saco">Écartement entre sacs<small>mètres, sur le rang</small></label><input id="p-esp_saco" data-k="esp_saco" type="number" step="0.05" min="0.2"></div>
+        <div class="campo"><label for="p-linha_max">Longueur maximale d'un rang<small>mètres ; 0 = sans allées</small></label><input id="p-linha_max" data-k="linha_max" type="number" step="5" min="0"></div>
+        <div class="campo"><label for="p-corredor">Allée entre tronçons de rang<small>mètres, dans le sens du rang</small></label><input id="p-corredor" data-k="corredor" type="number" step="0.5" min="0"></div>
+        <div class="campo calc"><label>Taux d'occupation du rang<small>calculé</small></label><input id="c-util" readonly tabindex="-1"></div>
+        <div class="campo"><label for="p-arred">Arrondir les plants/ha au multiple de<small>1 = pas d'arrondi</small></label><input id="p-arred" data-k="arred" type="number" step="1" min="1"></div>
+        <div class="campo calc"><label>Plants par hectare<small>calculé</small></label><input id="c-plha" readonly tabindex="-1"></div>
+        <div class="campo calc"><label>Plants au total<small>calculé</small></label><input id="c-plantas" readonly tabindex="-1"></div>
+        <div class="campo"><label for="p-muda">Prix du plant<small>R$ par plant</small></label><input id="p-muda" data-k="muda" type="number" step="0.5" min="0"></div>
+        <div class="campo"><label for="p-replantio">Remplacement des manquants<small>% des plants</small></label><input id="p-replantio" data-k="replantio" type="number" step="0.5" min="0"></div>
+      </div>
+      <div class="box"><h5>Sacs et substrat</h5>
+        <div class="campo"><label for="p-vol_saco">Volume du sac<small>litres</small></label><input id="p-vol_saco" data-k="vol_saco" type="number" step="1" min="1"></div>
+        <div class="campo"><label for="p-preco_saco">Prix du sac<small>R$ l'unité</small></label><input id="p-preco_saco" data-k="preco_saco" type="number" step="0.1" min="0"></div>
+        <div class="campo calc"><label>Substrat nécessaire<small>m³, calculé</small></label><input id="c-volsub" readonly tabindex="-1"></div>
+        <div class="comp"><span class="h">Composition</span><span class="h">% vol.</span><span class="h">R$ / m³</span></div>
+        <div class="comp"><label for="p-c1_pct">Écorce de pin compostée</label><input id="p-c1_pct" data-k="c1_pct" type="number" step="1" min="0"><input id="p-c1_rs" data-k="c1_rs" type="number" step="10" min="0" aria-label="Écorce de pin, R$ par m³"></div>
+        <div class="comp"><label for="p-c2_pct">Fibre de coco</label><input id="p-c2_pct" data-k="c2_pct" type="number" step="1" min="0"><input id="p-c2_rs" data-k="c2_rs" type="number" step="10" min="0" aria-label="Fibre de coco, R$ par m³"></div>
+        <div class="comp"><label for="p-c3_pct">Tourbe ou sciure compostée</label><input id="p-c3_pct" data-k="c3_pct" type="number" step="1" min="0"><input id="p-c3_rs" data-k="c3_rs" type="number" step="10" min="0" aria-label="Tourbe, R$ par m³"></div>
+        <div class="comp"><label for="p-c4_pct">Autre composant</label><input id="p-c4_pct" data-k="c4_pct" type="number" step="1" min="0"><input id="p-c4_rs" data-k="c4_rs" type="number" step="10" min="0" aria-label="Autre composant, R$ par m³"></div>
+        <div class="campo calc" id="w-soma"><label>Somme des parts<small>doit faire 100 %</small></label><input id="c-soma" readonly tabindex="-1"></div>
+        <div class="campo"><label for="p-extras_m3">Amendements, transport et remplissage<small>R$ par m³</small></label><input id="p-extras_m3" data-k="extras_m3" type="number" step="1" min="0"></div>
+        <div class="campo calc"><label>Coût moyen du substrat<small>R$ par m³, calculé</small></label><input id="c-custom3" readonly tabindex="-1"></div>
+      </div>
+      <div class="box"><h5>Structure et infrastructure</h5>
+        <div class="campo"><label for="p-tunel_m2">Macrotunnel<small>R$ par m² couvert</small></label><input id="p-tunel_m2" data-k="tunel_m2" type="number" step="1" min="0"></div>
+        <div class="campo"><label for="p-fert_ha">Fertirrigation<small>R$ par hectare planté</small></label><input id="p-fert_ha" data-k="fert_ha" type="number" step="1000" min="0"></div>
+        <div class="campo"><label for="p-gc_m2">Toile de paillage<small>R$ par m² planté</small></label><input id="p-gc_m2" data-k="gc_m2" type="number" step="0.1" min="0"></div>
+        <div class="campo"><label for="p-equip">Équipements<small>pulvérisateur, chariots, caisses (R$)</small></label><input id="p-equip" data-k="equip" type="number" step="1000" min="0"></div>
+        <div class="campo"><label for="p-eletrica">Électricité, projet et autorisations<small>R$</small></label><input id="p-eletrica" data-k="eletrica" type="number" step="1000" min="0"></div>
+        <h5 style="margin-top:12px">Post-récolte</h5>
+        <div class="campo"><label for="p-camara">Chambre froide<small>R$</small></label><input id="p-camara" data-k="camara" type="number" step="1000" min="0"></div>
+        <div class="campo"><label for="p-galpao_m2">Hangar de conditionnement<small>m²</small></label><input id="p-galpao_m2" data-k="galpao_m2" type="number" step="10" min="0"></div>
+        <div class="campo"><label for="p-galpao_rs">Hangar de conditionnement<small>R$ par m²</small></label><input id="p-galpao_rs" data-k="galpao_rs" type="number" step="50" min="0"></div>
+        <div class="campo"><label for="p-equip_pack">Équipements de conditionnement<small>R$</small></label><input id="p-equip_pack" data-k="equip_pack" type="number" step="1000" min="0"></div>
+      </div>
+      <div class="box"><h5>Production et prix</h5>
+        <div class="campo"><label for="p-kg1">Production en année 1<small>kg par plant</small></label><input id="p-kg1" data-k="kg1" type="number" step="0.1" min="0"></div>
+        <div class="campo"><label for="p-kg2">Production à partir de l'année 2<small>kg par plant</small></label><input id="p-kg2" data-k="kg2" type="number" step="0.1" min="0"></div>
+        <div class="campo"><label for="p-perda">Perte sur la surface non couverte<small>% du fruit</small></label><input id="p-perda" data-k="perda" type="number" step="1" min="0" max="100"></div>
+        <div class="campo"><label for="p-preco_cob">Prix du fruit sous couvert<small>R$ par kg</small></label><input id="p-preco_cob" data-k="preco_cob" type="number" step="1" min="0"></div>
+        <div class="campo"><label for="p-preco_desc">Prix du fruit non couvert<small>R$ par kg</small></label><input id="p-preco_desc" data-k="preco_desc" type="number" step="1" min="0"></div>
+        <div class="campo calc"><label>Prix de la caisse de 1,5 kg<small>calculé</small></label><input id="c-caixa" readonly tabindex="-1"></div>
+        <h5 style="margin-top:12px">Coûts variables</h5>
+        <div class="campo"><label for="p-colheita">Récolte<small>R$ par kg</small></label><input id="p-colheita" data-k="colheita" type="number" step="0.1" min="0"></div>
+        <div class="campo"><label for="p-embalagem">Emballage<small>R$ par kg</small></label><input id="p-embalagem" data-k="embalagem" type="number" step="0.1" min="0"></div>
+        <div class="campo"><label for="p-frete">Transport frigorifique<small>R$ par kg</small></label><input id="p-frete" data-k="frete" type="number" step="0.1" min="0"></div>
+        <div class="campo"><label for="p-comissao">Commission, pertes et Funrural<small>% du chiffre d'affaires</small></label><input id="p-comissao" data-k="comissao" type="number" step="0.5" min="0"></div>
+      </div>
+      <div class="box"><h5>Coûts fixes par an</h5>
+        <div class="campo"><label for="p-mo">Main-d'œuvre permanente<small>R$, charges comprises</small></label><input id="p-mo" data-k="mo" type="number" step="1000" min="0"></div>
+        <div class="campo"><label for="p-fert_op">Fertirrigation : engrais et acide<small>R$ par hectare</small></label><input id="p-fert_op" data-k="fert_op" type="number" step="1000" min="0"></div>
+        <div class="campo"><label for="p-defensivos">Phytosanitaires et lutte biologique<small>R$ par hectare</small></label><input id="p-defensivos" data-k="defensivos" type="number" step="500" min="0"></div>
+        <div class="campo"><label for="p-energia">Électricité et eau<small>R$</small></label><input id="p-energia" data-k="energia" type="number" step="1000" min="0"></div>
+        <div class="campo"><label for="p-manut">Entretien et substrat d'appoint<small>R$</small></label><input id="p-manut" data-k="manut" type="number" step="1000" min="0"></div>
+        <div class="campo"><label for="p-consult">Conseil agronomique<small>R$</small></label><input id="p-consult" data-k="consult" type="number" step="1000" min="0"></div>
+        <div class="campo"><label for="p-admin">Administration, comptabilité et assurance<small>R$</small></label><input id="p-admin" data-k="admin" type="number" step="1000" min="0"></div>
+        <div class="campo"><label for="p-filme_m2">Film du macrotunnel<small>R$ par m² de film</small></label><input id="p-filme_m2" data-k="filme_m2" type="number" step="0.5" min="0"></div>
+        <div class="campo"><label for="p-filme_fator">m² de film par m² couvert<small>arceau et pignons</small></label><input id="p-filme_fator" data-k="filme_fator" type="number" step="0.05" min="1"></div>
+        <div class="campo"><label for="p-filme_vida">Durée de vie du film<small>années</small></label><input id="p-filme_vida" data-k="filme_vida" type="number" step="1" min="1"></div>
+        <div class="campo"><label for="p-saco_vida">Durée de vie des sacs<small>années</small></label><input id="p-saco_vida" data-k="saco_vida" type="number" step="1" min="1"></div>
+        <div class="campo"><label for="p-taxa">Taux d'actualisation de la VAN<small>% par an</small></label><input id="p-taxa" data-k="taxa" type="number" step="0.5" min="0"></div>
+      </div>
+    </div>
+    <div class="sim-res" id="sim-res"></div>
+  </div>
+</section>
+
+<section id="investimento">
+  <h3><span class="num">06</span>Investissement (CAPEX)</h3>
+  <p>Séparé en deux blocs : la <strong>plantation</strong>, payée aux mois 1 à 5, et la <strong>post-récolte</strong> (chambre froide et conditionnement), qui n'a besoin d'exister qu'avant la première récolte commerciale, aux mois 12 à 15. Puits, tracteur, clôture et terrassement restent hors périmètre, existants ou écartés.</p>
+  <h4>Bloc 1 · Plantation (mois 1 à 5)</h4>
+  <div class="tabela-wrap"><table>
+    <thead><tr><th>Poste</th><th>Base de calcul</th><th class="num">R$</th><th class="num">%</th></tr></thead>
+    <tbody id="t-capex1"></tbody>
+  </table></div>
+  <h4>Bloc 2 · Post-récolte (mois 12 à 15)</h4>
+  <div class="tabela-wrap"><table>
+    <thead><tr><th>Poste</th><th>Base de calcul</th><th class="num">R$</th></tr></thead>
+    <tbody id="t-capex2"></tbody>
+  </table></div>
+  <h4>Résumé de l'investissement</h4>
+  <div class="tabela-wrap"><table>
+    <thead><tr><th>Bloc</th><th>Quand</th><th class="num">R$</th></tr></thead>
+    <tbody id="t-resumo"></tbody>
+  </table></div>
+  <p class="legenda" id="l-prov"></p>
+
+  <h4>Combien couvrir : comparaison de trois options</h4>
+  <p>Mêmes paramètres, en ne changeant que la surface plantée et la surface couverte. La deuxième ligne couvre toute la surface plantée en macrotunnel ; la troisième ne plante que la surface couverte.</p>
+  <div class="tabela-wrap"><table>
+    <thead><tr><th>Option</th><th class="num">Plantation</th><th class="num">Production à maturité</th><th class="num">EBITDA à maturité</th><th class="num">TRI 10 ans</th><th class="num">Retour</th></tr></thead>
+    <tbody id="t-comp"></tbody>
+  </table></div>
+  <p class="legenda" id="l-comp"></p>
+</section>
+
+<section id="custos">
+  <h3><span class="num">07</span>Coûts d'exploitation à maturité</h3>
+  <p id="p-custos-intro"></p>
+  <div class="tabela-wrap"><table>
+    <thead><tr><th>Poste</th><th>Base</th><th class="num">R$/an</th><th class="num">R$/kg</th></tr></thead>
+    <tbody id="t-custos"></tbody>
+  </table></div>
+  <p id="p-custos-pe"></p>
+</section>
+
+<section id="projecao">
+  <h3><span class="num">08</span>Projection sur dix ans</h3>
+  <div class="tabela-wrap"><table>
+    <thead><tr><th>Année</th><th class="num">kg/plant</th><th class="num">Production (t)</th><th class="num">Chiffre d'affaires</th><th class="num">Coût d'exploitation</th><th class="num">EBITDA</th><th class="num">Trésorerie cumulée</th></tr></thead>
+    <tbody id="proj"></tbody>
+  </table></div>
+  <p class="legenda" id="l-proj"></p>
+  <figure>
+    <div class="ftitle">Résultat annuel et trésorerie cumulée</div>
+    <div class="chart-legend"><span><i style="background:var(--verde)"></i>EBITDA de l'année</span><span><i style="background:var(--ocre)"></i>EBITDA négatif</span><span><i class="line" style="background:var(--mirtilo)"></i>Trésorerie cumulée</span></div>
+    <div class="chart-box"><svg class="chart" id="chart" viewBox="0 0 800 340" role="img" aria-label="Graphique en barres de l'EBITDA annuel et courbe de la trésorerie cumulée sur dix ans"></svg><div class="tip" id="tip"></div></div>
+    <figcaption id="cap-chart"></figcaption>
+  </figure>
+</section>
+
+<section id="sensibilidade">
+  <h3><span class="num">09</span>Sensibilité : prix × productivité</h3>
+  <p>TRI sur dix ans selon le prix reçu sur la surface couverte (la surface non couverte garde le même écart de prix que dans les paramètres) et la productivité réalisée par rapport à la courbe des paramètres. La cellule de base est au centre.</p>
+  <div class="tabela-wrap"><table class="sens">
+    <thead><tr><th>Prix sous couvert</th><th class="num">70 % de la production</th><th class="num">85 %</th><th class="num">100 %</th><th class="num">115 %</th></tr></thead>
+    <tbody id="t-sens"></tbody>
+  </table></div>
+  <p class="legenda">Vert : TRI égal ou supérieur au taux d'actualisation. Orange : le projet ne récupère pas le capital en dix ans.</p>
+  <p id="p-sens-txt"></p>
+</section>
+
+<section id="riscos">
+  <h3><span class="num">10</span>Risques et parades</h3>
+  <div class="tabela-wrap"><table>
+    <thead><tr><th>Risque</th><th>Impact</th><th>Parade prévue</th></tr></thead>
+    <tbody>
+      <tr><td>Baisse du prix de gros avec la croissance de la production paulista</td><td>Élevé. Chaque R$ 4/kg en moins retire environ <span data-d="drop4"></span> points de TRI</td><td>40 % du volume en détail direct sous marque ; échelonner la récolte vers juin à août ; contrat d'approvisionnement avec 1 ou 2 enseignes régionales avant l'année 3</td></tr>
+      <tr><td>Productivité inférieure aux prévisions (chaleur, faible froid)</td><td>Élevé. À 70 % de la courbe, le TRI tombe à <span data-d="tir70"></span> ; avec la courbe de la littérature, à <span data-d="tir_lit"></span></td><td>Variétés éprouvées à São Paulo ; implanter 1 ha d'abord et mesurer ; ombrage de 20 à 30 % en été si le verger souffre du rayonnement</td></tr>
+      <tr><td><em>Drosophila suzukii</em> et botrytis</td><td>Moyen. Pertes de 10 à 30 % les années pluvieuses</td><td>Pièges, récolte fréquente, retrait des fruits tombés, lutte biologique ; le macrotunnel réduit déjà le botrytis sous couvert</td></tr>
+      <tr><td>Eau inadaptée (alcalinité, fer, chlore)</td><td>Élevé si découvert tard</td><td>Analyse complète avant tout achat ; injection d'acide dimensionnée pour le pire cas ; bassin de décantation</td></tr>
+      <tr><td>Manque de cueilleurs au pic</td><td>Moyen. Le fruit passe en 3 jours</td><td>Partenariat avec une coopérative de travail rural ; embauche saisonnière déclarée ; échelonner les variétés</td></tr>
+      <tr><td>Oiseaux, grêle et brûlure sur la surface non couverte</td><td>Moyen. Chaque 10 points de perte en plus retirent environ <span data-d="drop_perda"></span> points de TRI</td><td>Filet anti-oiseaux léger sur les rangs (R$ 3 à 4/m²) dès l'année 2 ; couvrir définitivement avant l'année 3</td></tr>
+      <tr><td>Vent et grêle sur le macrotunnel</td><td>Moyen, épisodique</td><td>Dimensionner le macrotunnel pour un vent de 100 km/h, film garanti UV et ancrage renforcé ; assurance agricole sur la structure</td></tr>
+      <tr><td>Plant de mauvaise qualité ou hors type à R$ <span data-d="muda"></span></td><td>Élevé et irréversible sur 10 ans</td><td>Acheter chez une pépinière enregistrée au RENASEM, avec certificat phytosanitaire ; visiter la pépinière ; retenir 20 % du paiement jusqu'à 90 jours après plantation</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="financiamento">
+  <h3><span class="num">11</span>Financement et fiscalité</h3>
+  <div class="grid2">
+    <div class="box"><h5>Lignes de crédit</h5>
+      <ul>
+        <li><strong>Pronamp</strong> (producteur moyen, chiffre d'affaires jusqu'à R$ 3 millions) : investissement à environ 8 % par an, jusqu'à 8 ans dont 3 de différé. Couvre structure, irrigation et plants.</li>
+        <li><strong>BNDES Finame</strong> pour tracteur, chambre froide et équipements.</li>
+        <li><strong>Desenvolve SP</strong> et <strong>FEAP</strong> (fonds d'expansion de l'agro-industrie de l'État de São Paulo) pour l'irrigation et la protection des cultures.</li>
+      </ul>
+      <p>Avec 60 % de la plantation et de la post-récolte financés à 8 % par an, 3 ans de différé et 5 d'amortissement, les fonds propres nécessaires tombent à environ R$ <span data-d="equity"></span> et la trésorerie du propriétaire devient positive <span data-d="ano_pos"></span>.</p>
+    </div>
+    <div class="box"><h5>Impôts et cotisations</h5>
+      <ul>
+        <li><strong>Funrural</strong> : 1,5 % du chiffre d'affaires brut (personne physique), déjà inclus dans les coûts.</li>
+        <li><strong>ICMS</strong> (TVA d'État) : le fruit frais est exonéré sur les ventes internes à l'État de São Paulo.</li>
+        <li><strong>Impôt sur le revenu</strong> : la personne physique déclare sur le livre de caisse (jusqu'à 27,5 % du bénéfice) ou sur une base forfaitaire de 20 % du chiffre d'affaires ; une société au régime « Lucro Presumido » paie environ 3,1 % du chiffre d'affaires brut. Au-delà de R$ 1 million de chiffre d'affaires, la société est souvent plus avantageuse.</li>
+        <li>Les investissements (CAPEX) sont intégralement déductibles l'année de l'achat en activité rurale (personne physique), ce qui réduit l'impôt pendant l'implantation.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="proximos">
+  <h3><span class="num">12</span>Prochaines étapes</h3>
+  <ol>
+    <li><strong>Analyse de l'eau</strong> de la source prévue (pH, alcalinité, fer, sodium, chlorures, conductivité). Moins de R$ 500 et cela décide du projet.</li>
+    <li><strong>Seconde visite chez le producteur</strong> rencontré le 10/09, de préférence pendant la récolte, pour voir en pratique le tri, l'emballage, le rythme de cueillette et la conduite qui donne <span data-d="kg1"></span> kg dès la première année.</li>
+    <li><strong>Spécification du macrotunnel</strong> pour l'hectare 1 (portée, hauteur, film, filet latéral anti-oiseaux, ventilation) et devis d'un filet anti-oiseaux léger pour l'hectare 2.</li>
+    <li><strong>Confirmation des plants</strong> : pépinière, variétés, taille, certificat et délai de livraison pour une plantation entre mars et mai 2027.</li>
+    <li><strong>Premier contact commercial</strong> avec un grossiste de la CEAGESP et deux enseignes régionales, pour voir comment les R$ <span data-d="preco_caixa"></span> par caisse tiennent au fil de la saison.</li>
+    <li><strong>Décision sur la couverture de la surface restante</strong> : <span data-d="cobrir_txt"></span></li>
+  </ol>
+</section>
+
+<section id="fontes">
+  <h3><span class="num">13</span>Sources et base des estimations</h3>
+  <ul class="fontes">
+    <li>CEAGESP, cotations de la myrtille au marché de gros de São Paulo (bulletin des prix) : R$ 26,67 à 34,71/kg en novembre et décembre 2025 ; R$ 96,20/kg en janvier 2025. <a href="https://ceagesp.gov.br/guia-ceagesp/mirtilo/">ceagesp.gov.br/guia-ceagesp/mirtilo</a></li>
+    <li>Hortifruti/Cepea (Esalq-USP), dossier myrtille : part du produit paulista à la CEAGESP et origine des importations (Chili 66 %, Pérou 14 %, Uruguay 9 %, Argentine 6 %). <a href="https://www.cepea.org.br/br/releases/hf-brasil-cepea-na-edicao-de-abril-revista-traz-um-especial-sobre-mirtilo.aspx">cepea.org.br</a></li>
+    <li>Revista Brasileira de Fruticultura (SciELO), performance initiale de variétés à faible besoin en froid dans l'État de São Paulo. <a href="https://www.scielo.br/j/rbf/a/cG47Fsqm583VwcmNtb8KQWv/?lang=pt">scielo.br</a></li>
+    <li>Embrapa Clima Temperado, Système de production de la myrtille (2023) : conduite, nutrition, ravageurs et post-récolte. <a href="https://www.infoteca.cnptia.embrapa.br/infoteca/bitstream/doc/1155980/1/Sistema-de-Producao-do-Mirtilo.pdf">infoteca.cnptia.embrapa.br</a></li>
+    <li>Presse spécialisée sur le coût d'implantation en pots (R$ 650 à 900 mille par hectare) et les densités de 6 000 à 8 000 plants/ha. <a href="https://campoenegocios.com/mirtilo-tropical-o-ouro-azul-da-nova-fruticultura-brasileira/">campoenegocios.com</a>, <a href="https://aegro.com.br/blog/pequenas-frutas-lucro-custos-producao/">aegro.com.br</a></li>
+    <li>Prix de R$ 60 la caisse de 1,5 kg et courbe de production (0,8 et 2,5 kg/plant) : relevés auprès d'un producteur de myrtilles en activité, réunion du 10 septembre 2026. Devis du macrotunnel : Plantfort.</li>
+    <li>Coûts des sacs, du substrat, de la fertirrigation, de l'emballage et de la main-d'œuvre : estimations de marché pour l'intérieur de l'État de São Paulo en 2026, à confirmer par devis.</li>
+  </ul>
+</section>
+
+<footer>
+  Plantfort Estufas Agrícolas · Business plan préparé en septembre 2026 pour évaluation interne.<br>
+  Toutes les valeurs sont des estimations en réais courants et doivent être confirmées par des devis et des analyses locales avant toute décision d'investissement.
+</footer>
+</div>
+
+<script>
+(function(){
+  var DEF={area:2,area_cob:1,esp_linha:2.5,esp_saco:0.6,linha_max:50,corredor:3,arred:100,muda:20,replantio:3,vol_saco:30,preco_saco:3.5,
+    c1_pct:60,c1_rs:280,c2_pct:30,c2_rs:380,c3_pct:10,c3_rs:300,c4_pct:0,c4_rs:0,extras_m3:55,
+    tunel_m2:20,fert_ha:55000,gc_m2:1.8,equip:35000,eletrica:25000,
+    camara:55000,galpao_m2:120,galpao_rs:600,equip_pack:13000,
+    kg1:0.8,kg2:2.5,perda:25,preco_cob:40,preco_desc:38,
+    colheita:3,embalagem:4,frete:1.5,comissao:9.5,
+    mo:90000,fert_op:30000,defensivos:8000,energia:12000,manut:20000,consult:36000,admin:40000,
+    filme_m2:7,filme_fator:1.3,filme_vida:4,saco_vida:5,taxa:12};
+  var KEY='plantfort-mirtilo-params-v1';
+  var LIT=[0.3,1.0,1.8,2.3,2.5,2.5,2.5,2.5,2.5,2.5];
+
+  function br(n){var s=Math.round(Math.abs(n)).toString().replace(/\B(?=(\d{3})+(?!\d))/g,' ');return (n<0?'−':'')+s;}
+  function rs(n){return 'R$ '+br(n);}
+  function dec(n,d){d=(d===undefined)?1:d;var s=Math.abs(n).toFixed(d).replace('.',',');return (n<0?'−':'')+s;}
+  function pct(x){return dec(x*100,1)+' %';}
+  function mi(n){var a=Math.abs(n);var s=a>=1e6?dec(a/1e6,2)+' M':dec(a/1e3,0)+' k';return (n<0?'−':'')+s;}
+  function irr(f){var lo=-0.99,hi=10,npv=function(r){var s=0;for(var t=0;t<f.length;t++)s+=f[t]/Math.pow(1+r,t);return s;};
+    if(npv(lo)*npv(hi)>0)return null;for(var i=0;i<200;i++){var m=(lo+hi)/2;if(npv(m)>0)lo=m;else hi=m;}return lo;}
+  function npv(r,f){var s=0;for(var t=0;t<f.length;t++)s+=f[t]/Math.pow(1+r,t);return s;}
+
+  function calc(p,o){
+    o=o||{};
+    var area=Math.max(0,o.area!==undefined?o.area:p.area);
+    var cob=Math.min(Math.max(0,o.area_cob!==undefined?o.area_cob:p.area_cob),area);
+    var arred=Math.max(1,p.arred||1);
+    var util=(p.linha_max>0&&p.corredor>0)?p.linha_max/(p.linha_max+p.corredor):1;
+    var plha=Math.floor(10000/(p.esp_linha*p.esp_saco)*util/arred)*arred;
+    var plantas=Math.round(plha*area), plc=Math.round(plha*cob), pld=plantas-plc;
+    var volsub=plantas*p.vol_saco/1000;
+    var soma=p.c1_pct+p.c2_pct+p.c3_pct+p.c4_pct;
+    var custo_m3=(p.c1_pct*p.c1_rs+p.c2_pct*p.c2_rs+p.c3_pct*p.c3_rs+p.c4_pct*p.c4_rs)/100+p.extras_m3;
+    var capex1=[
+      ['Plants',br(plantas)+' × R$ '+dec(p.muda,2)+' + '+dec(p.replantio,1)+' % de remplacement',plantas*p.muda*(1+p.replantio/100)],
+      ['Macrotunnel Plantfort',br(cob*10000)+' m² ('+dec(cob,1)+' ha) × R$ '+dec(p.tunel_m2,2)+'/m², film et filet latéral',cob*10000*p.tunel_m2],
+      ['Substrat',dec(volsub,0)+' m³ × R$ '+dec(custo_m3,2)+'/m³ (composition des paramètres)',volsub*custo_m3],
+      ['Fertirrigation','R$ '+br(p.fert_ha)+'/ha × '+dec(area,1)+' ha : pompe, injecteurs, automatisme, lignes et goutteurs',p.fert_ha*area],
+      ['Sacs de culture '+br(p.vol_saco)+' L',br(plantas)+' × R$ '+dec(p.preco_saco,2),plantas*p.preco_saco],
+      ['Toile de paillage',br(area*10000)+' m² × R$ '+dec(p.gc_m2,2),area*10000*p.gc_m2],
+      ['Équipements','Pulvérisateur, chariots de récolte, caisses et outillage',p.equip],
+      ['Électricité, projet et autorisations','Raccordement et armoire de la pompe, projet d’exécution, autorisation d’eau',p.eletrica]
+    ];
+    var plantio=0;capex1.forEach(function(r){plantio+=r[2];});
+    var capex2=[['Chambre froide','0 à 2 °C, panneaux, évaporateur et condenseur',p.camara],
+      ['Hangar de conditionnement',br(p.galpao_m2)+' m² × R$ '+br(p.galpao_rs)+'/m²',p.galpao_m2*p.galpao_rs],
+      ['Équipements de conditionnement','Table de tri, balances, scelleuse',p.equip_pack]];
+    var pos=0;capex2.forEach(function(r){pos+=r[2];});
+    var prov=(cob*10000*p.filme_fator*p.filme_m2)/Math.max(1,p.filme_vida)+(plantas*p.preco_saco)/Math.max(1,p.saco_vida);
+    var fixos=[['Main-d’œuvre permanente','Salariés charges comprises, toute l’année',p.mo],
+      ['Fertirrigation : engrais et acide','R$ '+br(p.fert_op)+'/ha × '+dec(area,1)+' ha',p.fert_op*area],
+      ['Phytosanitaires et lutte biologique','R$ '+br(p.defensivos)+'/ha × '+dec(area,1)+' ha',p.defensivos*area],
+      ['Électricité et eau','Pompage et chambre froide',p.energia],
+      ['Entretien et substrat d’appoint','',p.manut],
+      ['Provision de remplacement du film et des sacs','Film tous les '+p.filme_vida+' ans, sacs tous les '+p.saco_vida,prov],
+      ['Conseil agronomique','Visite mensuelle et analyses',p.consult],
+      ['Administration, comptabilité et assurance agricole','',p.admin]];
+    var fixo=0;fixos.forEach(function(r){fixo+=r[2];});
+    var pc=o.preco_cob!==undefined?o.preco_cob:p.preco_cob, pd=o.preco_desc!==undefined?o.preco_desc:p.preco_desc;
+    var fator=o.fator||1, curva=o.curva||null;
+    var vkg=p.colheita+p.embalagem+p.frete, com=p.comissao/100, perda=p.perda/100;
+    var anos=[],f=[-plantio],acum=-plantio;
+    for(var t=1;t<=10;t++){
+      var kgp=(curva?curva[t-1]:(t===1?p.kg1:p.kg2))*fator;
+      var kgc=plc*kgp,kgd=pld*kgp*(1-perda),kg=kgc+kgd;
+      var rec=kgc*pc+kgd*pd, vr=kg*vkg+com*rec, custo=fixo+vr, e=rec-custo, inv=(t===1?pos:0);
+      acum+=e-inv;f.push(e-inv);
+      anos.push({ano:t,kgp:kgp,kg:kg,kgc:kgc,kgd:kgd,rec:rec,custo:custo,fixo:fixo,vr:vr,e:e,inv:inv,acum:acum});
+    }
+    var giro=0;anos.forEach(function(a){if(a.e<0)giro+=-a.e;});
+    var pb=null;for(var i=0;i<anos.length;i++){if(anos[i].acum>=0){pb=anos[i].ano;break;}}
+    var m=anos[1];
+    return {area:area,cob:cob,util:util,plha:plha,plantas:plantas,plc:plc,pld:pld,volsub:volsub,soma:soma,custo_m3:custo_m3,
+      capex1:capex1,capex2:capex2,plantio:plantio,pos:pos,fixos:fixos,fixo:fixo,prov:prov,giro:giro,total:plantio+pos+giro,
+      anos:anos,f:f,tir:irr(f),vpl:npv(p.taxa/100,f),pb:pb,mat:m,pc:pc,pd:pd,vkg:vkg,com:com};
+  }
+
+  var P=Object.assign({},DEF);
+  try{var s=localStorage.getItem(KEY);if(s){var o=JSON.parse(s);for(var k in DEF)if(typeof o[k]==='number'&&isFinite(o[k]))P[k]=o[k];}}catch(e){}
+  var inputs=document.querySelectorAll('.sim input[data-k]');
+  function fill(){inputs.forEach(function(el){el.value=P[el.getAttribute('data-k')];});}
+  inputs.forEach(function(el){el.addEventListener('input',function(){var v=parseFloat(el.value.replace(',','.'));if(isFinite(v)){P[el.getAttribute('data-k')]=v;try{localStorage.setItem(KEY,JSON.stringify(P));}catch(e){}render();}});});
+  document.getElementById('btn-reset').addEventListener('click',function(){P=Object.assign({},DEF);try{localStorage.removeItem(KEY);}catch(e){}fill();render();});
+  document.getElementById('btn-copy').addEventListener('click',function(){var txt=JSON.stringify(P);var b=this;
+    if(navigator.clipboard){navigator.clipboard.writeText(txt).then(function(){b.textContent='Copié';setTimeout(function(){b.textContent='Copier les paramètres';},1500);});}
+    else{window.prompt('Paramètres :',txt);}});
+
+  function setv(id,v){var el=document.getElementById(id);if(el)el.value=v;}
+  function setT(id,v){var el=document.getElementById(id);if(el)el.textContent=v;}
+  function setH(id,v){var el=document.getElementById(id);if(el)el.innerHTML=v;}
+  function tdn(v,cls){return '<td class="num'+(cls?' '+cls:'')+'">'+v+'</td>';}
+  function pbTxt(pb){return pb?('année '+pb):'pas de retour en 10 ans';}
+  function tirTxt(t){return t===null?'—':pct(t);}
+
+  function setDyn(R,full,lit){
+    var d4=calc(P,{preco_cob:P.preco_cob-4,preco_desc:P.preco_desc-4}), s70=calc(P,{fator:0.7}), pp=Object.assign({},P,{perda:Math.min(100,P.perda+10)}), pd=calc(pp);
+    var pts=function(a,b){return (a===null||b===null)?'—':dec(Math.abs(a-b)*100,0);};
+    var firstPos=null;for(var i=0;i<R.anos.length;i++){if(R.anos[i].e>0){firstPos=R.anos[i].ano;break;}}
+    var D={area:dec(R.area,1),area_int:(R.area===1?'1 hectare':dec(R.area,R.area%1?1:0)+' hectares'),area_cob:dec(R.cob,1),plantas:br(R.plantas),plha:br(R.plha),
+      esp_linha:dec(P.esp_linha,P.esp_linha%1?(P.esp_linha*10%1?2:1):1),esp_saco:dec(P.esp_saco,2),linha_max:br(P.linha_max),corredor:dec(P.corredor,P.corredor%1?1:0),util:dec(R.util*100,1),muda:dec(P.muda,2),replantio:dec(P.replantio,P.replantio%1?1:0),vol_saco:br(P.vol_saco),custo_m3:dec(R.custo_m3,0),
+      tunel_total:mi(R.cob*10000*P.tunel_m2),tunel_area:br(R.cob*10000),tunel_m2:dec(P.tunel_m2,P.tunel_m2%1?2:0),
+      cob_de_area:(R.cob>=R.area?'toute la surface':dec(R.cob,1)+' des '+dec(R.area,1)+' hectares'),
+      desc_txt:(R.cob>=R.area?'Toute la surface plantée est couverte.':'La surface restante ('+dec(R.area-R.cob,1)+' ha) reste à découvert.'),
+      kg1:dec(P.kg1,1),kg2:dec(P.kg2,1),perda:dec(P.perda,0),preco_cob:dec(P.preco_cob,0),preco_caixa:dec(P.preco_cob*1.5,0),preco_desc:dec(P.preco_desc,0),comissao:dec(P.comissao,1),
+      pos:mi(R.pos),t1:dec(R.anos[0].kg/1000,0),equity:mi(Math.max(0,R.total-0.6*(R.plantio+R.pos))),
+      ano_pos:(firstPos?'dès l’année '+firstPos:'seulement après l’année 10'),
+      drop4:pts(R.tir,d4.tir),tir70:tirTxt(s70.tir),tir_lit:tirTxt(lit.tir),drop_perda:pts(R.tir,pd.tir),
+      cobrir_txt:(R.cob<R.area?'second macrotunnel sur la surface restante en même temps que le premier (R$ '+br(full.plantio-R.plantio)+' de plus, TRI de '+tirTxt(full.tir)+') ou plus tard, avec la trésorerie de la production, avant la récolte de l’année 3.':'toute la surface est déjà couverte dans ce scénario.')};
+    var els=document.querySelectorAll('[data-d]');for(var i=0;i<els.length;i++){var k=els[i].getAttribute('data-d');if(D[k]!==undefined)els[i].textContent=D[k];}
+  }
+
+  function render(){
+    var R=calc(P);
+    setv('c-util',dec(R.util*100,1)+' %');setv('c-plha',br(R.plha));setv('c-plantas',br(R.plantas));setv('c-volsub',dec(R.volsub,0)+' m³');
+    setv('c-soma',dec(R.soma,0)+' %');document.getElementById('w-soma').classList.toggle('warn',Math.abs(R.soma-100)>0.01);
+    setv('c-custom3','R$ '+dec(R.custo_m3,2));setv('c-caixa','R$ '+dec(P.preco_cob*1.5,2));
+    setH('sim-res','<span>Plantation <b>'+rs(R.plantio)+'</b></span><span>Investissement total <b>'+rs(R.total)+'</b></span><span>EBITDA à maturité <b>'+rs(R.mat.e)+'/an</b></span><span>Retour <b>'+pbTxt(R.pb)+'</b></span><span>TRI 10 ans <b>'+tirTxt(R.tir)+'</b></span>'+(Math.abs(R.soma-100)>0.01?'<span style="color:var(--ocre)">La composition du substrat ne fait pas 100 %.</span>':''));
+    setH('k-invest','R$ '+mi(R.total).replace(' M','<small> M</small>').replace(' k','<small> k</small>'));
+    setT('k-invest-n','plantation '+dec(R.plantio/1e6,2)+' + post-récolte '+dec(R.pos/1e6,2)+' + fonds de roulement '+dec(R.giro/1e6,2)+' (R$ M)');
+    setH('k-rec','R$ '+mi(R.mat.rec).replace(' M','<small> M/an</small>').replace(' k','<small> k/an</small>'));
+    setT('k-rec-n',dec(R.mat.kg/1000,1)+' t/an à partir de l’année 2, R$ '+dec(R.pc,0)+'/kg');
+    setH('k-ebitda','R$ '+mi(R.mat.e).replace(' M','<small> M/an</small>').replace(' k','<small> k/an</small>'));
+    setT('k-ebitda-n','marge de '+(R.mat.rec?pct(R.mat.e/R.mat.rec):'—')+' · coût R$ '+dec(R.mat.kg?R.mat.custo/R.mat.kg:0,2)+'/kg');
+    setH('k-pb',(R.pb?'année '+R.pb:'>10')+'<small> · '+tirTxt(R.tir)+'</small>');
+    setT('k-pb-n',dec(R.cob,1)+' ha sous macrotunnel sur '+dec(R.area,1)+' ha, sans financement');
+    var full=calc(P,{area_cob:P.area}), lit=calc(P,{curva:LIT}), low=calc(P,{preco_cob:P.preco_cob-8,preco_desc:P.preco_desc-8});
+    setDyn(R,full,lit);
+    setH('v1','<strong>Lecture directe.</strong> Avec une vente à R$ '+dec(P.preco_cob*1.5,0)+' la caisse de 1,5 kg (R$ '+dec(P.preco_cob,0)+'/kg) et une production de '+dec(P.kg1,1)+' kg par plant la première année puis '+dec(P.kg2,1)+' kg à partir de la deuxième, le projet '+(R.pb?'est remboursé en <strong>année '+R.pb+'</strong>':'<strong>n’est pas remboursé en dix ans</strong>')+' avec un TRI de '+tirTxt(R.tir)+' sur dix ans, avec '+dec(R.cob,1)+' ha sous macrotunnel sur '+dec(R.area,1)+' ha plantés. Le verger dégage environ '+rs(R.mat.e)+' par an d’EBITDA à partir de l’année 2 et le fonds de roulement nécessaire est de '+rs(R.giro)+'.');
+    var cobTxt=(R.cob<R.area)?' Couvrir toute la surface en macrotunnel ('+rs(full.plantio-R.plantio)+' de plus) '+(full.mat.e>=R.mat.e?'ajoute':'retire')+' '+rs(Math.abs(full.mat.e-R.mat.e))+' par an d’EBITDA et porte le TRI à '+tirTxt(full.tir)+'.':' Toute la surface plantée est couverte dans ce scénario.';
+    setH('v2','Prix et production viennent d’un <strong>producteur de myrtilles en activité</strong>, rencontré le 10 septembre 2026, et forment donc la base du plan. Par prudence, le plan montre aussi le cas conservateur : avec la courbe de production de la littérature (0,3 kg en année 1 jusqu’à 2,5 kg seulement en année 5), le TRI est de '+tirTxt(lit.tir)+' et le retour '+(lit.pb?'en année '+lit.pb:'n’a pas lieu en dix ans')+' ; à R$ '+dec(P.preco_cob-8,0)+'/kg, le TRI est de '+tirTxt(low.tir)+'.'+cobTxt);
+    var h='';R.capex1.forEach(function(r){h+='<tr><td>'+r[0]+'</td><td>'+r[1]+'</td>'+tdn(br(r[2]))+tdn(R.plantio?dec(r[2]/R.plantio*100,0)+' %':'—')+'</tr>';});
+    h+='<tr class="total"><td>Investissement de plantation</td><td>R$ '+br(R.area?R.plantio/R.area:0)+' par hectare · R$ '+dec(R.plantas?R.plantio/R.plantas:0,2)+' par plant</td>'+tdn(br(R.plantio))+tdn('100 %')+'</tr>';
+    setH('t-capex1',h);
+    h='';R.capex2.forEach(function(r){h+='<tr><td>'+r[0]+'</td><td>'+r[1]+'</td>'+tdn(br(r[2]))+'</tr>';});
+    h+='<tr class="total"><td>Investissement post-récolte</td><td>Avec un hangar déjà utilisable, tombe à '+rs(R.pos-P.galpao_m2*P.galpao_rs)+'</td>'+tdn(br(R.pos))+'</tr>';
+    setH('t-capex2',h);
+    setH('t-resumo','<tr><td>Plantation</td><td>Mois 1 à 5</td>'+tdn(br(R.plantio))+'</tr><tr><td>Post-récolte</td><td>Mois 12 à 15</td>'+tdn(br(R.pos))+'</tr><tr><td>Fonds de roulement</td><td>Couvre la trésorerie d’exploitation négative des premières années</td>'+tdn(br(R.giro))+'</tr><tr class="total"><td>Investissement total</td><td>R$ '+br(R.area?R.total/R.area:0)+' par hectare</td>'+tdn(br(R.total))+'</tr>');
+    setT('l-prov','Le plan provisionne '+rs(R.prov)+' par an pour le remplacement du film du macrotunnel (tous les '+P.filme_vida+' ans) et des sacs (tous les '+P.saco_vida+' ans).');
+    var only=calc(P,{area:P.area_cob,area_cob:P.area_cob});
+    function crow(lab,S){return '<tr><td>'+lab+'</td>'+tdn(br(S.plantio))+tdn(dec(S.mat.kg/1000,1)+' t')+tdn(br(S.mat.e))+tdn(tirTxt(S.tir))+tdn(S.pb?'année '+S.pb:'>10')+'</tr>';}
+    setH('t-comp',crow('<strong>Base</strong> · '+dec(R.area,1)+' ha plantés, '+dec(R.cob,1)+' ha couvert(s)',R)+crow(dec(R.area,1)+' ha plantés, tout couvert (+ '+rs(full.plantio-R.plantio)+')',full)+crow('Seule la surface couverte plantée ('+dec(R.cob,1)+' ha)',only));
+    setT('l-comp',(R.cob<R.area)?('Couvrir toute la surface '+(full.mat.e>=R.mat.e?'ajoute ':'retire ')+rs(Math.abs(full.mat.e-R.mat.e))+' par an d’EBITDA'+(full.mat.e>R.mat.e?' : le macrotunnel supplémentaire se rembourse en '+dec((full.plantio-R.plantio)/(full.mat.e-R.mat.e),1)+' an(s) de pleine production.':'.')):'Toute la surface plantée est déjà couverte.');
+    var m=R.mat;
+    setH('p-custos-intro','À partir de l’année 2, '+dec(m.kg/1000,1)+' t récoltées ('+dec(m.kgc/1000,1)+' t sous couvert et '+dec(m.kgd/1000,1)+' t à découvert). Les coûts fixes ne dépendent pas du volume ; les variables suivent les kilos vendus.');
+    var rows=[];R.fixos.forEach(function(r){rows.push([r[0],r[1],r[2]]);});
+    rows.push(['Récolte (saisonniers)','R$ '+dec(P.colheita,2)+' par kg cueilli',P.colheita*m.kg]);
+    rows.push(['Emballage','Barquette de 125 g, étiquette, caisse : R$ '+dec(P.embalagem,2)+'/kg',P.embalagem*m.kg]);
+    rows.push(['Transport frigorifique','R$ '+dec(P.frete,2)+'/kg vers São Paulo et les clients régionaux',P.frete*m.kg]);
+    rows.push(['Commission, pertes et Funrural',dec(P.comissao,1)+' % du chiffre d’affaires brut',R.com*m.rec]);
+    rows.sort(function(a,b){return b[2]-a[2];});
+    h='';rows.forEach(function(r){h+='<tr><td>'+r[0]+'</td><td>'+r[1]+'</td>'+tdn(br(r[2]))+tdn(m.kg?dec(r[2]/m.kg,2):'—')+'</tr>';});
+    h+='<tr class="total"><td>Coût d’exploitation total</td><td>'+br(m.kg)+' kg</td>'+tdn(br(m.custo))+tdn(m.kg?dec(m.custo/m.kg,2):'—')+'</tr>';
+    setH('t-custos',h);
+    var pmed=m.kg?m.rec/m.kg:0, mc=pmed-R.vkg-R.com*pmed, pe=mc>0?R.fixo/mc/1000:0;
+    setH('p-custos-pe','La marge sur coûts variables est de R$ '+dec(mc,2)+' par kg vendu au prix moyen de R$ '+dec(pmed,2)+'. Les coûts fixes de '+rs(R.fixo)+' par an exigent <strong>'+dec(pe,1)+' t</strong> pour atteindre l’équilibre d’exploitation'+(R.anos[0].kg/1000>=pe?', déjà atteint en année 1.':(m.kg/1000>=pe?' : l’année 1 récolte '+dec(R.anos[0].kg/1000,1)+' t et l’année 2 le dépasse largement.':' : la production à maturité n’atteint pas ce volume.'))+' Au-delà, chaque kilo supplémentaire laisse R$ '+dec(mc,0)+' en trésorerie.');
+    h='';R.anos.forEach(function(a){h+='<tr><td>Année '+a.ano+'</td>'+tdn(dec(a.kgp,1))+tdn(dec(a.kg/1000,1))+tdn(br(a.rec))+tdn(br(a.custo))+tdn(br(a.e),a.e<0?'neg':'')+tdn(br(a.acum),a.acum<0?'neg':(a.ano===R.pb?'rec':''))+'</tr>';});
+    setH('proj',h);
+    setT('l-proj','La trésorerie cumulée part de −R$ '+br(R.plantio)+' (plantation en année 0) et déduit les R$ '+br(R.pos)+' de post-récolte en année 1. Sans impôt sur le résultat ni intérêts. Prix fixes de R$ '+dec(R.pc,0)+'/kg (couvert) et R$ '+dec(R.pd,0)+'/kg (à découvert) en réais courants. La colonne kg/plant est celle de la surface couverte.');
+    setT('cap-chart',(R.pb?'La trésorerie cumulée repasse au-dessus de zéro en année '+R.pb+'.':'La trésorerie cumulée ne repasse pas au-dessus de zéro en dix ans.')+' Survolez les barres pour voir les valeurs.');
+    drawChart(R);
+    var fat=[0.7,0.85,1.0,1.15], dif=P.preco_cob-P.preco_desc, taxa=P.taxa/100;
+    h='';[-12,-8,-4,0,4,8].forEach(function(d){var pc=P.preco_cob+d;h+='<tr><td>'+(d===0?'<strong>R$ '+dec(pc,0)+'/kg</strong>':'R$ '+dec(pc,0)+'/kg')+' (R$ '+dec(pc*1.5,0)+'/caisse)</td>';
+      fat.forEach(function(fx){var S=calc(P,{preco_cob:pc,preco_desc:pc-dif,fator:fx});var t=S.tir;var cls=t===null?'bad':(t>=taxa?'ok':(t>=0?'meh':'bad'));var txt=tirTxt(t);if(d===0&&fx===1)txt='<strong>'+txt+'</strong>';h+=tdn(txt,cls);});h+='</tr>';});
+    setH('t-sens',h);
+    var up=calc(P,{preco_cob:P.preco_cob+4,preco_desc:P.preco_desc+4}), more=calc(P,{fator:1.15});
+    setH('p-sens-txt','R$ 4/kg de plus sur le prix '+(up.tir!==null&&more.tir!==null?(Math.abs(up.tir-more.tir)<0.02?'vaut à peu près autant que':(up.tir>more.tir?'vaut plus que':'vaut moins que')):'se compare à')+' 15 % de production en plus. Avec la courbe de production de la littérature (0,3 · 1,0 · 1,8 · 2,3 · 2,5 kg les années 1 à 5), le TRI est de '+tirTxt(lit.tir)+' et le retour '+(lit.pb?'en année '+lit.pb:'n’a pas lieu en dix ans')+'. C’est pourquoi le plan traite le canal de vente et la fenêtre de récolte comme des décisions d’investissement, pas comme de la routine commerciale.');
+  }
+
+  var svg=document.getElementById('chart'), NS='http://www.w3.org/2000/svg', tip=document.getElementById('tip'), box=svg.parentNode;
+  function drawChart(R){
+    while(svg.firstChild)svg.removeChild(svg.firstChild);
+    var W=800,H=340,L=74,Rm=20,T=18,B=36,pw=W-L-Rm,ph=H-T-B;
+    var vals=[-R.plantio];R.anos.forEach(function(a){vals.push(a.acum);vals.push(a.e);});
+    var mn=Math.min.apply(null,vals),mx=Math.max.apply(null,vals);if(mx<=0)mx=Math.abs(mn)*0.2;if(mn>=0)mn=-mx*0.1;
+    var raw=(mx-mn)/6,mag=Math.pow(10,Math.floor(Math.log10(raw))),step=[1,2,2.5,5,10].map(function(c){return c*mag;}).filter(function(s){return s>=raw;})[0];
+    var ymin=Math.floor(mn/step)*step,ymax=Math.ceil(mx/step)*step;
+    function y(v){return T+ph*(ymax-v)/(ymax-ymin);}
+    function x(i){return L+pw*(i+0.5)/11;}
+    function el(n,attrs){var e=document.createElementNS(NS,n);for(var k in attrs)e.setAttribute(k,attrs[k]);svg.appendChild(e);return e;}
+    var g=el('g',{class:'grid'});
+    for(var v=ymin;v<=ymax+1e-6;v+=step){var ln=document.createElementNS(NS,'line');ln.setAttribute('x1',L);ln.setAttribute('x2',W-Rm);ln.setAttribute('y1',y(v));ln.setAttribute('y2',y(v));g.appendChild(ln);
+      var t=document.createElementNS(NS,'text');t.setAttribute('x',L-8);t.setAttribute('y',y(v)+4);t.setAttribute('text-anchor','end');t.textContent=mi(v).replace('−0 k','0 k');g.appendChild(t);}
+    el('line',{class:'zero',x1:L,x2:W-Rm,y1:y(0),y2:y(0)});
+    var bw=pw/11*0.55,pts=[[x(-0.5),y(-R.plantio)]];
+    R.anos.forEach(function(a,i){
+      var top=Math.min(y(0),y(a.e)),hh=Math.abs(y(a.e)-y(0));
+      el('rect',{class:'bar'+(a.e<0?' neg':''),x:x(i)-bw/2,y:top,width:bw,height:hh,rx:3});
+      el('text',{x:x(i),y:H-B+18,'text-anchor':'middle'}).textContent='A'+a.ano;
+      pts.push([x(i),y(a.acum)]);
+    });
+    el('text',{x:x(-0.5)+12,y:y(-R.plantio)-22,'text-anchor':'start'}).textContent='−'+mi(R.plantio)+' (plantation)';
+    el('path',{class:'acum',d:pts.map(function(p,i){return (i?'L':'M')+p[0].toFixed(1)+' '+p[1].toFixed(1);}).join(' ')});
+    var last=R.anos[9];
+    el('circle',{class:'pt',cx:pts[0][0],cy:pts[0][1],r:4});el('circle',{class:'pt',cx:pts[10][0],cy:pts[10][1],r:4});
+    el('text',{x:x(9),y:y(last.acum)-10,'text-anchor':'middle'}).textContent=(last.acum>=0?'+':'')+mi(last.acum);
+    if(R.pb){var i=R.pb-1;el('circle',{class:'pt',cx:x(i),cy:y(R.anos[i].acum),r:4});el('text',{x:x(i)+8,y:y(0)+22,'text-anchor':'start'}).textContent='+'+mi(R.anos[i].acum)+' (année '+R.pb+')';}
+    R.anos.forEach(function(a,i){
+      var hit=el('rect',{class:'hit',x:x(i)-pw/22,y:T,width:pw/11,height:ph});
+      hit.addEventListener('mousemove',function(ev){tip.style.display='block';
+        tip.innerHTML='<b>Année '+a.ano+'</b> · '+dec(a.kg/1000,1)+' t<br>EBITDA R$ '+br(a.e)+(a.inv?'<br>Post-récolte −R$ '+br(a.inv):'')+'<br>Cumulé R$ '+br(a.acum);
+        var r=box.getBoundingClientRect(),px=ev.clientX-r.left+14,py=ev.clientY-r.top-10;if(px+190>r.width)px=ev.clientX-r.left-200;tip.style.left=px+'px';tip.style.top=py+'px';});
+      hit.addEventListener('mouseleave',function(){tip.style.display='none';});
+    });
+  }
+
+  var meses=['J','F','M','A','M','J','J','A','S','O','N','D'];
+  var linhas=[['Chili (import)',[1,1,1,0,0,0,0,0,0,0,1,1],'on'],['Pérou et Argentine (import)',[0,0,0,0,0,0,0,1,1,1,1,1],'on'],['Sud du Brésil (RS, SC, PR)',[1,0,0,0,0,0,0,0,0,1,1,1],'on'],['SP et MG, faible froid',[0,0,0,0,0,0,1,1,1,1,1,0],'on'],['São Carlos, ce plan',[0,0,0,0,0,1,1,1,1,1,0,0],'sc'],['Prix les plus hauts',[0,0,1,1,1,1,1,0,0,0,0,0],'pr']];
+  var cal=document.getElementById('cal'),ch='<div class="r"></div>';meses.forEach(function(m){ch+='<div class="h">'+m+'</div>';});
+  linhas.forEach(function(l){ch+='<div class="r">'+l[0]+'</div>';l[1].forEach(function(v){ch+='<div class="c'+(v?' '+l[2]:'')+'"></div>';});});cal.innerHTML=ch;
+
+  fill();render();
+})();
+</script>
+
+</body>
+</html>

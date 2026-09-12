@@ -226,7 +226,7 @@
   </div>
   <div class="meta">
     <b>Myrtille · <span data-d="area">2,0</span> ha · São Carlos/SP, Brésil</b><br>
-    Version 7 · simulateur · septembre 2026<br>
+    Version 8 · paramètres officiels · septembre 2026<br>
     Valeurs en R$ (réais brésiliens) courants · estimations
   </div>
 </header>
@@ -246,11 +246,12 @@
 
 <div class="veredito">
   <p id="v1"><strong>Lecture directe.</strong> Avec une vente à R$ 60 la caisse de 1,5 kg (R$ 40/kg) et une production de 0,8 kg par plant la première année, 2,5 kg la deuxième et 4,5 kg à partir de l’année 5, le projet est remboursé en <strong>année 3</strong> avec un TRI de 74,0 % sur dix ans, avec 1,0 ha sous macrotunnel sur 2,0 ha plantés. Le verger dégage environ R$ 2 291 249 par an d’EBITDA à partir de l’année 5 et le fonds de roulement nécessaire est de R$ 0.</p>
-  <p id="v2">Prix et production viennent d’un <strong>producteur de myrtilles en activité</strong>, rencontré le 10 septembre 2026, et forment donc la base du plan. Par prudence, le plan montre aussi le cas conservateur : avec la courbe de production de la littérature (0,3 kg en année 1 jusqu’à 2,5 kg seulement en année 5), le TRI est de 34,7 % et le retour en année 4 ; à R$ 32/kg, le TRI est de 57,6 %. Couvrir toute la surface en macrotunnel (R$ 200 000 de plus) ajoute R$ 443 651 par an d’EBITDA et porte le TRI à 76,5 %.</p>
+  <p id="v2">Prix, production, équipe, emballage et post-récolte sont les <strong>paramètres officiels du projet</strong>, relevés auprès d’un producteur de myrtilles en activité le 10 septembre 2026. Par prudence, le plan montre aussi le cas conservateur : avec la courbe de production de la littérature (0,3 kg en année 1 jusqu’à 2,5 kg seulement en année 5), le TRI est de 34,7 % et le retour en année 4 ; à R$ 32/kg, le TRI est de 57,6 %. Couvrir toute la surface en macrotunnel (R$ 200 000 de plus) ajoute R$ 443 651 par an d’EBITDA et porte le TRI à 76,5 %.</p>
 </div>
 
 <section id="premissas">
   <h3><span class="num">01</span>Hypothèses du plan</h3>
+  <p>Les valeurs ci-dessous et les valeurs par défaut du simulateur sont les <strong>paramètres officiels du projet</strong>, fixés par Plantfort à partir de la visite d'un producteur en activité le 10 septembre 2026. Le simulateur sert à tester des variantes à partir de cette base.</p>
   <div class="grid2">
     <div class="box"><h5>Données du client</h5>
       <ul>
@@ -637,7 +638,7 @@
     <li>Revista Brasileira de Fruticultura (SciELO), performance initiale de variétés à faible besoin en froid dans l'État de São Paulo. <a href="https://www.scielo.br/j/rbf/a/cG47Fsqm583VwcmNtb8KQWv/?lang=pt">scielo.br</a></li>
     <li>Embrapa Clima Temperado, Système de production de la myrtille (2023) : conduite, nutrition, ravageurs et post-récolte. <a href="https://www.infoteca.cnptia.embrapa.br/infoteca/bitstream/doc/1155980/1/Sistema-de-Producao-do-Mirtilo.pdf">infoteca.cnptia.embrapa.br</a></li>
     <li>Presse spécialisée sur le coût d'implantation en pots (R$ 650 à 900 mille par hectare) et les densités de 6 000 à 8 000 plants/ha. <a href="https://campoenegocios.com/mirtilo-tropical-o-ouro-azul-da-nova-fruticultura-brasileira/">campoenegocios.com</a>, <a href="https://aegro.com.br/blog/pequenas-frutas-lucro-custos-producao/">aegro.com.br</a></li>
-    <li>Prix de R$ 60 la caisse de 1,5 kg et courbe de production (0,8 et 2,5 kg/plant) : relevés auprès d'un producteur de myrtilles en activité, réunion du 10 septembre 2026. Devis du macrotunnel : Plantfort.</li>
+    <li>Paramètres officiels du projet (prix de R$ 60 la caisse de 1,5 kg ; production de 0,8, 2,5 puis jusqu'à 4,5 kg par plant en année 5 ; équipe de 3 personnes par hectare ; chambre froide 4 × 4 × 4 m ; emballage à R$ 0,40 ; conseil semestriel ; sac à R$ 3,50 ou pot à R$ 14) : fixés par Plantfort sur la base d'un producteur de myrtilles en activité, réunion du 10 septembre 2026. Devis du macrotunnel : Plantfort.</li>
     <li>Coûts des sacs, du substrat, de la fertirrigation, de l'emballage et de la main-d'œuvre : estimations de marché pour l'intérieur de l'État de São Paulo en 2026, à confirmer par devis.</li>
   </ul>
 </section>
@@ -782,7 +783,7 @@
     setDyn(R,full,lit);
     setH('v1','<strong>Lecture directe.</strong> Avec une vente à R$ '+dec(P.preco_cob*1.5,0)+' la caisse de 1,5 kg (R$ '+dec(P.preco_cob,0)+'/kg) et une production de '+dec(P.kg1,1)+' kg par plant la première année, '+dec(P.kg2,1)+' kg la deuxième et '+dec(P.kg_max,1)+' kg à partir de l’année '+R.mat_ano+', le projet '+(R.pb?'est remboursé en <strong>année '+R.pb+'</strong>':'<strong>n’est pas remboursé en dix ans</strong>')+' avec un TRI de '+tirTxt(R.tir)+' sur dix ans, avec '+dec(R.cob,1)+' ha sous macrotunnel sur '+dec(R.area,1)+' ha plantés. Le verger dégage environ '+rs(R.mat.e)+' par an d’EBITDA à partir de l’année '+R.mat_ano+' et le fonds de roulement nécessaire est de '+rs(R.giro)+'.');
     var cobTxt=(R.cob<R.area)?' Couvrir toute la surface en macrotunnel ('+rs(full.plantio-R.plantio)+' de plus) '+(full.mat.e>=R.mat.e?'ajoute':'retire')+' '+rs(Math.abs(full.mat.e-R.mat.e))+' par an d’EBITDA et porte le TRI à '+tirTxt(full.tir)+'.':' Toute la surface plantée est couverte dans ce scénario.';
-    setH('v2','Prix et production viennent d’un <strong>producteur de myrtilles en activité</strong>, rencontré le 10 septembre 2026, et forment donc la base du plan. Par prudence, le plan montre aussi le cas conservateur : avec la courbe de production de la littérature (0,3 kg en année 1 jusqu’à 2,5 kg seulement en année 5), le TRI est de '+tirTxt(lit.tir)+' et le retour '+(lit.pb?'en année '+lit.pb:'n’a pas lieu en dix ans')+' ; à R$ '+dec(P.preco_cob-8,0)+'/kg, le TRI est de '+tirTxt(low.tir)+'.'+cobTxt);
+    setH('v2','Prix, production, équipe, emballage et post-récolte sont les <strong>paramètres officiels du projet</strong>, relevés auprès d’un producteur de myrtilles en activité le 10 septembre 2026. Par prudence, le plan montre aussi le cas conservateur : avec la courbe de production de la littérature (0,3 kg en année 1 jusqu’à 2,5 kg seulement en année 5), le TRI est de '+tirTxt(lit.tir)+' et le retour '+(lit.pb?'en année '+lit.pb:'n’a pas lieu en dix ans')+' ; à R$ '+dec(P.preco_cob-8,0)+'/kg, le TRI est de '+tirTxt(low.tir)+'.'+cobTxt);
     var h='';R.capex1.forEach(function(r){h+='<tr><td>'+r[0]+'</td><td>'+r[1]+'</td>'+tdn(br(r[2]))+tdn(R.plantio?dec(r[2]/R.plantio*100,0)+' %':'—')+'</tr>';});
     h+='<tr class="total"><td>Investissement de plantation</td><td>R$ '+br(R.area?R.plantio/R.area:0)+' par hectare · R$ '+dec(R.plantas?R.plantio/R.plantas:0,2)+' par plant</td>'+tdn(br(R.plantio))+tdn('100 %')+'</tr>';
     setH('t-capex1',h);

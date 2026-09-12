@@ -224,7 +224,7 @@
   </div>
   <div class="meta">
     <b>Mirtilo · <span data-d="area">2,0</span> ha · São Carlos/SP</b><br>
-    Versão 7 · simulador · setembro de 2026<br>
+    Versão 8 · parâmetros oficiais · setembro de 2026<br>
     Valores em R$ correntes · estimativas
   </div>
 </header>
@@ -244,11 +244,12 @@
 
 <div class="veredito">
   <p id="v1"><strong>Leitura direta.</strong> Com venda a R$ 60 a caixa de 1,5 kg (R$ 40/kg) e produção de 0,8 kg por planta no primeiro ano, 2,5 kg no segundo e 4,5 kg a partir do ano 5, o projeto se paga no <strong>ano 3</strong> com TIR de 74,0% em dez anos, com 1,0 ha em macrotúnel de 2,0 ha plantados. O pomar gera cerca de R$ 2.291.249 por ano de EBITDA a partir do ano 5 e o capital de giro necessário é de R$ 0.</p>
-  <p id="v2">Preço e produção vêm de um <strong>produtor de mirtilo em atividade</strong>, ouvido em reunião em 10 de setembro de 2026, e por isso são a base do plano. Como margem de segurança, o plano também mostra o caso conservador: com a curva de produção da literatura (0,3 kg no ano 1 até 2,5 kg só no ano 5) a TIR fica em 34,7% e o payback no ano 4; a R$ 32/kg a TIR fica em 57,6%. Cobrir toda a área com macrotúnel (mais R$ 200.000) acrescenta R$ 443.651 por ano de EBITDA e leva a TIR a 76,5%.</p>
+  <p id="v2">Preço, produção, equipe, embalagem e pós-colheita são os <strong>parâmetros oficiais do projeto</strong>, levantados com produtor de mirtilo em atividade em 10 de setembro de 2026. Como margem de segurança, o plano também mostra o caso conservador: com a curva de produção da literatura (0,3 kg no ano 1 até 2,5 kg só no ano 5) a TIR fica em 34,7% e o payback no ano 4; a R$ 32/kg a TIR fica em 57,6%. Cobrir toda a área com macrotúnel (mais R$ 200.000) acrescenta R$ 443.651 por ano de EBITDA e leva a TIR a 76,5%.</p>
 </div>
 
 <section id="premissas">
   <h3><span class="num">01</span>Premissas do plano</h3>
+  <p>Os valores abaixo e os padrões do simulador são os <strong>parâmetros oficiais do projeto</strong>, definidos pela Plantfort a partir da visita a produtor em atividade em 10 de setembro de 2026. O simulador permite testar variações a partir deles.</p>
   <div class="grid2">
     <div class="box"><h5>Dados do cliente</h5>
       <ul>
@@ -635,7 +636,7 @@
     <li>Revista Brasileira de Fruticultura (SciELO), desempenho inicial de cultivares de baixa exigência em frio no Estado de São Paulo. <a href="https://www.scielo.br/j/rbf/a/cG47Fsqm583VwcmNtb8KQWv/?lang=pt">scielo.br</a></li>
     <li>Embrapa Clima Temperado, Sistema de Produção do Mirtilo (2023): manejo, nutrição, pragas e pós-colheita. <a href="https://www.infoteca.cnptia.embrapa.br/infoteca/bitstream/doc/1155980/1/Sistema-de-Producao-do-Mirtilo.pdf">infoteca.cnptia.embrapa.br</a></li>
     <li>Reportagens setoriais sobre custo de implantação em vasos (R$ 650 a 900 mil por hectare) e densidades de 6.000 a 8.000 plantas/ha. <a href="https://campoenegocios.com/mirtilo-tropical-o-ouro-azul-da-nova-fruticultura-brasileira/">campoenegocios.com</a>, <a href="https://aegro.com.br/blog/pequenas-frutas-lucro-custos-producao/">aegro.com.br</a></li>
-    <li>Preço de R$ 60 por caixa de 1,5 kg e curva de produção (0,8 e 2,5 kg/planta): levantados com produtor de mirtilo em atividade, em reunião de 10 de setembro de 2026. Orçamento do macrotúnel: Plantfort.</li>
+    <li>Parâmetros oficiais do projeto (preço de R$ 60 por caixa de 1,5 kg; produção de 0,8, 2,5 e até 4,5 kg por planta no ano 5; equipe de 3 pessoas por hectare; câmara fria 4 × 4 × 4 m; embalagem de R$ 0,40; consultoria semestral; saco a R$ 3,50 ou vaso a R$ 14): definidos pela Plantfort com base em produtor de mirtilo em atividade, reunião de 10 de setembro de 2026. Orçamento do macrotúnel: Plantfort.</li>
     <li>Custos de sacos, substrato, fertirrigação, embalagem e mão de obra: estimativas de mercado para o interior de São Paulo em 2026, a confirmar em cotação.</li>
   </ul>
 </section>
@@ -784,7 +785,7 @@
     setDyn(R,full,lit);
     setH('v1','<strong>Leitura direta.</strong> Com venda a R$ '+dec(P.preco_cob*1.5,0)+' a caixa de 1,5 kg (R$ '+dec(P.preco_cob,0)+'/kg) e produção de '+dec(P.kg1,1)+' kg por planta no primeiro ano, '+dec(P.kg2,1)+' kg no segundo e '+dec(P.kg_max,1)+' kg a partir do ano '+R.mat_ano+', o projeto '+(R.pb?'se paga no <strong>ano '+R.pb+'</strong>':'<strong>não se paga em dez anos</strong>')+' com TIR de '+tirTxt(R.tir)+' em dez anos, com '+dec(R.cob,1)+' ha em macrotúnel de '+dec(R.area,1)+' ha plantados. O pomar gera cerca de '+rs(R.mat.e)+' por ano de EBITDA a partir do ano '+R.mat_ano+' e o capital de giro necessário é de '+rs(R.giro)+'.');
     var cobTxt=(R.cob<R.area)?' Cobrir toda a área com macrotúnel (mais '+rs(full.plantio-R.plantio)+') '+(full.mat.e>=R.mat.e?'acrescenta':'reduz')+' '+rs(Math.abs(full.mat.e-R.mat.e))+' por ano de EBITDA e leva a TIR a '+tirTxt(full.tir)+'.':' Toda a área plantada está coberta neste cenário.';
-    setH('v2','Preço e produção vêm de um <strong>produtor de mirtilo em atividade</strong>, ouvido em reunião em 10 de setembro de 2026, e por isso são a base do plano. Como margem de segurança, o plano também mostra o caso conservador: com a curva de produção da literatura (0,3 kg no ano 1 até 2,5 kg só no ano 5) a TIR fica em '+tirTxt(lit.tir)+' e o payback '+(lit.pb?'no ano '+lit.pb:'não ocorre em dez anos')+'; a R$ '+dec(P.preco_cob-8,0)+'/kg a TIR fica em '+tirTxt(low.tir)+'.'+cobTxt);
+    setH('v2','Preço, produção, equipe, embalagem e pós-colheita são os <strong>parâmetros oficiais do projeto</strong>, levantados com produtor de mirtilo em atividade em 10 de setembro de 2026. Como margem de segurança, o plano também mostra o caso conservador: com a curva de produção da literatura (0,3 kg no ano 1 até 2,5 kg só no ano 5) a TIR fica em '+tirTxt(lit.tir)+' e o payback '+(lit.pb?'no ano '+lit.pb:'não ocorre em dez anos')+'; a R$ '+dec(P.preco_cob-8,0)+'/kg a TIR fica em '+tirTxt(low.tir)+'.'+cobTxt);
     // 06
     var h='';R.capex1.forEach(function(r){h+='<tr><td>'+r[0]+'</td><td>'+r[1]+'</td>'+tdn(br(r[2]))+tdn(R.plantio?dec(r[2]/R.plantio*100,0)+'%':'—')+'</tr>';});
     h+='<tr class="total"><td>Investimento de plantio</td><td>R$ '+br(R.area?R.plantio/R.area:0)+' por hectare · R$ '+dec(R.plantas?R.plantio/R.plantas:0,2)+' por planta</td>'+tdn(br(R.plantio))+tdn('100%')+'</tr>';

@@ -353,7 +353,7 @@
   </div>
 
   <h4>Colheita e pós-colheita</h4>
-  <p>Colheita manual, em 5 a 8 passadas por planta ao longo de 10 a 14 semanas. Um colhedor treinado rende 4 a 6 kg por hora. A fruta vai direto em cumbucas de 125 g, entra na câmara fria a 2 °C em até duas horas e sai no mesmo dia ou no dia seguinte para o cliente. No pico da safra (setembro e outubro) o pomar a colheita é feita pela própria equipe fixa de <span data-d="pessoas_ha">3</span> pessoas por hectare, dimensionada para dar conta do pico sem diaristas.</p>
+  <p>Colheita manual, em 5 a 8 passadas por planta ao longo de 10 a 14 semanas. Uma pessoa treinada colhe 4 a 6 kg por hora. A fruta vai direto em cumbucas de 125 g, entra na câmara fria a 2 °C em até duas horas e sai no mesmo dia ou no dia seguinte para o cliente. No pico da safra (setembro e outubro) o pomar a colheita é feita pela própria equipe fixa de <span data-d="pessoas_ha">3</span> pessoas por hectare, dimensionada para dar conta do pico.</p>
 </section>
 
 <section id="cronograma">
@@ -460,7 +460,6 @@
         <div class="campo"><label for="p-preco_desc">Preço da fruta descoberta<small>R$ por kg</small></label><input id="p-preco_desc" data-k="preco_desc" type="number" step="1" min="0" value="38"></div>
         <div class="campo calc"><label>Preço da caixa de 1,5 kg<small>calculado</small></label><input id="c-caixa" readonly="" tabindex="-1" value="R$ 60,00"></div>
         <h5 style="margin-top:12px">Custos variáveis</h5>
-        <div class="campo"><label for="p-colheita">Colheita por diaristas<small>R$ por kg; 0 = a equipe fixa colhe</small></label><input id="p-colheita" data-k="colheita" type="number" step="0.1" min="0" value="0"></div>
         <div class="campo"><label for="p-emb_unit">Custo por embalagem<small>R$ por unidade</small></label><input id="p-emb_unit" data-k="emb_unit" type="number" step="0.05" min="0" value="0.4"></div>
         <div class="campo"><label for="p-kg_emb">Quilos por embalagem<small>kg</small></label><input id="p-kg_emb" data-k="kg_emb" type="number" step="0.1" min="0.1" value="1.5"></div>
         <div class="campo"><label for="p-frete">Frete refrigerado<small>R$ por kg</small></label><input id="p-frete" data-k="frete" type="number" step="0.1" min="0" value="1.5"></div>
@@ -522,7 +521,7 @@
     <thead><tr><th>Item</th><th>Base</th><th class="num">R$/ano</th><th class="num">R$/kg</th></tr></thead>
     <tbody id="t-custos"><tr><td>Comissão, perdas e Funrural</td><td>9,5% da receita bruta</td><td class="num">304.551</td><td class="num">3,72</td></tr><tr><td>Mão de obra fixa</td><td>3,0 pessoa(s)/ha × 2,0 ha × R$ 45.000/ano com encargos; a equipe também colhe</td><td class="num">270.000</td><td class="num">3,30</td></tr><tr><td>Frete refrigerado</td><td>R$ 1,50/kg até São Paulo e clientes regionais</td><td class="num">122.850</td><td class="num">1,50</td></tr><tr><td>Fertirrigação: nutrientes e ácido</td><td>R$ 30.000/ha × 2,0 ha</td><td class="num">60.000</td><td class="num">0,73</td></tr><tr><td>Administração, contabilidade e seguro rural</td><td></td><td class="num">40.000</td><td class="num">0,49</td></tr><tr><td>Provisão de troca do filme e dos sacos</td><td>Filme a cada 4 anos, sacos a cada 5</td><td class="num">37.310</td><td class="num">0,46</td></tr><tr><td>Embalagem</td><td>R$ 0,40 por embalagem de 1,5 kg (R$ 0,27/kg)</td><td class="num">21.840</td><td class="num">0,27</td></tr><tr><td>Manutenção e substrato de reposição</td><td></td><td class="num">20.000</td><td class="num">0,24</td></tr><tr><td>Defensivos e controle biológico</td><td>R$ 8.000/ha × 2,0 ha</td><td class="num">16.000</td><td class="num">0,20</td></tr><tr><td>Energia elétrica e água</td><td>Bombeamento e câmara fria</td><td class="num">12.000</td><td class="num">0,15</td></tr><tr><td>Consultoria agronômica</td><td>R$ 5 mil por semestre</td><td class="num">10.000</td><td class="num">0,12</td></tr><tr class="total"><td>Custo operacional total</td><td>81.900 kg</td><td class="num">914.551</td><td class="num">11,17</td></tr></tbody>
   </table></div>
-  <p id="p-custos-pe">A margem de contribuição é de R$ 33,66 por kg vendido ao preço médio de R$ 39,14. Os custos fixos de R$ 465.310 por ano exigem <strong>13,8 t</strong> para o pomar empatar no operacional, já atingido no ano 1. Acima disso, cada quilo adicional deixa R$ 34 no caixa.</p>
+  <p id="p-custos-pe">A margem de contribuição é de R$ 33,66 por kg vendido (a colheita é feita pela equipe fixa, já nos custos fixos) ao preço médio de R$ 39,14. Os custos fixos de R$ 465.310 por ano exigem <strong>13,8 t</strong> para o pomar empatar no operacional, já atingido no ano 1. Acima disso, cada quilo adicional deixa R$ 34 no caixa.</p>
 </section>
 
 <section id="projecao">
@@ -560,7 +559,7 @@
       <tr><td>Produtividade abaixo do previsto por calor e baixo frio</td><td>Alto. A 70% da curva a TIR cai para <span data-d="tir70">50,7%</span>; com a curva da literatura, para <span data-d="tir_lit">34,7%</span></td><td>Cultivares comprovadas em SP; implantar 1 ha primeiro e medir; sombreamento de 20 a 30% no verão se o pomar sofrer com radiação</td></tr>
       <tr><td><em>Drosophila suzukii</em> e botrytis</td><td>Médio. Perdas de 10 a 30% em anos chuvosos</td><td>Armadilhas, colheita frequente, retirada de fruta caída, controle biológico; o macrotúnel já reduz botrytis no hectare coberto</td></tr>
       <tr><td>Água inadequada (alcalinidade, ferro, cloro)</td><td>Alto se descoberto tarde</td><td>Análise completa antes de qualquer compra; injeção de ácido dimensionada para o pior caso; reservatório de decantação</td></tr>
-      <tr><td>Pico de colheita acima da capacidade da equipe fixa</td><td>Médio. Fruta passa do ponto em 3 dias</td><td>Escalonar cultivares e poda para alongar a safra; se necessário, reforço por safra com cooperativa de trabalho rural (informar R$/kg no simulador)</td></tr>
+      <tr><td>Pico de colheita acima da capacidade da equipe fixa</td><td>Médio. Fruta passa do ponto em 3 dias</td><td>Escalonar cultivares e poda para alongar a safra e distribuir a colheita ao longo de mais semanas; organizar turnos da equipe fixa no pico</td></tr>
       <tr><td>Pássaros, granizo e queimadura no hectare descoberto</td><td>Médio. Cada 10 pontos de perda a mais tiram cerca de <span data-d="drop_perda">4</span> pontos da TIR</td><td>Rede antipássaro leve sobre as linhas (R$ 3 a 4/m²) já no ano 2; cobrir o hectare de vez antes do ano 3</td></tr>
       <tr><td>Vento e granizo no macrotúnel</td><td>Médio, episódico</td><td>Dimensionar o macrotúnel para vento de 100 km/h, filme com garantia UV e ancoragem reforçada; seguro rural para a estrutura</td></tr>
       <tr><td>Muda de baixa qualidade ou fora de tipo a R$ <span data-d="muda">20,00</span></td><td>Alto e irreversível por 10 anos</td><td>Comprar de viveiro registrado no RENASEM, com laudo fitossanitário; visitar o viveiro; reter 20% do pagamento até 90 dias após o plantio</td></tr>
@@ -654,7 +653,7 @@
     tunel_m2:20,fert_ha:55000,gc_m2:3.0,equip:35000,eletrica:25000,
     camara:60000,obra_camara:30000,galpao_m2:0,galpao_rs:600,equip_pack:13000,
     kg1:0.8,kg2:2.5,kg_max:4.5,ano_max:5,perda:25,preco_cob:40,preco_desc:38,
-    colheita:0,emb_unit:0.4,kg_emb:1.5,frete:1.5,comissao:9.5,
+    emb_unit:0.4,kg_emb:1.5,frete:1.5,comissao:9.5,
     pessoas_ha:3,custo_pessoa:45000,fert_op:30000,defensivos:8000,energia:12000,manut:20000,consult:10000,admin:40000,
     filme_m2:7,filme_fator:1.3,filme_vida:4,saco_vida:5,taxa:12};
   var KEY='plantfort-mirtilo-params-v1';
@@ -712,7 +711,7 @@
     var pc=o.preco_cob!==undefined?o.preco_cob:p.preco_cob, pd=o.preco_desc!==undefined?o.preco_desc:p.preco_desc;
     var fator=o.fator||1, curva=o.curva||null;
     var emb=p.kg_emb>0?p.emb_unit/p.kg_emb:0;
-    var vkg=p.colheita+emb+p.frete, com=p.comissao/100, perda=p.perda/100;
+    var vkg=emb+p.frete, com=p.comissao/100, perda=p.perda/100;
     var anos=[],f=[-plantio],acum=-plantio;
     for(var t=1;t<=10;t++){
       var kgp=(curva?curva[t-1]:kgCurve(p,t))*fator;
@@ -803,7 +802,7 @@
     var m=R.mat;
     setH('p-custos-intro','Ano '+R.mat_ano+' em diante, '+dec(m.kg/1000,1)+' t colhidas ('+dec(m.kgc/1000,1)+' t na área coberta e '+dec(m.kgd/1000,1)+' t na descoberta). Custos fixos independem do volume; variáveis acompanham os quilos vendidos.');
     var rows=[];R.fixos.forEach(function(r){rows.push([r[0],r[1],r[2]]);});
-    if(P.colheita>0)rows.push(['Colheita (diaristas)','R$ '+dec(P.colheita,2)+' por kg colhido',P.colheita*m.kg]);
+    
     rows.push(['Embalagem','R$ '+dec(P.emb_unit,2)+' por embalagem de '+dec(P.kg_emb,1)+' kg (R$ '+dec(R.emb,2)+'/kg)',R.emb*m.kg]);
     rows.push(['Frete refrigerado','R$ '+dec(P.frete,2)+'/kg até São Paulo e clientes regionais',P.frete*m.kg]);
     rows.push(['Comissão, perdas e Funrural',dec(P.comissao,1)+'% da receita bruta',R.com*m.rec]);
@@ -812,7 +811,7 @@
     h+='<tr class="total"><td>Custo operacional total</td><td>'+br(m.kg)+' kg</td>'+tdn(br(m.custo))+tdn(m.kg?dec(m.custo/m.kg,2):'—')+'</tr>';
     setH('t-custos',h);
     var pmed=m.kg?m.rec/m.kg:0, mc=pmed-R.vkg-R.com*pmed, pe=mc>0?R.fixo/mc/1000:0;
-    setH('p-custos-pe','A margem de contribuição é de R$ '+dec(mc,2)+' por kg vendido ao preço médio de R$ '+dec(pmed,2)+'. Os custos fixos de '+rs(R.fixo)+' por ano exigem <strong>'+dec(pe,1)+' t</strong> para o pomar empatar no operacional'+(R.anos[0].kg/1000>=pe?', já atingido no ano 1.':(m.kg/1000>=pe?': o ano 1 colhe '+dec(R.anos[0].kg/1000,1)+' t e o ano 2 supera com folga.':': a produção madura não atinge esse volume.'))+' Acima disso, cada quilo adicional deixa R$ '+dec(mc,0)+' no caixa.');
+    setH('p-custos-pe','A margem de contribuição é de R$ '+dec(mc,2)+' por kg vendido (a colheita é feita pela equipe fixa, já nos custos fixos) ao preço médio de R$ '+dec(pmed,2)+'. Os custos fixos de '+rs(R.fixo)+' por ano exigem <strong>'+dec(pe,1)+' t</strong> para o pomar empatar no operacional'+(R.anos[0].kg/1000>=pe?', já atingido no ano 1.':(m.kg/1000>=pe?': o ano 1 colhe '+dec(R.anos[0].kg/1000,1)+' t e o ano 2 supera com folga.':': a produção madura não atinge esse volume.'))+' Acima disso, cada quilo adicional deixa R$ '+dec(mc,0)+' no caixa.');
     // 08
     h='';R.anos.forEach(function(a){h+='<tr><td>Ano '+a.ano+'</td>'+tdn(dec(a.kgp,1))+tdn(dec(a.kg/1000,1))+tdn(br(a.rec))+tdn(br(a.custo))+tdn(br(a.e),a.e<0?'neg':'')+tdn(br(a.acum),a.acum<0?'neg':(a.ano===R.pb?'rec':''))+'</tr>';});
     setH('proj',h);

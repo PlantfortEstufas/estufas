@@ -355,7 +355,7 @@
   </div>
 
   <h4>Récolte et post-récolte</h4>
-  <p>Récolte manuelle, en 5 à 8 passages par plant sur 10 à 14 semaines. Un cueilleur formé fait 4 à 6 kg par heure. Le fruit va directement en barquettes de 125 g, entre en chambre froide à 2 °C en moins de deux heures et repart le jour même ou le lendemain vers le client. Au pic de saison (septembre et octobre), la récolte est assurée par l'équipe permanente de <span data-d="pessoas_ha">3</span> personnes par hectare, dimensionnée pour absorber le pic sans saisonniers.</p>
+  <p>Récolte manuelle, en 5 à 8 passages par plant sur 10 à 14 semaines. Une personne formée récolte 4 à 6 kg par heure. Le fruit va directement en barquettes de 125 g, entre en chambre froide à 2 °C en moins de deux heures et repart le jour même ou le lendemain vers le client. Au pic de saison (septembre et octobre), la récolte est assurée par l'équipe permanente de <span data-d="pessoas_ha">3</span> personnes par hectare, dimensionnée pour absorber le pic.</p>
 </section>
 
 <section id="cronograma">
@@ -462,7 +462,6 @@
         <div class="campo"><label for="p-preco_desc">Prix du fruit non couvert<small>R$ par kg</small></label><input id="p-preco_desc" data-k="preco_desc" type="number" step="1" min="0" value="38"></div>
         <div class="campo calc"><label>Prix de la caisse de 1,5 kg<small>calculé</small></label><input id="c-caixa" readonly="" tabindex="-1" value="R$ 60,00"></div>
         <h5 style="margin-top:12px">Coûts variables</h5>
-        <div class="campo"><label for="p-colheita">Récolte par saisonniers<small>R$ par kg ; 0 = l'équipe permanente récolte</small></label><input id="p-colheita" data-k="colheita" type="number" step="0.1" min="0" value="0"></div>
         <div class="campo"><label for="p-emb_unit">Coût par emballage<small>R$ l'unité</small></label><input id="p-emb_unit" data-k="emb_unit" type="number" step="0.05" min="0" value="0.4"></div>
         <div class="campo"><label for="p-kg_emb">Kilos par emballage<small>kg</small></label><input id="p-kg_emb" data-k="kg_emb" type="number" step="0.1" min="0.1" value="1.5"></div>
         <div class="campo"><label for="p-frete">Transport frigorifique<small>R$ par kg</small></label><input id="p-frete" data-k="frete" type="number" step="0.1" min="0" value="1.5"></div>
@@ -524,7 +523,7 @@
     <thead><tr><th>Poste</th><th>Base</th><th class="num">R$/an</th><th class="num">R$/kg</th></tr></thead>
     <tbody id="t-custos"><tr><td>Commission, pertes et Funrural</td><td>9,5 % du chiffre d’affaires brut</td><td class="num">304 551</td><td class="num">3,72</td></tr><tr><td>Main-d’œuvre permanente</td><td>3,0 personne(s)/ha × 2,0 ha × R$ 45 000/an charges comprises ; l’équipe récolte aussi</td><td class="num">270 000</td><td class="num">3,30</td></tr><tr><td>Transport frigorifique</td><td>R$ 1,50/kg vers São Paulo et les clients régionaux</td><td class="num">122 850</td><td class="num">1,50</td></tr><tr><td>Fertirrigation : engrais et acide</td><td>R$ 30 000/ha × 2,0 ha</td><td class="num">60 000</td><td class="num">0,73</td></tr><tr><td>Administration, comptabilité et assurance agricole</td><td></td><td class="num">40 000</td><td class="num">0,49</td></tr><tr><td>Provision de remplacement du film et des sacs</td><td>Film tous les 4 ans, sacs tous les 5</td><td class="num">37 310</td><td class="num">0,46</td></tr><tr><td>Emballage</td><td>R$ 0,40 par emballage de 1,5 kg (R$ 0,27/kg)</td><td class="num">21 840</td><td class="num">0,27</td></tr><tr><td>Entretien et substrat d’appoint</td><td></td><td class="num">20 000</td><td class="num">0,24</td></tr><tr><td>Phytosanitaires et lutte biologique</td><td>R$ 8 000/ha × 2,0 ha</td><td class="num">16 000</td><td class="num">0,20</td></tr><tr><td>Électricité et eau</td><td>Pompage et chambre froide</td><td class="num">12 000</td><td class="num">0,15</td></tr><tr><td>Conseil agronomique</td><td>R$ 5 000 par semestre</td><td class="num">10 000</td><td class="num">0,12</td></tr><tr class="total"><td>Coût d’exploitation total</td><td>81 900 kg</td><td class="num">914 551</td><td class="num">11,17</td></tr></tbody>
   </table></div>
-  <p id="p-custos-pe">La marge sur coûts variables est de R$ 33,66 par kg vendu au prix moyen de R$ 39,14. Les coûts fixes de R$ 465 310 par an exigent <strong>13,8 t</strong> pour atteindre l’équilibre d’exploitation, déjà atteint en année 1. Au-delà, chaque kilo supplémentaire laisse R$ 34 en trésorerie.</p>
+  <p id="p-custos-pe">La marge sur coûts variables est de R$ 33,66 par kg vendu (la récolte est assurée par l’équipe permanente, déjà dans les coûts fixes) au prix moyen de R$ 39,14. Les coûts fixes de R$ 465 310 par an exigent <strong>13,8 t</strong> pour atteindre l’équilibre d’exploitation, déjà atteint en année 1. Au-delà, chaque kilo supplémentaire laisse R$ 34 en trésorerie.</p>
 </section>
 
 <section id="projecao">
@@ -562,7 +561,7 @@
       <tr><td>Productivité inférieure aux prévisions (chaleur, faible froid)</td><td>Élevé. À 70 % de la courbe, le TRI tombe à <span data-d="tir70">50,7 %</span> ; avec la courbe de la littérature, à <span data-d="tir_lit">34,7 %</span></td><td>Variétés éprouvées à São Paulo ; implanter 1 ha d'abord et mesurer ; ombrage de 20 à 30 % en été si le verger souffre du rayonnement</td></tr>
       <tr><td><em>Drosophila suzukii</em> et botrytis</td><td>Moyen. Pertes de 10 à 30 % les années pluvieuses</td><td>Pièges, récolte fréquente, retrait des fruits tombés, lutte biologique ; le macrotunnel réduit déjà le botrytis sous couvert</td></tr>
       <tr><td>Eau inadaptée (alcalinité, fer, chlore)</td><td>Élevé si découvert tard</td><td>Analyse complète avant tout achat ; injection d'acide dimensionnée pour le pire cas ; bassin de décantation</td></tr>
-      <tr><td>Pic de récolte au-delà de la capacité de l'équipe permanente</td><td>Moyen. Le fruit passe en 3 jours</td><td>Échelonner variétés et taille pour allonger la saison ; au besoin, renfort saisonnier via une coopérative de travail rural (indiquer le R$/kg dans le simulateur)</td></tr>
+      <tr><td>Pic de récolte au-delà de la capacité de l'équipe permanente</td><td>Moyen. Le fruit passe en 3 jours</td><td>Échelonner variétés et taille pour allonger la saison et étaler la récolte sur plus de semaines ; organiser les équipes permanentes en rotation au pic</td></tr>
       <tr><td>Oiseaux, grêle et brûlure sur la surface non couverte</td><td>Moyen. Chaque 10 points de perte en plus retirent environ <span data-d="drop_perda">4</span> points de TRI</td><td>Filet anti-oiseaux léger sur les rangs (R$ 3 à 4/m²) dès l'année 2 ; couvrir définitivement avant l'année 3</td></tr>
       <tr><td>Vent et grêle sur le macrotunnel</td><td>Moyen, épisodique</td><td>Dimensionner le macrotunnel pour un vent de 100 km/h, film garanti UV et ancrage renforcé ; assurance agricole sur la structure</td></tr>
       <tr><td>Plant de mauvaise qualité ou hors type à R$ <span data-d="muda">20,00</span></td><td>Élevé et irréversible sur 10 ans</td><td>Acheter chez une pépinière enregistrée au RENASEM, avec certificat phytosanitaire ; visiter la pépinière ; retenir 20 % du paiement jusqu'à 90 jours après plantation</td></tr>
@@ -656,7 +655,7 @@
     tunel_m2:20,fert_ha:55000,gc_m2:3.0,equip:35000,eletrica:25000,
     camara:60000,obra_camara:30000,galpao_m2:0,galpao_rs:600,equip_pack:13000,
     kg1:0.8,kg2:2.5,kg_max:4.5,ano_max:5,perda:25,preco_cob:40,preco_desc:38,
-    colheita:0,emb_unit:0.4,kg_emb:1.5,frete:1.5,comissao:9.5,
+    emb_unit:0.4,kg_emb:1.5,frete:1.5,comissao:9.5,
     pessoas_ha:3,custo_pessoa:45000,fert_op:30000,defensivos:8000,energia:12000,manut:20000,consult:10000,admin:40000,
     filme_m2:7,filme_fator:1.3,filme_vida:4,saco_vida:5,taxa:12};
   var KEY='plantfort-mirtilo-params-v1';
@@ -714,7 +713,7 @@
     var pc=o.preco_cob!==undefined?o.preco_cob:p.preco_cob, pd=o.preco_desc!==undefined?o.preco_desc:p.preco_desc;
     var fator=o.fator||1, curva=o.curva||null;
     var emb=p.kg_emb>0?p.emb_unit/p.kg_emb:0;
-    var vkg=p.colheita+emb+p.frete, com=p.comissao/100, perda=p.perda/100;
+    var vkg=emb+p.frete, com=p.comissao/100, perda=p.perda/100;
     var anos=[],f=[-plantio],acum=-plantio;
     for(var t=1;t<=10;t++){
       var kgp=(curva?curva[t-1]:kgCurve(p,t))*fator;
@@ -799,7 +798,7 @@
     var m=R.mat;
     setH('p-custos-intro','À partir de l’année '+R.mat_ano+', '+dec(m.kg/1000,1)+' t récoltées ('+dec(m.kgc/1000,1)+' t sous couvert et '+dec(m.kgd/1000,1)+' t à découvert). Les coûts fixes ne dépendent pas du volume ; les variables suivent les kilos vendus.');
     var rows=[];R.fixos.forEach(function(r){rows.push([r[0],r[1],r[2]]);});
-    if(P.colheita>0)rows.push(['Récolte (saisonniers)','R$ '+dec(P.colheita,2)+' par kg cueilli',P.colheita*m.kg]);
+    
     rows.push(['Emballage','R$ '+dec(P.emb_unit,2)+' par emballage de '+dec(P.kg_emb,1)+' kg (R$ '+dec(R.emb,2)+'/kg)',R.emb*m.kg]);
     rows.push(['Transport frigorifique','R$ '+dec(P.frete,2)+'/kg vers São Paulo et les clients régionaux',P.frete*m.kg]);
     rows.push(['Commission, pertes et Funrural',dec(P.comissao,1)+' % du chiffre d’affaires brut',R.com*m.rec]);
@@ -808,7 +807,7 @@
     h+='<tr class="total"><td>Coût d’exploitation total</td><td>'+br(m.kg)+' kg</td>'+tdn(br(m.custo))+tdn(m.kg?dec(m.custo/m.kg,2):'—')+'</tr>';
     setH('t-custos',h);
     var pmed=m.kg?m.rec/m.kg:0, mc=pmed-R.vkg-R.com*pmed, pe=mc>0?R.fixo/mc/1000:0;
-    setH('p-custos-pe','La marge sur coûts variables est de R$ '+dec(mc,2)+' par kg vendu au prix moyen de R$ '+dec(pmed,2)+'. Les coûts fixes de '+rs(R.fixo)+' par an exigent <strong>'+dec(pe,1)+' t</strong> pour atteindre l’équilibre d’exploitation'+(R.anos[0].kg/1000>=pe?', déjà atteint en année 1.':(m.kg/1000>=pe?' : l’année 1 récolte '+dec(R.anos[0].kg/1000,1)+' t et l’année 2 le dépasse largement.':' : la production à maturité n’atteint pas ce volume.'))+' Au-delà, chaque kilo supplémentaire laisse R$ '+dec(mc,0)+' en trésorerie.');
+    setH('p-custos-pe','La marge sur coûts variables est de R$ '+dec(mc,2)+' par kg vendu (la récolte est assurée par l’équipe permanente, déjà dans les coûts fixes) au prix moyen de R$ '+dec(pmed,2)+'. Les coûts fixes de '+rs(R.fixo)+' par an exigent <strong>'+dec(pe,1)+' t</strong> pour atteindre l’équilibre d’exploitation'+(R.anos[0].kg/1000>=pe?', déjà atteint en année 1.':(m.kg/1000>=pe?' : l’année 1 récolte '+dec(R.anos[0].kg/1000,1)+' t et l’année 2 le dépasse largement.':' : la production à maturité n’atteint pas ce volume.'))+' Au-delà, chaque kilo supplémentaire laisse R$ '+dec(mc,0)+' en trésorerie.');
     h='';R.anos.forEach(function(a){h+='<tr><td>Année '+a.ano+'</td>'+tdn(dec(a.kgp,1))+tdn(dec(a.kg/1000,1))+tdn(br(a.rec))+tdn(br(a.custo))+tdn(br(a.e),a.e<0?'neg':'')+tdn(br(a.acum),a.acum<0?'neg':(a.ano===R.pb?'rec':''))+'</tr>';});
     setH('proj',h);
     setT('l-proj','La trésorerie cumulée part de −R$ '+br(R.plantio)+' (plantation en année 0) et déduit les R$ '+br(R.pos)+' de post-récolte en année 1. Sans impôt sur le résultat ni intérêts. Prix fixes de R$ '+dec(R.pc,0)+'/kg (couvert) et R$ '+dec(R.pd,0)+'/kg (à découvert) en réais courants. La colonne kg/plant est celle de la surface couverte.');

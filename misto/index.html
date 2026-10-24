@@ -446,7 +446,7 @@
   <h3><span class="num">06</span>Sensibilidade da framboesa</h3>
   <p>A framboesa carrega quase toda a incerteza do plano. A tabela cruza as duas hipóteses mais frágeis: o preço de venda e a produtividade. O mirtilo fica fixo nos parâmetros oficiais.</p>
   <div class="tabela-wrap"><table class="sens">
-    <thead><tr><th>Preço da framboesa</th><th class="num">6 t/ha</th><th class="num">9 t/ha</th><th class="num">12 t/ha</th><th class="num">15 t/ha</th><th class="num">20 t/ha</th></tr></thead>
+    <thead id="t-sens-head"><tr><th>Preço da framboesa</th><th class="num">6 t/ha</th><th class="num">10 t/ha</th><th class="num">15 t/ha</th><th class="num">20 t/ha</th><th class="num">30 t/ha</th></tr></thead>
     <tbody id="t-sens"><tr><td>R$ 30/kg</td><td class="num ok">28,4%</td><td class="num ok">31,2%</td><td class="num ok">34,7%</td><td class="num ok">38,1%</td><td class="num ok">44,5%</td></tr><tr><td>R$ 40/kg</td><td class="num ok">31,4%</td><td class="num ok">35,5%</td><td class="num ok">40,5%</td><td class="num ok">45,2%</td><td class="num ok">54,2%</td></tr><tr><td><strong>R$ 50/kg</strong></td><td class="num ok">34,5%</td><td class="num ok">39,9%</td><td class="num ok"><strong>46,2%</strong></td><td class="num ok">52,3%</td><td class="num ok">63,6%</td></tr><tr><td>R$ 60/kg</td><td class="num ok">37,7%</td><td class="num ok">44,3%</td><td class="num ok">52,0%</td><td class="num ok">59,3%</td><td class="num ok">72,9%</td></tr><tr><td>R$ 70/kg</td><td class="num ok">41,0%</td><td class="num ok">48,8%</td><td class="num ok">57,9%</td><td class="num ok">66,4%</td><td class="num ok">82,1%</td></tr></tbody>
   </table></div>
   <p class="legenda">TIR do projeto inteiro em dez anos. Verde: acima da taxa de desconto. Laranja: não recupera o capital.</p>
@@ -774,6 +774,9 @@
       });
       h+='</tr>';
     });
+    var hh='<tr><th>Preço da framboesa</th>';
+    tas.forEach(function(ta){hh+='<th class="num">'+dec(ta,0)+' t/ha</th>';});
+    setH('t-sens-head',hh+'</tr>');
     setH('t-sens',h);
     var pior=calc(P,{f_preco:30,f_tm:6});
     setH('p-sens','No pior canto da tabela, R$ 30/kg e 6 t/ha, o projeto inteiro cai para '+tirTxt(pior.tir)+'. O mirtilo sozinho entrega '+tirTxt(soM.tir)+'. Ou seja: se a framboesa decepcionar nas duas frentes, ela destrói valor em vez de criar. É por isso que o talhão piloto vem antes da área inteira.');
